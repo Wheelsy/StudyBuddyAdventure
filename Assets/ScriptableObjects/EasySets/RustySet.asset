@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
+  m_Name: RustySet
+  m_EditorClassIdentifier: 
+  isSet: 1
+  name: Rusty Set
+  itemArt: {fileID: -5644802712462747586, guid: aa8679ac243c7ad47af1226cf56af46a, type: 3}
+  atk: 2
+  def: 1
+  initiative: 0
+  durability: -2
+  skin:
+  - {fileID: 6648145789318816913, guid: f326b98e41a55ea42b8a46b096c07d31, type: 3}
+  - {fileID: 5220119589717749481, guid: f326b98e41a55ea42b8a46b096c07d31, type: 3}
+  potion: 0

@@ -1,0 +1,3 @@
+Bandit Stronghold,30,Medium,60,NA,NA,NA
+Collect Herbal Ingredients,10,Easy,60,NA,NA,NA
+Hydras Spotted in Eastern Swamplands,100,Hard,60,NA,NA,NA

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
+  m_Name: AtkPotion
+  m_EditorClassIdentifier: 
+  isSet: 0
+  name: Atk Potion
+  itemArt: {fileID: 6285645462315052536, guid: 987a783198b252147b55fb50c4999dba, type: 3}
+  atk: 0
+  def: 0
+  initiative: 0
+  durability: 0
+  skin: []
+  potion: 2

@@ -1,0 +1,4 @@
+repository "Study Buddy@wheeIs@cloud"
+  path "/"
+    br "/main"
+    co "/main"

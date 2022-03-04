@@ -1,0 +1,3 @@
+Goblins Spotted to the West,10,Easy,25,A group of goblins has been raiding farmlands on the outskirts of town. Drive them off.,The goblin pack was scattered and extra defenses constructed.,The golblins overcame our defensive efforts and more towns have been lost.
+Necromancer is Massing Forces,200,Extreme,25,A foul presence lurks in the forest. Villagers recount seeing the dead walk. Investigate their reports,The reports were true. An evil magic was raising the dead for its own sinister purposes. He was turned to ash and his army put to rest.,The reports were true. A powerful and evil magic resides in that forest. We were no match and only by the grace of god did we escape with our lives.
+Mercenary Wanted for Undisclosed Duties,30,Medium,25,NA,NA,NA

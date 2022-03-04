@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
+  m_Name: ClaySet
+  m_EditorClassIdentifier: 
+  isSet: 1
+  name: Clay Set
+  itemArt: {fileID: 2260269065238413314, guid: fa7d94246267d7f42a889cca839f3999, type: 3}
+  atk: 1
+  def: 1
+  initiative: 0
+  durability: -1
+  skin:
+  - {fileID: -4019610810466107526, guid: 0083ae7745d634545a7dd8f323d6d894, type: 3}
+  - {fileID: 5246281563158928188, guid: 0083ae7745d634545a7dd8f323d6d894, type: 3}
+  potion: 0

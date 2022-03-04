@@ -1,0 +1,3 @@
+Green Dragon of Elms Hill,200,Extreme,150,NA,NA,NA
+Deliver Supplies to Redtown,10,Easy,150,NA,NA,NA
+Orks at the Gates,30,Medium,150,NA,NA,NA

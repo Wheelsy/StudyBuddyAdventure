@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
+  m_Name: WoodenSet
+  m_EditorClassIdentifier: 
+  isSet: 1
+  name: Wooden Set
+  itemArt: {fileID: 3009656529787979336, guid: 964d7d388e8975e4294a06281bedcb90, type: 3}
+  atk: 1
+  def: 1
+  initiative: 0
+  durability: 0
+  skin:
+  - {fileID: 5629861441923867916, guid: 87977c842050be04f94bfaaf7a2c85a9, type: 3}
+  - {fileID: -1370010355394432692, guid: 87977c842050be04f94bfaaf7a2c85a9, type: 3}
+  potion: 0
