@@ -1,0 +1,2 @@
+# StudyBuddy
+StudyAid application repository
