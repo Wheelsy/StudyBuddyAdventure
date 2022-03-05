@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: aa3efe0e0ebd5974eb5f6590fb130a11
+guid: b4270574d1f457a438ca8a165dff4666
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7496178629034878930
-    second: IronSetItem_0
+      213: -8675077374283534407
+    second: FurSet_0
+  - first:
+      213: 6770367396810965180
+    second: FurSet_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -118,22 +121,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IronSetItem_0
+      name: FurSet_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 13
-        width: 39
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 27
+        y: 21
+        width: 54
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e28508bd04938f790800000000000000
-      internalID: -7496178629034878930
+      spriteID: 9bf2dc2371feb9780800000000000000
+      internalID: -8675077374283534407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FurSet_1
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 21
+        width: 54
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb0cdc5c64d25fd50800000000000000
+      internalID: 6770367396810965180
       vertices: []
       indices: 
       edges: []
