@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
-  m_Name: IronSet
+  m_Name: ChainSet
   m_EditorClassIdentifier: 
   isSet: 1
-  name: Iron Set
-  itemArt: {fileID: -7496178629034878930, guid: aa3efe0e0ebd5974eb5f6590fb130a11, type: 3}
+  name: Chain Set
+  itemArt: {fileID: 5290321141170629481, guid: 86158da4b9ca2cc4eacbcaa0b84f7028, type: 3}
   atk: 2
-  def: 2
-  initiative: 0
-  durability: 0
+  def: 3
+  initiative: -1
+  durability: 2
   skin:
-  - {fileID: -3939758392165601432, guid: 51a76a024f26ae5438e1d43c71576307, type: 3}
-  - {fileID: 5643849197484307851, guid: 51a76a024f26ae5438e1d43c71576307, type: 3}
+  - {fileID: 1184580354351899088, guid: c89ae040e1a22504fbb78fe850961bb8, type: 3}
+  - {fileID: 8781484290522318290, guid: c89ae040e1a22504fbb78fe850961bb8, type: 3}
   potion: 0
   potionEffect: 

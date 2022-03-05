@@ -22,7 +22,7 @@ public class Item : ScriptableObject
         DoubleDef,
         DoubleInit
     }
-    [Header("Potion Type")]
+    [Header("Potion Attributes")]
     public Potion potion;
-
+    public string potionEffect;
 }

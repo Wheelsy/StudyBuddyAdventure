@@ -21,3 +21,4 @@ MonoBehaviour:
   durability: 0
   skin: []
   potion: 1
+  potionEffect: If you would lose the combat receive a second life. Potion is consumed.

@@ -21,3 +21,4 @@ MonoBehaviour:
   durability: 0
   skin: []
   potion: 3
+  potionEffect: Double your defense for the next quest. Potion is consumed.

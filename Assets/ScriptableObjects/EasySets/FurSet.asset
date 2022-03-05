@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
   m_Name: FurSet
   m_EditorClassIdentifier: 
-  isSet: 0
+  isSet: 1
   name: Fur Set
   itemArt: {fileID: -7620612179064165710, guid: dcf917c5d4ca8fb4b8dcf74a91357c1e, type: 3}
   atk: 4
@@ -23,3 +23,4 @@ MonoBehaviour:
   - {fileID: -8675077374283534407, guid: b4270574d1f457a438ca8a165dff4666, type: 3}
   - {fileID: 6770367396810965180, guid: b4270574d1f457a438ca8a165dff4666, type: 3}
   potion: 0
+  potionEffect: 

@@ -21,3 +21,5 @@ MonoBehaviour:
   durability: 0
   skin: []
   potion: 4
+  potionEffect: Double your Initiative for the next quest (if initiative is negative
+    it will reset to 0). Potion is consumed.
