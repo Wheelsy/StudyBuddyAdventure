@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
-  m_Name: JesterSet
+  m_Name: SackSet
   m_EditorClassIdentifier: 
   isSet: 1
-  name: Jester Set
-  itemArt: {fileID: -6472668695737456649, guid: 7d25b707bf8e7924ca6db630af9b9250, type: 3}
-  atk: 3
+  name: Sack Set
+  itemArt: {fileID: 6393082277432569091, guid: b48d7295fafb16747ac3d06c2c2e526e, type: 3}
+  atk: 0
   def: 0
-  initiative: 3
-  durability: -1
+  initiative: 0
+  durability: 0
   skin:
-  - {fileID: 6076786813148130766, guid: 8f6cfc2a1f96cbf4aa2f3c7d86b10c67, type: 3}
-  - {fileID: 5068874845597762328, guid: 8f6cfc2a1f96cbf4aa2f3c7d86b10c67, type: 3}
+  - {fileID: 7436677555344752108, guid: 4b49a97a54bdda1448d2076f4f4e9e66, type: 3}
+  - {fileID: 6324546335719066786, guid: 4b49a97a54bdda1448d2076f4f4e9e66, type: 3}
   potion: 0
+  potionEffect: 

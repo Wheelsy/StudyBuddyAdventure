@@ -15,11 +15,12 @@ MonoBehaviour:
   isSet: 1
   name: Leaf Set
   itemArt: {fileID: -2057521219274922478, guid: 2a6e09124a7f24646836f0e66e866e0a, type: 3}
-  atk: 4
+  atk: 5
   def: 0
-  initiative: 2
+  initiative: 3
   durability: -3
   skin:
   - {fileID: 89918623730591553, guid: 8013988472bc71b409eebf1e17696b15, type: 3}
   - {fileID: 5991391026304119451, guid: 8013988472bc71b409eebf1e17696b15, type: 3}
   potion: 0
+  potionEffect: 

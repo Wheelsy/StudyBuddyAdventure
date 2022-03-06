@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
-  m_Name: FurSet
+  m_Name: FarmerSet
   m_EditorClassIdentifier: 
   isSet: 1
-  name: Fur Set
-  itemArt: {fileID: -7620612179064165710, guid: dcf917c5d4ca8fb4b8dcf74a91357c1e, type: 3}
-  atk: 4
+  name: Farmer Set
+  itemArt: {fileID: 4250153964036702893, guid: 0e60cf8f0f43ef24cbebf4b17da75acb, type: 3}
+  atk: 1
   def: 1
   initiative: 1
   durability: 1
   skin:
-  - {fileID: -8675077374283534407, guid: b4270574d1f457a438ca8a165dff4666, type: 3}
-  - {fileID: 6770367396810965180, guid: b4270574d1f457a438ca8a165dff4666, type: 3}
+  - {fileID: 3804454139995742054, guid: 11ae784ef5b9ac2408b2e3708674bbb6, type: 3}
+  - {fileID: 8786949207963799152, guid: 11ae784ef5b9ac2408b2e3708674bbb6, type: 3}
   potion: 0
   potionEffect: 

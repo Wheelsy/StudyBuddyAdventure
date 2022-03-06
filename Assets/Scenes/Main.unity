@@ -162,12 +162,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3b40441fee0b7204db38d373254e903b, type: 2}
   - {fileID: 11400000, guid: 82e82c0b1190ae940b618070c28a909f, type: 2}
   - {fileID: 11400000, guid: 66e51834ca885de4193c78c7893785a0, type: 2}
-  - {fileID: 11400000, guid: 0c5b2d61c4108cb4e996bd772c553fd8, type: 2}
-  - {fileID: 11400000, guid: 0af295468d912f44e9265c6a79a0c60d, type: 2}
-  - {fileID: 11400000, guid: 5f49f05ae5274b14681e4b965dc2e7cd, type: 2}
   - {fileID: 11400000, guid: 239349fdf49a76e45a4a8a13bfe3628c, type: 2}
+  - {fileID: 11400000, guid: 5369bd20d50eeeb4ebebdf38dfe02da1, type: 2}
+  - {fileID: 11400000, guid: ee49752a4f4de7c4cbb808d9ceee1d8d, type: 2}
+  - {fileID: 11400000, guid: 0a85bb1438fb20340a90ecbee2411203, type: 2}
+  mediumRewards:
+  - {fileID: 11400000, guid: 5f49f05ae5274b14681e4b965dc2e7cd, type: 2}
+  - {fileID: 11400000, guid: 0af295468d912f44e9265c6a79a0c60d, type: 2}
+  - {fileID: 11400000, guid: 0c5b2d61c4108cb4e996bd772c553fd8, type: 2}
   - {fileID: 11400000, guid: 61b10c406e0c582488c4dd193c627592, type: 2}
-  mediumRewards: []
   hardRewards: []
   extremeRewards: []
   potions:
