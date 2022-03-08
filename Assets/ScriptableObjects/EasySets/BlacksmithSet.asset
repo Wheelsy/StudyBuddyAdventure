@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
+  m_Name: BlacksmithSet
+  m_EditorClassIdentifier: 
+  isSet: 1
+  name: Blacksmith Set
+  itemArt: {fileID: 2147955594826253631, guid: d7eba90cb05f0d349a79e6cfd4d1e460, type: 3}
+  atk: 2
+  def: 0
+  initiative: 0
+  durability: 4
+  skin:
+  - {fileID: 3271458477872372685, guid: 157a991a091408847939b0bb502d3f14, type: 3}
+  - {fileID: 6369899606772813748, guid: 157a991a091408847939b0bb502d3f14, type: 3}
+  potion: 0
+  potionEffect: 
