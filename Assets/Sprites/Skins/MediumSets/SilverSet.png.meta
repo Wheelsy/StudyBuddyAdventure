@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: 87129874b1aff3d4c990a0ad8445a949
+guid: 9f78da66e566c024aba78e82eca41690
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6008292859447104044
-    second: HoneySet_0
+      213: -5237713269800406490
+    second: SilverSet_0
   - first:
-      213: 4415602982246150377
-    second: HoneySet_3
-  - first:
-      213: -4421510984047006805
-    second: HoneySet_1
+      213: -3500654179628415332
+    second: SilverSet_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -124,7 +121,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HoneySet_0
+      name: SilverSet_0
       rect:
         serializedVersion: 2
         x: 27
@@ -138,14 +135,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c225cd9b58eb16350800000000000000
-      internalID: 6008292859447104044
+      spriteID: 622723e1887ef47b0800000000000000
+      internalID: -5237713269800406490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HoneySet_1
+      name: SilverSet_1
       rect:
         serializedVersion: 2
         x: 127
@@ -159,8 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: babe369af23a3a2c0800000000000000
-      internalID: -4421510984047006805
+      spriteID: c9603c5229d2b6fc0800000000000000
+      internalID: -3500654179628415332
       vertices: []
       indices: 
       edges: []

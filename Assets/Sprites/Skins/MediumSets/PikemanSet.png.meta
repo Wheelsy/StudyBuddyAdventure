@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: 87129874b1aff3d4c990a0ad8445a949
+guid: cb09bed90fb3e6e488f1a8d95185c18c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6008292859447104044
-    second: HoneySet_0
+      213: -4310862641477823011
+    second: PikemanSet_0
   - first:
-      213: 4415602982246150377
-    second: HoneySet_3
-  - first:
-      213: -4421510984047006805
-    second: HoneySet_1
+      213: -2330734985462520267
+    second: PikemanSet_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -124,13 +121,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HoneySet_0
+      name: PikemanSet_0
       rect:
         serializedVersion: 2
         x: 27
         y: 21
         width: 47
-        height: 56
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,20 +135,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c225cd9b58eb16350800000000000000
-      internalID: 6008292859447104044
+      spriteID: dd5563b744dbc24c0800000000000000
+      internalID: -4310862641477823011
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HoneySet_1
+      name: PikemanSet_1
       rect:
         serializedVersion: 2
         x: 127
         y: 21
         width: 47
-        height: 55
+        height: 63
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,8 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: babe369af23a3a2c0800000000000000
-      internalID: -4421510984047006805
+      spriteID: 5366ee521e097afd0800000000000000
+      internalID: -2330734985462520267
       vertices: []
       indices: 
       edges: []

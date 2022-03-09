@@ -11,6 +11,8 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     private ItemManager im;
     [SerializeField]
+    private PetManager pm;
+    [SerializeField]
     private Buddy buddy;
     [SerializeField]
     private Sprite emptySlot;
@@ -119,6 +121,17 @@ public class Inventory : MonoBehaviour
         if (img.sprite != null || img != cp.SetSlot || img != cp.PotionSlot)
         {
             Item itemToCp = im.GetItemBySpriteMatch(img.sprite);
+
+            //If the set has a pet turn it on
+            //If theres already a pet in the scene turn it off
+            if (itemToCp.hasPet)
+            {
+                if(pm.CurActivePet != 99)
+                {
+                    pm.TurnOffPet();
+                }
+                pm.TurnOnPet(itemToCp.petIndex);
+            }
 
             if (itemToCp != null)
             {

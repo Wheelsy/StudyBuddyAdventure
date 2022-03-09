@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: 87129874b1aff3d4c990a0ad8445a949
+guid: 257397988098eb140a24d7bce530563c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6008292859447104044
-    second: HoneySet_0
+      213: 4369630906698788523
+    second: GoldSet_0
   - first:
-      213: 4415602982246150377
-    second: HoneySet_3
-  - first:
-      213: -4421510984047006805
-    second: HoneySet_1
+      213: 9008678545853306341
+    second: GoldSet_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -124,7 +121,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HoneySet_0
+      name: GoldSet_0
       rect:
         serializedVersion: 2
         x: 27
@@ -138,14 +135,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c225cd9b58eb16350800000000000000
-      internalID: 6008292859447104044
+      spriteID: bae6959882c04ac30800000000000000
+      internalID: 4369630906698788523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HoneySet_1
+      name: GoldSet_1
       rect:
         serializedVersion: 2
         x: 127
@@ -159,8 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: babe369af23a3a2c0800000000000000
-      internalID: -4421510984047006805
+      spriteID: 5e5d44d4861450d70800000000000000
+      internalID: 9008678545853306341
       vertices: []
       indices: 
       edges: []

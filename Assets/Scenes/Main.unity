@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 1178641}
   - component: {fileID: 1178640}
   - component: {fileID: 1178642}
+  - component: {fileID: 1178643}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -168,12 +169,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0a85bb1438fb20340a90ecbee2411203, type: 2}
   - {fileID: 11400000, guid: 5f9754cede8eef940871b6b597bed954, type: 2}
   - {fileID: 11400000, guid: 7a166314e1702b547b2b6bc50dae1c9c, type: 2}
+  - {fileID: 11400000, guid: 1c6b145bfd4dea449aa37a43c5ad418d, type: 2}
   mediumRewards:
   - {fileID: 11400000, guid: 5f49f05ae5274b14681e4b965dc2e7cd, type: 2}
   - {fileID: 11400000, guid: 0af295468d912f44e9265c6a79a0c60d, type: 2}
   - {fileID: 11400000, guid: 0c5b2d61c4108cb4e996bd772c553fd8, type: 2}
   - {fileID: 11400000, guid: 61b10c406e0c582488c4dd193c627592, type: 2}
   - {fileID: 11400000, guid: 774c58d95d5cb7445b1d4d2ee5682e8f, type: 2}
+  - {fileID: 11400000, guid: 92d51339816b7234185b786fb93e1ff7, type: 2}
+  - {fileID: 11400000, guid: 2aef219e55366ec47a42097a2d34911d, type: 2}
+  - {fileID: 11400000, guid: ba74fa234ef70964c853df15f3638b09, type: 2}
+  - {fileID: 11400000, guid: 73ea01aa1d5212148a9087eea659ab95, type: 2}
   hardRewards: []
   extremeRewards: []
   potions:
@@ -215,6 +221,21 @@ MonoBehaviour:
   - {fileID: 254022430}
   - {fileID: 119893152}
   - {fileID: 892014345}
+--- !u!114 &1178643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b65ffc7efffe1548989b0cb6c2ebf01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petPrefabs:
+  - {fileID: 2082102259373945996, guid: 4e826c98fbab20c4abc1379c22a50bd5, type: 3}
+  spawnPos: {fileID: 1706437969}
 --- !u!1 &8492387
 GameObject:
   m_ObjectHideFlags: 0
@@ -6134,6 +6155,7 @@ MonoBehaviour:
   - {fileID: 283223247}
   - {fileID: 809786931}
   im: {fileID: 1178640}
+  pm: {fileID: 1178643}
   buddy: {fileID: 1993419325}
   emptySlot: {fileID: -6638737560837077189, guid: 9706bd54e4c21cc4b904820442732332, type: 3}
 --- !u!114 &372816365
@@ -30621,6 +30643,36 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &1706437968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1706437969}
+  m_Layer: 0
+  m_Name: Pet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1706437969
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706437968}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.23, y: 3.36, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1993419323}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1735129582
 GameObject:
   m_ObjectHideFlags: 0
@@ -34871,7 +34923,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.23, y: -8.16, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1706437969}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

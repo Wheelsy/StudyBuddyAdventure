@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
-  m_Name: JesterSet
+  m_Name: TungstenSet
   m_EditorClassIdentifier: 
   isSet: 1
-  name: Jester Set
-  itemArt: {fileID: -6472668695737456649, guid: 7d25b707bf8e7924ca6db630af9b9250, type: 3}
-  atk: 4
-  def: 0
-  initiative: 4
+  name: Tungsten Set
+  itemArt: {fileID: -5730326660124950127, guid: 24bae3a1e223fae44bc61ff60c3bfebb, type: 3}
+  atk: 6
+  def: 6
+  initiative: 1
   durability: 1
   skin:
-  - {fileID: 6076786813148130766, guid: 8f6cfc2a1f96cbf4aa2f3c7d86b10c67, type: 3}
-  - {fileID: 5068874845597762328, guid: 8f6cfc2a1f96cbf4aa2f3c7d86b10c67, type: 3}
+  - {fileID: 3344153742547099118, guid: a0672dcc27e3da44985f8bcda4f90495, type: 3}
+  - {fileID: -5418696488290077701, guid: a0672dcc27e3da44985f8bcda4f90495, type: 3}
   potion: 0
   potionEffect: 
   hasPet: 0

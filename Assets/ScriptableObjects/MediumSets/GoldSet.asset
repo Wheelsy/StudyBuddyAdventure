@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
-  m_Name: JesterSet
+  m_Name: GoldSet
   m_EditorClassIdentifier: 
   isSet: 1
-  name: Jester Set
-  itemArt: {fileID: -6472668695737456649, guid: 7d25b707bf8e7924ca6db630af9b9250, type: 3}
-  atk: 4
-  def: 0
-  initiative: 4
-  durability: 1
+  name: Gold Set
+  itemArt: {fileID: 3701037860875909210, guid: ed5e009b6f5daf644aadb87d344ee20b, type: 3}
+  atk: 5
+  def: 5
+  initiative: 1
+  durability: 2
   skin:
-  - {fileID: 6076786813148130766, guid: 8f6cfc2a1f96cbf4aa2f3c7d86b10c67, type: 3}
-  - {fileID: 5068874845597762328, guid: 8f6cfc2a1f96cbf4aa2f3c7d86b10c67, type: 3}
+  - {fileID: 4369630906698788523, guid: 257397988098eb140a24d7bce530563c, type: 3}
+  - {fileID: 9008678545853306341, guid: 257397988098eb140a24d7bce530563c, type: 3}
   potion: 0
   potionEffect: 
   hasPet: 0

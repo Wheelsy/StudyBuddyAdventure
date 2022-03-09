@@ -13,6 +13,7 @@ public class GameMaster : MonoBehaviour
     private Buddy buddy;
     private ToDo td;
     private BackgroundSelector bg;
+    private PetManager pm;
     [SerializeField]
     private Image[] checkboxes;
 
@@ -24,6 +25,7 @@ public class GameMaster : MonoBehaviour
         buddy = GameObject.Find("StudyBuddy").GetComponent<Buddy>();
         td = GameObject.Find("ToDoListContainer").GetComponent<ToDo>();
         bg = GameObject.Find("ShopsContainer").GetComponent<BackgroundSelector>();
+        pm = gameObject.GetComponent<PetManager>();
     }
 
     private void Start()
@@ -91,6 +93,10 @@ public class GameMaster : MonoBehaviour
         if (data.equippedItem != null)
         {
             Item item = im.GetItemByNameMatch(data.equippedItem);
+            if (item.hasPet)
+            {
+                pm.TurnOnPet(item.petIndex);
+            }
             cp.UpdateSetImage(item.itemArt);
             cp.UpdateCharacterImage(item.skin[0]);
             buddy.UpdateCurrentSkin(item.skin[0], item.skin[1]);

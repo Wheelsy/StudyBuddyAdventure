@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
-  m_Name: JesterSet
+  m_Name: PikemanSet
   m_EditorClassIdentifier: 
   isSet: 1
-  name: Jester Set
-  itemArt: {fileID: -6472668695737456649, guid: 7d25b707bf8e7924ca6db630af9b9250, type: 3}
-  atk: 4
+  name: 
+  itemArt: {fileID: -945185035746996491, guid: a5b4c0a73af3b8f448742e117e2efb26, type: 3}
+  atk: 5
   def: 0
-  initiative: 4
+  initiative: 6
   durability: 1
   skin:
-  - {fileID: 6076786813148130766, guid: 8f6cfc2a1f96cbf4aa2f3c7d86b10c67, type: 3}
-  - {fileID: 5068874845597762328, guid: 8f6cfc2a1f96cbf4aa2f3c7d86b10c67, type: 3}
+  - {fileID: -4310862641477823011, guid: cb09bed90fb3e6e488f1a8d95185c18c, type: 3}
+  - {fileID: -2330734985462520267, guid: cb09bed90fb3e6e488f1a8d95185c18c, type: 3}
   potion: 0
   potionEffect: 
   hasPet: 0

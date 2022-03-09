@@ -25,4 +25,7 @@ public class Item : ScriptableObject
     [Header("Potion Attributes")]
     public Potion potion;
     public string potionEffect;
+    [Header("Pet Attributes")]
+    public bool hasPet;
+    public int petIndex;
 }

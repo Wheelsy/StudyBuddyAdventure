@@ -15,12 +15,14 @@ MonoBehaviour:
   isSet: 1
   name: Honey Set
   itemArt: {fileID: 3894431002720195774, guid: e284441b28f35ae45887dcc0892b9302, type: 3}
-  atk: 6
+  atk: 7
   def: 2
-  initiative: 1
+  initiative: 3
   durability: 1
   skin:
   - {fileID: 6008292859447104044, guid: 87129874b1aff3d4c990a0ad8445a949, type: 3}
-  - {fileID: 4415602982246150377, guid: 87129874b1aff3d4c990a0ad8445a949, type: 3}
+  - {fileID: -4421510984047006805, guid: 87129874b1aff3d4c990a0ad8445a949, type: 3}
   potion: 0
   potionEffect: 
+  hasPet: 1
+  petIndex: 0
