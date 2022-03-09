@@ -132,6 +132,10 @@ public class Inventory : MonoBehaviour
                 }
                 pm.TurnOnPet(itemToCp.petIndex);
             }
+            else if(GameObject.FindGameObjectWithTag("Pet") != null)
+            {
+                pm.TurnOffPet();
+            }
 
             if (itemToCp != null)
             {
