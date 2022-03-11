@@ -15,11 +15,14 @@ MonoBehaviour:
   isSet: 1
   name: Stone Set
   itemArt: {fileID: 8079203578332724230, guid: b489719a677692b44996fd26073054b8, type: 3}
-  atk: 2
-  def: 3
-  initiative: -3
+  atk: 1
+  def: 5
+  initiative: -5
   durability: 0
   skin:
   - {fileID: 157566320784252507, guid: 9eb93eab8890037438d7c75443c776aa, type: 3}
   - {fileID: -6558273247410166021, guid: 9eb93eab8890037438d7c75443c776aa, type: 3}
   potion: 0
+  potionEffect: 
+  hasPet: 0
+  petIndex: 0

@@ -17,7 +17,7 @@ MonoBehaviour:
   itemArt: {fileID: -5454390068082434585, guid: 6041cb6d4bec3bb4780a0b9eaff61af5, type: 3}
   atk: 4
   def: 4
-  initiative: 1
+  initiative: 0
   durability: 3
   skin: []
   potion: 0

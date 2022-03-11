@@ -16,11 +16,13 @@ MonoBehaviour:
   name: Chain Set
   itemArt: {fileID: 5290321141170629481, guid: 86158da4b9ca2cc4eacbcaa0b84f7028, type: 3}
   atk: 2
-  def: 3
-  initiative: -1
+  def: 4
+  initiative: -2
   durability: 2
   skin:
   - {fileID: 1184580354351899088, guid: c89ae040e1a22504fbb78fe850961bb8, type: 3}
   - {fileID: 8781484290522318290, guid: c89ae040e1a22504fbb78fe850961bb8, type: 3}
   potion: 0
   potionEffect: 
+  hasPet: 0
+  petIndex: 0
