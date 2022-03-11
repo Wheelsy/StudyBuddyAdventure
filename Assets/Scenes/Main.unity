@@ -185,6 +185,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 704ed7bcf7f76ec448612c4c5e4c7879, type: 2}
   - {fileID: 11400000, guid: c03f4bf761977cc45b86ce1fc1ecb42b, type: 2}
   - {fileID: 11400000, guid: 3f8e0f276f6f14541847dd6bb9c142df, type: 2}
+  - {fileID: 11400000, guid: 12ab8297c8cca4b4bb7054e050921910, type: 2}
   hardRewards: []
   extremeRewards: []
   potions:
