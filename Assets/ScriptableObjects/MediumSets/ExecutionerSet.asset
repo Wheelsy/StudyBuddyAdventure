@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
+  m_Name: ExecutionerSet
+  m_EditorClassIdentifier: 
+  isSet: 1
+  name: Executioner Set
+  itemArt: {fileID: 6474088669641777306, guid: 47adb59de389b7341bf23bbba9ad71c6, type: 3}
+  atk: 7
+  def: -1
+  initiative: 2
+  durability: 4
+  skin:
+  - {fileID: 7123694938778318652, guid: cc27a5186ee619349b1ae2588f9ff716, type: 3}
+  - {fileID: 7796945381591909616, guid: cc27a5186ee619349b1ae2588f9ff716, type: 3}
+  potion: 0
+  potionEffect: 
+  hasPet: 0
+  petIndex: 0

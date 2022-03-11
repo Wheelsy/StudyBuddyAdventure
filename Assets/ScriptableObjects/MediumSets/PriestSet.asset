@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
+  m_Name: PriestSet
+  m_EditorClassIdentifier: 
+  isSet: 1
+  name: Priest Set
+  itemArt: {fileID: 3814652250538406447, guid: b5449e26e1a433645b80ed41f04fd583, type: 3}
+  atk: 0
+  def: 5
+  initiative: -2
+  durability: 5
+  skin:
+  - {fileID: -6278624732789189419, guid: b91f34736b471484f98eb648aaed066a, type: 3}
+  - {fileID: -7224824565501796166, guid: b91f34736b471484f98eb648aaed066a, type: 3}
+  potion: 0
+  potionEffect: 
+  hasPet: 0
+  petIndex: 0

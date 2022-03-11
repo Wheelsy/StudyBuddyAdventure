@@ -181,6 +181,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ba74fa234ef70964c853df15f3638b09, type: 2}
   - {fileID: 11400000, guid: 73ea01aa1d5212148a9087eea659ab95, type: 2}
   - {fileID: 11400000, guid: 02b52dcca64b0ab46b617fdd98c58b3a, type: 2}
+  - {fileID: 11400000, guid: 15dac5b583a276f4fa5c8672af707abd, type: 2}
+  - {fileID: 11400000, guid: 704ed7bcf7f76ec448612c4c5e4c7879, type: 2}
+  - {fileID: 11400000, guid: c03f4bf761977cc45b86ce1fc1ecb42b, type: 2}
+  - {fileID: 11400000, guid: 3f8e0f276f6f14541847dd6bb9c142df, type: 2}
   hardRewards: []
   extremeRewards: []
   potions:
