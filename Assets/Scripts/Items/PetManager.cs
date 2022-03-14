@@ -6,9 +6,10 @@ public class PetManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] petPrefabs;
-    [SerializeField]
-    private Transform spawnPos;
     private int curActivePet = 99;
+
+    public Transform flyingSpawnPos;
+    public Transform groundedSpawnPos;
 
     public int CurActivePet { get => curActivePet; set => curActivePet = value; }
 
@@ -19,7 +20,14 @@ public class PetManager : MonoBehaviour
             CurActivePet = index;
         }
 
-        Instantiate(petPrefabs[index], spawnPos.position, Quaternion.identity);
+        if (petPrefabs[index].GetComponent<Pet>().grounded)
+        {
+            Instantiate(petPrefabs[index], groundedSpawnPos.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(petPrefabs[index], flyingSpawnPos.position, Quaternion.identity);
+        }
     }
 
     public void TurnOffPet()

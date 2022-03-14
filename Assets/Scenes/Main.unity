@@ -190,6 +190,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9187be2ac76d9e542b299eb73fba7640, type: 2}
   - {fileID: 11400000, guid: b2762c9d34a99a642acfd8a35b211e54, type: 2}
   - {fileID: 11400000, guid: 4e46b5db01f808747939f3699e659da8, type: 2}
+  - {fileID: 11400000, guid: cd84be6960873ab41abb2924fd0fdc48, type: 2}
   extremeRewards: []
   potions:
   - {fileID: 11400000, guid: 98b4d043420e3af44b258bb258b96707, type: 2}
@@ -245,7 +246,9 @@ MonoBehaviour:
   petPrefabs:
   - {fileID: 2082102259373945996, guid: 4e826c98fbab20c4abc1379c22a50bd5, type: 3}
   - {fileID: 5044663754455393855, guid: f0fba0da48d2d5e43b2a378cbd074875, type: 3}
-  spawnPos: {fileID: 1706437969}
+  - {fileID: 2931687339452308129, guid: 99913e3f6c19b9843bd2e3652c0d2287, type: 3}
+  flyingSpawnPos: {fileID: 1706437969}
+  groundedSpawnPos: {fileID: 622743871}
 --- !u!1 &8492387
 GameObject:
   m_ObjectHideFlags: 0
@@ -10030,6 +10033,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610395428}
   m_CullTransparentMesh: 1
+--- !u!1 &622743870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 622743871}
+  m_Layer: 0
+  m_Name: GroundedPet
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &622743871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622743870}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.39, y: 0.37, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1993419323}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &626959859
 GameObject:
   m_ObjectHideFlags: 0
@@ -30663,9 +30696,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1706437969}
   m_Layer: 0
-  m_Name: Pet
+  m_Name: FlyingPet
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -30677,7 +30710,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1706437968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.23, y: 3.36, z: 0}
+  m_LocalPosition: {x: -2.44, y: 3.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1993419323}
@@ -34935,6 +34968,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1706437969}
+  - {fileID: 622743871}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

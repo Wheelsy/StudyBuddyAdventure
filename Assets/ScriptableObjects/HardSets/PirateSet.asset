@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
-  m_Name: NInjaSet
+  m_Name: PirateSet
   m_EditorClassIdentifier: 
   isSet: 1
-  name: Ninja Set
-  itemArt: {fileID: -2336329157588958869, guid: e69586d07874e3b4192904560401623e, type: 3}
-  atk: 11
+  name: Pirate Set
+  itemArt: {fileID: 603895849268718088, guid: faafadcef90caa842a31709d06e1ec59, type: 3}
+  atk: 12
   def: -5
-  initiative: 11
+  initiative: 10
   durability: 5
   skin:
-  - {fileID: 3412866276097216815, guid: ef7408bb0aadac847b3c33f5e3957648, type: 3}
-  - {fileID: 9049550253253394029, guid: ef7408bb0aadac847b3c33f5e3957648, type: 3}
+  - {fileID: -1513050422258573328, guid: 0871cfd0b7c76b04aaa8c0f136375786, type: 3}
+  - {fileID: 8607258756852892071, guid: 0871cfd0b7c76b04aaa8c0f136375786, type: 3}
   potion: 0
   potionEffect: 
-  hasPet: 0
-  petIndex: 0
+  hasPet: 1
+  petIndex: 2
