@@ -188,6 +188,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 12ab8297c8cca4b4bb7054e050921910, type: 2}
   hardRewards:
   - {fileID: 11400000, guid: 9187be2ac76d9e542b299eb73fba7640, type: 2}
+  - {fileID: 11400000, guid: b2762c9d34a99a642acfd8a35b211e54, type: 2}
+  - {fileID: 11400000, guid: 4e46b5db01f808747939f3699e659da8, type: 2}
   extremeRewards: []
   potions:
   - {fileID: 11400000, guid: 98b4d043420e3af44b258bb258b96707, type: 2}
@@ -242,6 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   petPrefabs:
   - {fileID: 2082102259373945996, guid: 4e826c98fbab20c4abc1379c22a50bd5, type: 3}
+  - {fileID: 5044663754455393855, guid: f0fba0da48d2d5e43b2a378cbd074875, type: 3}
   spawnPos: {fileID: 1706437969}
 --- !u!1 &8492387
 GameObject:
@@ -34928,7 +34931,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993419321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.23, y: -8.16, z: -1}
+  m_LocalPosition: {x: -1.38, y: -8.16, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1706437969}
@@ -35847,7 +35850,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 221, y: -300}
+  m_AnchoredPosition: {x: 240, y: -211}
   m_SizeDelta: {x: 910.3752, y: 910.3812}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2046037251

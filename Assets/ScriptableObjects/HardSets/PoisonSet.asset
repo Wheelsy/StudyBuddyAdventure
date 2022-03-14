@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
+  m_Name: PoisonSet
+  m_EditorClassIdentifier: 
+  isSet: 1
+  name: Poison Set
+  itemArt: {fileID: -1327339394891236627, guid: d83f80e7a99017b44aaa54588402e140, type: 3}
+  atk: 10
+  def: 6
+  initiative: 5
+  durability: 5
+  skin:
+  - {fileID: 4038048632855336425, guid: 9f63e927879ba3c4c8f90ccbe667bf83, type: 3}
+  - {fileID: 180026702885944126, guid: 9f63e927879ba3c4c8f90ccbe667bf83, type: 3}
+  potion: 0
+  potionEffect: 
+  hasPet: 1
+  petIndex: 1

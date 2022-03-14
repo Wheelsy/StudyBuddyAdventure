@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
+  m_Name: NInjaSet
+  m_EditorClassIdentifier: 
+  isSet: 1
+  name: Ninja Set
+  itemArt: {fileID: -2336329157588958869, guid: e69586d07874e3b4192904560401623e, type: 3}
+  atk: 12
+  def: -5
+  initiative: 10
+  durability: 5
+  skin:
+  - {fileID: 3412866276097216815, guid: ef7408bb0aadac847b3c33f5e3957648, type: 3}
+  - {fileID: 9049550253253394029, guid: ef7408bb0aadac847b3c33f5e3957648, type: 3}
+  potion: 0
+  potionEffect: 
+  hasPet: 0
+  petIndex: 0
