@@ -19,6 +19,10 @@ public class PetManager : MonoBehaviour
         {
             CurActivePet = index;
         }
+        else
+        {
+            TurnOffPet();
+        }
 
         if (petPrefabs[index].GetComponent<Pet>().grounded)
         {
