@@ -193,6 +193,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cd84be6960873ab41abb2924fd0fdc48, type: 2}
   - {fileID: 11400000, guid: 3e341323bfccc1545a6d48d733dd4d85, type: 2}
   - {fileID: 11400000, guid: 8196a07a6677ce848800197b0b7d2351, type: 2}
+  - {fileID: 11400000, guid: 1b44f3f1465179241834019e1477b5fe, type: 2}
+  - {fileID: 11400000, guid: dec3ef1e968dd504ebbb8dfb5a51efaf, type: 2}
+  - {fileID: 11400000, guid: 2bf0c0a4496346047b3a8d9d8c84e219, type: 2}
+  - {fileID: 11400000, guid: 20b3ca7b31a074e40a3274778a89aec3, type: 2}
+  - {fileID: 11400000, guid: fc364d9332f9a3e41a84944b4da88249, type: 2}
+  - {fileID: 11400000, guid: 60dd561a5fe8526418f18da6643736f3, type: 2}
+  - {fileID: 11400000, guid: c94e131066604a247bd143269700ba4a, type: 2}
+  - {fileID: 11400000, guid: 1a4804869b8be6f4080689931436dbee, type: 2}
+  - {fileID: 11400000, guid: c8aea0c9efe4f1743925fbd0c34a14eb, type: 2}
   extremeRewards: []
   potions:
   - {fileID: 11400000, guid: 98b4d043420e3af44b258bb258b96707, type: 2}
@@ -249,6 +258,7 @@ MonoBehaviour:
   - {fileID: 2082102259373945996, guid: 4e826c98fbab20c4abc1379c22a50bd5, type: 3}
   - {fileID: 5044663754455393855, guid: f0fba0da48d2d5e43b2a378cbd074875, type: 3}
   - {fileID: 2931687339452308129, guid: 99913e3f6c19b9843bd2e3652c0d2287, type: 3}
+  - {fileID: 5043437930463821822, guid: 2d8485cfd3725104f9cea1d0e3353dc3, type: 3}
   flyingSpawnPos: {fileID: 1706437969}
   groundedSpawnPos: {fileID: 622743871}
 --- !u!1 &8492387

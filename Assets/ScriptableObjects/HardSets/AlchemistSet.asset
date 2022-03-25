@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
-  m_Name: DiamondSet
+  m_Name: AlchemistSet
   m_EditorClassIdentifier: 
   isSet: 1
-  name: Diamond Set
-  itemArt: {fileID: 8809750377293749387, guid: aa6d456b593688542851ac4af0a32b4a, type: 3}
-  atk: 10
-  def: 10
-  initiative: 0
-  durability: 12
+  name: Alchemist Set (Potions Dont't Exhaust)
+  itemArt: {fileID: 703502027663053177, guid: b32d24edc9fca054e906c6e77af30e2a, type: 3}
+  atk: 7
+  def: 7
+  initiative: 1
+  durability: 7
   skin:
-  - {fileID: 7344688503179592094, guid: 6057d300bdd9c8b46bdefcb35de32bf6, type: 3}
-  - {fileID: 3058812977327311320, guid: 6057d300bdd9c8b46bdefcb35de32bf6, type: 3}
+  - {fileID: 1756799535332174633, guid: a7409583f3085db4d8f2aac960c4f202, type: 3}
+  - {fileID: -6589201682992102932, guid: a7409583f3085db4d8f2aac960c4f202, type: 3}
   potion: 0
   potionEffect: 
   hasPet: 0

@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
-  m_Name: DiamondSet
+  m_Name: KingSet
   m_EditorClassIdentifier: 
   isSet: 1
-  name: Diamond Set
-  itemArt: {fileID: 8809750377293749387, guid: aa6d456b593688542851ac4af0a32b4a, type: 3}
-  atk: 10
-  def: 10
-  initiative: 0
-  durability: 12
+  name: King Set
+  itemArt: {fileID: -1636197719308262732, guid: be295e43574b0db46b2d823c380d7855, type: 3}
+  atk: 9
+  def: 12
+  initiative: -3
+  durability: 10
   skin:
-  - {fileID: 7344688503179592094, guid: 6057d300bdd9c8b46bdefcb35de32bf6, type: 3}
-  - {fileID: 3058812977327311320, guid: 6057d300bdd9c8b46bdefcb35de32bf6, type: 3}
+  - {fileID: 7948103188649848130, guid: b3ff46d5246b7564fb50337bb5157a0a, type: 3}
+  - {fileID: 8838525510901602094, guid: b3ff46d5246b7564fb50337bb5157a0a, type: 3}
   potion: 0
   potionEffect: 
   hasPet: 0

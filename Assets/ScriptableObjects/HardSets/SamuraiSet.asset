@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
-  m_Name: DiamondSet
+  m_Name: SamuraiSet
   m_EditorClassIdentifier: 
   isSet: 1
-  name: Diamond Set
-  itemArt: {fileID: 8809750377293749387, guid: aa6d456b593688542851ac4af0a32b4a, type: 3}
-  atk: 10
-  def: 10
-  initiative: 0
-  durability: 12
+  name: Samurai Set
+  itemArt: {fileID: -1104704631827765874, guid: 8c8cbb590ec55074c9140d13add250c3, type: 3}
+  atk: 13
+  def: -2
+  initiative: 11
+  durability: 11
   skin:
-  - {fileID: 7344688503179592094, guid: 6057d300bdd9c8b46bdefcb35de32bf6, type: 3}
-  - {fileID: 3058812977327311320, guid: 6057d300bdd9c8b46bdefcb35de32bf6, type: 3}
+  - {fileID: 8301683064322967849, guid: da0660a490e8432419a29a506024b60a, type: 3}
+  - {fileID: 3562623423718500375, guid: da0660a490e8432419a29a506024b60a, type: 3}
   potion: 0
   potionEffect: 
   hasPet: 0

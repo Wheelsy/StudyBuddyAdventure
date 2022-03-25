@@ -17,7 +17,7 @@ MonoBehaviour:
   itemArt: {fileID: -2336329157588958869, guid: e69586d07874e3b4192904560401623e, type: 3}
   atk: 11
   def: -5
-  initiative: 11
+  initiative: 12
   durability: 5
   skin:
   - {fileID: 3412866276097216815, guid: ef7408bb0aadac847b3c33f5e3957648, type: 3}

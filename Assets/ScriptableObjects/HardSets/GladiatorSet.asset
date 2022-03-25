@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
-  m_Name: DiamondSet
+  m_Name: GladiatorSet
   m_EditorClassIdentifier: 
   isSet: 1
-  name: Diamond Set
-  itemArt: {fileID: 8809750377293749387, guid: aa6d456b593688542851ac4af0a32b4a, type: 3}
-  atk: 10
-  def: 10
+  name: Gladiator Set
+  itemArt: {fileID: -2739487782620726552, guid: d3441fcae4aedef43a357e30cf62949b, type: 3}
+  atk: 13
+  def: 8
   initiative: 0
-  durability: 12
+  durability: 9
   skin:
-  - {fileID: 7344688503179592094, guid: 6057d300bdd9c8b46bdefcb35de32bf6, type: 3}
-  - {fileID: 3058812977327311320, guid: 6057d300bdd9c8b46bdefcb35de32bf6, type: 3}
+  - {fileID: -2662372533572614025, guid: 844fd5f3e62439f42a54f554ab52e530, type: 3}
+  - {fileID: -1801792336009635783, guid: 844fd5f3e62439f42a54f554ab52e530, type: 3}
   potion: 0
   potionEffect: 
   hasPet: 0

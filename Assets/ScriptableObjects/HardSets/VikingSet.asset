@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
-  m_Name: DiamondSet
+  m_Name: VikingSet
   m_EditorClassIdentifier: 
   isSet: 1
-  name: Diamond Set
-  itemArt: {fileID: 8809750377293749387, guid: aa6d456b593688542851ac4af0a32b4a, type: 3}
-  atk: 10
-  def: 10
-  initiative: 0
-  durability: 12
+  name: Viking Set
+  itemArt: {fileID: 2169523331857572246, guid: e8beb0b02b4b7894db1178ecb5f54ecd, type: 3}
+  atk: 15
+  def: 2
+  initiative: 6
+  durability: 6
   skin:
-  - {fileID: 7344688503179592094, guid: 6057d300bdd9c8b46bdefcb35de32bf6, type: 3}
-  - {fileID: 3058812977327311320, guid: 6057d300bdd9c8b46bdefcb35de32bf6, type: 3}
+  - {fileID: 989639210580824666, guid: c6601897fd7892d4c9568c60c0e5a7d6, type: 3}
+  - {fileID: 1775702092408439611, guid: c6601897fd7892d4c9568c60c0e5a7d6, type: 3}
   potion: 0
   potionEffect: 
   hasPet: 0
