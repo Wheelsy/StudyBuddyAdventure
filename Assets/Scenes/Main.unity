@@ -202,7 +202,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c94e131066604a247bd143269700ba4a, type: 2}
   - {fileID: 11400000, guid: 1a4804869b8be6f4080689931436dbee, type: 2}
   - {fileID: 11400000, guid: c8aea0c9efe4f1743925fbd0c34a14eb, type: 2}
-  extremeRewards: []
+  extremeRewards:
+  - {fileID: 11400000, guid: e13ad83f2a0a94243a0dc24a0efb2915, type: 2}
+  - {fileID: 11400000, guid: e2fb2f108de359245b62c0c58a088993, type: 2}
   potions:
   - {fileID: 11400000, guid: 98b4d043420e3af44b258bb258b96707, type: 2}
   - {fileID: 11400000, guid: 3e98cf1f06f35154599a15068bc08926, type: 2}
@@ -259,6 +261,7 @@ MonoBehaviour:
   - {fileID: 5044663754455393855, guid: f0fba0da48d2d5e43b2a378cbd074875, type: 3}
   - {fileID: 2931687339452308129, guid: 99913e3f6c19b9843bd2e3652c0d2287, type: 3}
   - {fileID: 5043437930463821822, guid: 2d8485cfd3725104f9cea1d0e3353dc3, type: 3}
+  - {fileID: 810009318985756648, guid: c2125bb344457f64695d92890497f28b, type: 3}
   flyingSpawnPos: {fileID: 1706437969}
   groundedSpawnPos: {fileID: 622743871}
 --- !u!1 &8492387
@@ -10069,7 +10072,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622743870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.39, y: 0.37, z: 0}
+  m_LocalPosition: {x: -3.65, y: -0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1993419323}
@@ -30722,7 +30725,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1706437968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.44, y: 3.36, z: 0}
+  m_LocalPosition: {x: -3.68, y: 3.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1993419323}
@@ -34976,7 +34979,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993419321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.38, y: -8.16, z: -1}
+  m_LocalPosition: {x: -0.02, y: -8.16, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1706437969}

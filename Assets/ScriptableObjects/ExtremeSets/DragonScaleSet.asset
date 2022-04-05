@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
+  m_Name: DragonScaleSet
+  m_EditorClassIdentifier: 
+  isSet: 1
+  name: Dragon Scale Set
+  itemArt: {fileID: -1566065571041990021, guid: ae51008d93261eb4a9ee7c89e84b52de, type: 3}
+  atk: 20
+  def: 25
+  initiative: 10
+  durability: 15
+  skin:
+  - {fileID: 7337488740069570091, guid: d2f680764a1517f448353e64a3dd2342, type: 3}
+  - {fileID: -2287116024746052967, guid: d2f680764a1517f448353e64a3dd2342, type: 3}
+  potion: 0
+  potionEffect: 
+  hasPet: 1
+  petIndex: 4
