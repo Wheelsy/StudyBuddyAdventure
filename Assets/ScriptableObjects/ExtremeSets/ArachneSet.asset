@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
-  m_Name: BoogieKnightSet
+  m_Name: ArachneSet
   m_EditorClassIdentifier: 
   isSet: 1
-  name: Boogie Knight Set
-  itemArt: {fileID: -8696014425978801156, guid: 57fd3b604596bb6408c6dc160b9c1cb1, type: 3}
-  atk: 15
-  def: 22
-  initiative: -10
-  durability: 15
+  name: Arachne Set
+  itemArt: {fileID: 798535736160206668, guid: 26f022e4143516b40b2730e2556d4c28, type: 3}
+  atk: 18
+  def: 28
+  initiative: -8
+  durability: 18
   skin:
-  - {fileID: -4821725391317840640, guid: 019f1a3a8b8530740b2d9c7d48c9dfa0, type: 3}
-  - {fileID: 6808242763275016509, guid: 019f1a3a8b8530740b2d9c7d48c9dfa0, type: 3}
+  - {fileID: -6852185817789637798, guid: 7f591407e66cb094db96389af27fda35, type: 3}
+  - {fileID: -2032704968165771548, guid: 7f591407e66cb094db96389af27fda35, type: 3}
   potion: 0
   potionEffect: 
   hasPet: 0

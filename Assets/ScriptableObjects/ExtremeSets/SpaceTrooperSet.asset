@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
-  m_Name: BoogieKnightSet
+  m_Name: SpaceTrooperSet
   m_EditorClassIdentifier: 
   isSet: 1
-  name: Boogie Knight Set
-  itemArt: {fileID: -8696014425978801156, guid: 57fd3b604596bb6408c6dc160b9c1cb1, type: 3}
-  atk: 15
-  def: 22
-  initiative: -10
-  durability: 15
+  name: Space Trooper Set
+  itemArt: {fileID: 5157921780637727110, guid: 2162123daf50cd74786d1afa16f15815, type: 3}
+  atk: 30
+  def: 10
+  initiative: 7
+  durability: 10
   skin:
-  - {fileID: -4821725391317840640, guid: 019f1a3a8b8530740b2d9c7d48c9dfa0, type: 3}
-  - {fileID: 6808242763275016509, guid: 019f1a3a8b8530740b2d9c7d48c9dfa0, type: 3}
+  - {fileID: -5819897514378180518, guid: 56a3982495b1ec940b882d449e55ceb9, type: 3}
+  - {fileID: 8379071768909597181, guid: 56a3982495b1ec940b882d449e55ceb9, type: 3}
   potion: 0
   potionEffect: 
   hasPet: 0

@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
-  m_Name: BoogieKnightSet
+  m_Name: FireWizardSet
   m_EditorClassIdentifier: 
   isSet: 1
-  name: Boogie Knight Set
-  itemArt: {fileID: -8696014425978801156, guid: 57fd3b604596bb6408c6dc160b9c1cb1, type: 3}
-  atk: 15
-  def: 22
-  initiative: -10
-  durability: 15
+  name: Fire Wizard Set
+  itemArt: {fileID: -6105549389869075971, guid: 7ccb38d43066a4a4f97866ac851bf750, type: 3}
+  atk: 20
+  def: 18
+  initiative: 5
+  durability: 10
   skin:
-  - {fileID: -4821725391317840640, guid: 019f1a3a8b8530740b2d9c7d48c9dfa0, type: 3}
-  - {fileID: 6808242763275016509, guid: 019f1a3a8b8530740b2d9c7d48c9dfa0, type: 3}
+  - {fileID: -8489249873907266437, guid: b2ff720393b0db44dad40074f5f292c4, type: 3}
+  - {fileID: 5058602519960793348, guid: b2ff720393b0db44dad40074f5f292c4, type: 3}
   potion: 0
   potionEffect: 
   hasPet: 0
