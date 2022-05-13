@@ -24,14 +24,18 @@ public class AudioManager : MonoBehaviour
     private TextMeshProUGUI availableGold;
     [SerializeField]
     private bool[] locked;
+    //Track which song in the array is currently playing
+    [SerializeField]
+    private AudioSource currentSong;
 
     public GameObject buySongView;
     public CharacterPanel cp;
+    public GameObject snippetTxt;
+    public ShopSwitcher sw;
 
     private int curIndex;
+    private int curSnipIndex;
     private AudioSource freeSong;
-    //Track which song in the array is currently playing
-    private AudioSource currentSong;
 
     //Stores whether the song has been purchased or not
     public bool[] Locked { get => locked; set => locked = value; }
@@ -49,13 +53,13 @@ public class AudioManager : MonoBehaviour
 
     //Play the song at the index which has been passed in.
     //Stop playing the old song and update the current song index
-    public void PlaySongFromShop(int index)
+    public void ShopSongClicked(int index)
     {
         if (!Locked[index])
         {
-            currentSong.Stop();
-            currentSong.clip = ownedSongs[index];
-            currentSong.Play();
+            //currentSong.Stop();
+            //currentSong.clip = ownedSongs[index];
+            //currentSong.Play();
         }
         else
         {
@@ -63,6 +67,38 @@ public class AudioManager : MonoBehaviour
             cost.text = shopSongButtons[index].GetComponent<GoldPrice>().Price.ToString();
             buySongView.SetActive(true);
         }
+    }
+
+    //Start the snippet coroutine
+    //If there is a snipet already playing then stop that coroutine
+    public void PlaySnipClicked(int index)
+    {
+        if (currentSong.isPlaying)
+        {
+            StopCoroutine("PlaySnippet");
+        }
+
+        curSnipIndex = index;
+        StartCoroutine("PlaySnippet");
+    }
+
+    //Play the first 5 seconds of a song
+    IEnumerator PlaySnippet()
+    {
+        if (currentSong != null)
+        {
+            currentSong.Stop();
+        }
+
+        snippetTxt.SetActive(true);
+        currentSong.clip = shopSongs[curSnipIndex];
+        currentSong.Play();
+
+        yield return new WaitForSeconds(5);
+
+        snippetTxt.SetActive(false);
+        currentSong.Stop();
+        currentSong.clip = null;
     }
 
     //Check if the player has enough money to puchase the background
@@ -77,6 +113,18 @@ public class AudioManager : MonoBehaviour
             cp.Gold.text = (curGold - price).ToString();
             ownedSongs.Add(shopSongs[curIndex]);
         }
+    }
+
+    //Close buy background menu
+    public void CancelBackgroundPurchase()
+    {
+        buySongView.SetActive(false);
+    }
+
+    public void BuyMoreGold()
+    {
+        buySongView.SetActive(false);
+        sw.ReturnToGoldShop();
     }
 
     //Set the song to unlocked

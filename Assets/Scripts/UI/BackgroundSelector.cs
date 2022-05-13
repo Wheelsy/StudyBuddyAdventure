@@ -90,7 +90,7 @@ public class BackgroundSelector : MonoBehaviour
     public void BuyMoreGold()
     {
         buyBackgroundView.SetActive(false);
-        sw.PreviousShop();
+        sw.ReturnToGoldShop();
     }
 
     //Close buy background menu
