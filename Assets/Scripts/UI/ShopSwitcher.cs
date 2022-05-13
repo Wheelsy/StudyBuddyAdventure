@@ -22,7 +22,7 @@ public class ShopSwitcher : MonoBehaviour
     //Move to the next shop in the array
     public void NextShop()
     {
-        if (curShop + 1 <= shops.Length)
+        if (curShop + 1 < shops.Length)
         {
             shops[curShop].SetActive(false);
             shops[curShop + 1].SetActive(true);

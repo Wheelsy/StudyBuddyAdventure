@@ -61,6 +61,7 @@ public class BackgroundSelector : MonoBehaviour
         if(curGold >= price)
         {
             UnlockBackground(CurIndex);
+            cp.Gold.text = (curGold - price).ToString();
         }
     }
 

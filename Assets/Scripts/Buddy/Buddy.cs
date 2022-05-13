@@ -15,6 +15,7 @@ public class Buddy : MonoBehaviour
     private bool sprite1 = false;
     private bool sprite2 = false;
 
+    public PetManager pm;
     public int Atk { get => atk; set => atk = value; }
     public int Def { get => def; set => def = value; }
     public int Initiative { get => initiative; set => initiative = value; }
@@ -42,13 +43,20 @@ public class Buddy : MonoBehaviour
     public void LeaveForQuest()
     {
         //set leaving anim here >>>>>
-
+        if(pm.CurActivePet != 99)
+        {
+            pm.TurnOffPet();
+        }
         sr.enabled = false;
     }
 
     public void ReturnFromQuest()
     {
         //set returning anim here >>>>>>
+        if (pm.CurActivePet != 99)
+        {
+            pm.TurnOnPet(pm.CurActivePet);
+        }
         sr.enabled = true;
     }
 
