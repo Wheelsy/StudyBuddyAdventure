@@ -13,7 +13,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private List <AudioClip> ownedSongs;
     [SerializeField]
-    private TextMeshProUGUI[] songNames;
+    private TextMeshProUGUI[] shopSongNames;
     [SerializeField]
     private Image[] locks;
     [SerializeField]
@@ -33,8 +33,9 @@ public class AudioManager : MonoBehaviour
     public GameObject snippetTxt;
     public ShopSwitcher sw;
 
-    private int curIndex;
-    private int curSnipIndex;
+    private MusicLibrary library;
+    public static int curIndex;
+    public static int curSnipIndex;
     private AudioSource freeSong;
 
     //Stores whether the song has been purchased or not
@@ -42,26 +43,27 @@ public class AudioManager : MonoBehaviour
     //Index of what the current song is. Need this for loading the song on game start
     public int CurIndex { get => curIndex; set => curIndex = value; }
 
+    private void Awake()
+    {
+        library = gameObject.GetComponent<MusicLibrary>();    
+    }
+
     private void Start()
     {
         //populate the names of the songs in the shop
         for (int i = 0; i < shopSongs.Length; i++)
         {
-            songNames[i].text = shopSongs[i].name;
+            shopSongNames[i].text = shopSongs[i].name;
+
         }
+        library.AddToLibrary(shopSongs[0]);
     }
 
     //Play the song at the index which has been passed in.
     //Stop playing the old song and update the current song index
     public void ShopSongClicked(int index)
     {
-        if (!Locked[index])
-        {
-            //currentSong.Stop();
-            //currentSong.clip = ownedSongs[index];
-            //currentSong.Play();
-        }
-        else
+        if (Locked[index])
         {
             availableGold.text = cp.Gold.text.ToString();
             cost.text = shopSongButtons[index].GetComponent<GoldPrice>().Price.ToString();
@@ -111,18 +113,20 @@ public class AudioManager : MonoBehaviour
         {
             UnlockSong(CurIndex);
             cp.Gold.text = (curGold - price).ToString();
-            ownedSongs.Add(shopSongs[curIndex]);
+            ownedSongs.Add(shopSongs[curIndex+1]);
+            library.AddToLibrary(shopSongs[curIndex + 1]);
         }
     }
 
-    //Close buy background menu
-    public void CancelBackgroundPurchase()
+    //Close buy song menu
+    public void CancelSongPurchase()
     {
         buySongView.SetActive(false);
     }
 
     public void BuyMoreGold()
     {
+        CancelSongPurchase();
         buySongView.SetActive(false);
         sw.ReturnToGoldShop();
     }

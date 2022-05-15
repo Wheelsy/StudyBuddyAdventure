@@ -50,6 +50,8 @@ public class MenuButtons : MonoBehaviour
     private Sprite empty;
     [SerializeField]
     private ShopSwitcher switcher;
+    [SerializeField]
+    private GameObject musicLibrary;
 
     public void QuestsMenu()
     {
@@ -98,6 +100,11 @@ public class MenuButtons : MonoBehaviour
         TurnOffDialogue();
     }
 
+    public void MusicLibrary()
+    {
+        musicLibrary.SetActive(true);
+    }
+
     public void Back(string from)
     {
         switch (from)
@@ -133,6 +140,10 @@ public class MenuButtons : MonoBehaviour
                 musicShop.SetActive(false);
                 songBuy.SetActive(false);
                 backgroundBuy.SetActive(false);
+                break;
+
+            case "musicLibrary":
+                musicLibrary.SetActive(false);
                 break;
         }
         blackoutImg.SetActive(false);
