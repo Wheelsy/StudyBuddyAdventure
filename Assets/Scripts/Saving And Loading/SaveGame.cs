@@ -6,13 +6,13 @@ using System.IO;
 
 public static class SaveGame
 {
-    public static void Save( CharacterPanel cp, Inventory inv, ItemManager im, ToDo td, BackgroundSelector bg)
+    public static void Save( CharacterPanel cp, Inventory inv, ItemManager im, ToDo td, BackgroundSelector bg, AudioManager am)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         //set save file location
         string path = Application.persistentDataPath + "/player.savedata";
         FileStream stream = new FileStream(path, FileMode.Create);
-        PlayerData data = new PlayerData(cp, inv, im, td, bg);
+        PlayerData data = new PlayerData(cp, inv, im, td, bg, am);
         formatter.Serialize(stream, data);
         stream.Close();
     }

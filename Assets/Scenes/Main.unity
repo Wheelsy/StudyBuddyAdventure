@@ -2103,9 +2103,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1403795092}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySnipClicked
+      - m_Target: {fileID: 1403795093}
+        m_TargetAssemblyTypeName: MusicLibrary, Assembly-CSharp
+        m_MethodName: PlaySong
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2331,7 +2331,6 @@ GameObject:
   - component: {fileID: 123790701}
   - component: {fileID: 123790700}
   - component: {fileID: 123790699}
-  - component: {fileID: 123790698}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -2360,19 +2359,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -410}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &123790698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 123790696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d0c7c6f3015b84a891bf3d4a1499cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  price: 250
 --- !u!114 &123790699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2601,7 +2587,6 @@ GameObject:
   - component: {fileID: 138127472}
   - component: {fileID: 138127471}
   - component: {fileID: 138127470}
-  - component: {fileID: 138127469}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -2630,19 +2615,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -130}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &138127469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138127467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d0c7c6f3015b84a891bf3d4a1499cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  price: 250
 --- !u!114 &138127470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6304,7 +6276,6 @@ GameObject:
   - component: {fileID: 239575116}
   - component: {fileID: 239575115}
   - component: {fileID: 239575114}
-  - component: {fileID: 239575113}
   m_Layer: 5
   m_Name: Button (12)
   m_TagString: Untagged
@@ -6333,19 +6304,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -1670}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &239575113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239575111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d0c7c6f3015b84a891bf3d4a1499cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  price: 250
 --- !u!114 &239575114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7293,7 +7251,6 @@ GameObject:
   - component: {fileID: 267804904}
   - component: {fileID: 267804903}
   - component: {fileID: 267804902}
-  - component: {fileID: 267804901}
   m_Layer: 5
   m_Name: Button (17)
   m_TagString: Untagged
@@ -7322,19 +7279,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -2370}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &267804901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267804899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d0c7c6f3015b84a891bf3d4a1499cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  price: 250
 --- !u!114 &267804902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7918,8 +7862,8 @@ RectTransform:
   - {fileID: 372816361}
   - {fileID: 1071176966}
   - {fileID: 1648330534}
-  - {fileID: 1059136189}
   - {fileID: 975225372}
+  - {fileID: 1059136189}
   - {fileID: 2059533208}
   - {fileID: 876941317}
   m_Father: {fileID: 0}
@@ -8680,7 +8624,6 @@ GameObject:
   - component: {fileID: 315497906}
   - component: {fileID: 315497905}
   - component: {fileID: 315497904}
-  - component: {fileID: 315497903}
   m_Layer: 5
   m_Name: Button (16)
   m_TagString: Untagged
@@ -8709,19 +8652,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -2230}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &315497903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 315497901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d0c7c6f3015b84a891bf3d4a1499cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  price: 1000
 --- !u!114 &315497904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9821,9 +9751,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1403795092}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySnipClicked
+      - m_Target: {fileID: 1403795093}
+        m_TargetAssemblyTypeName: MusicLibrary, Assembly-CSharp
+        m_MethodName: PlaySong
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10567,7 +10497,6 @@ GameObject:
   - component: {fileID: 424221163}
   - component: {fileID: 424221162}
   - component: {fileID: 424221161}
-  - component: {fileID: 424221160}
   m_Layer: 5
   m_Name: Button (7)
   m_TagString: Untagged
@@ -10596,19 +10525,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -970}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &424221160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 424221158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d0c7c6f3015b84a891bf3d4a1499cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  price: 250
 --- !u!114 &424221161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14778,7 +14694,6 @@ GameObject:
   - component: {fileID: 576262157}
   - component: {fileID: 576262156}
   - component: {fileID: 576262155}
-  - component: {fileID: 576262154}
   m_Layer: 5
   m_Name: Button (6)
   m_TagString: Untagged
@@ -14807,19 +14722,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -830}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &576262154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 576262152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d0c7c6f3015b84a891bf3d4a1499cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  price: 250
 --- !u!114 &576262155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15594,9 +15496,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1403795092}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySnipClicked
+      - m_Target: {fileID: 1403795093}
+        m_TargetAssemblyTypeName: MusicLibrary, Assembly-CSharp
+        m_MethodName: PlaySong
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16989,9 +16891,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1403795092}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySnipClicked
+      - m_Target: {fileID: 1403795093}
+        m_TargetAssemblyTypeName: MusicLibrary, Assembly-CSharp
+        m_MethodName: PlaySong
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18190,9 +18092,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1403795092}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySnipClicked
+      - m_Target: {fileID: 1403795093}
+        m_TargetAssemblyTypeName: MusicLibrary, Assembly-CSharp
+        m_MethodName: PlaySong
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18322,9 +18224,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1403795092}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySnipClicked
+      - m_Target: {fileID: 1403795093}
+        m_TargetAssemblyTypeName: MusicLibrary, Assembly-CSharp
+        m_MethodName: PlaySong
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18781,7 +18683,6 @@ GameObject:
   - component: {fileID: 695495711}
   - component: {fileID: 695495710}
   - component: {fileID: 695495709}
-  - component: {fileID: 695495708}
   m_Layer: 5
   m_Name: Button (9)
   m_TagString: Untagged
@@ -18810,19 +18711,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -1250}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &695495708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695495706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d0c7c6f3015b84a891bf3d4a1499cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  price: 250
 --- !u!114 &695495709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21417,9 +21305,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1403795092}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySnipClicked
+      - m_Target: {fileID: 1403795093}
+        m_TargetAssemblyTypeName: MusicLibrary, Assembly-CSharp
+        m_MethodName: PlaySong
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24619,9 +24507,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1403795092}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySnipClicked
+      - m_Target: {fileID: 1403795093}
+        m_TargetAssemblyTypeName: MusicLibrary, Assembly-CSharp
+        m_MethodName: PlaySong
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25542,9 +25430,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1403795092}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySnipClicked
+      - m_Target: {fileID: 1403795093}
+        m_TargetAssemblyTypeName: MusicLibrary, Assembly-CSharp
+        m_MethodName: PlaySong
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25965,7 +25853,7 @@ RectTransform:
   - {fileID: 819665744}
   - {fileID: 1412480018}
   m_Father: {fileID: 282453312}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -26932,9 +26820,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1403795092}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySnipClicked
+      - m_Target: {fileID: 1403795093}
+        m_TargetAssemblyTypeName: MusicLibrary, Assembly-CSharp
+        m_MethodName: PlaySong
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -27785,7 +27673,7 @@ RectTransform:
   m_Children:
   - {fileID: 66642163}
   m_Father: {fileID: 282453312}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -28390,7 +28278,6 @@ GameObject:
   - component: {fileID: 1070468474}
   - component: {fileID: 1070468473}
   - component: {fileID: 1070468472}
-  - component: {fileID: 1070468471}
   m_Layer: 5
   m_Name: Button (8)
   m_TagString: Untagged
@@ -28419,19 +28306,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -1110}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1070468471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070468469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d0c7c6f3015b84a891bf3d4a1499cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  price: 250
 --- !u!114 &1070468472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28676,9 +28550,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1403795092}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySnipClicked
+      - m_Target: {fileID: 1403795093}
+        m_TargetAssemblyTypeName: MusicLibrary, Assembly-CSharp
+        m_MethodName: PlaySong
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30818,9 +30692,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1403795092}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySnipClicked
+      - m_Target: {fileID: 1403795093}
+        m_TargetAssemblyTypeName: MusicLibrary, Assembly-CSharp
+        m_MethodName: PlaySong
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -33668,7 +33542,6 @@ GameObject:
   - component: {fileID: 1206335280}
   - component: {fileID: 1206335279}
   - component: {fileID: 1206335278}
-  - component: {fileID: 1206335277}
   m_Layer: 5
   m_Name: Button (15)
   m_TagString: Untagged
@@ -33697,19 +33570,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -2090}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1206335277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1206335275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d0c7c6f3015b84a891bf3d4a1499cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  price: 250
 --- !u!114 &1206335278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35190,9 +35050,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1403795092}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySnipClicked
+      - m_Target: {fileID: 1403795093}
+        m_TargetAssemblyTypeName: MusicLibrary, Assembly-CSharp
+        m_MethodName: PlaySong
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35456,9 +35316,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1403795092}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySnipClicked
+      - m_Target: {fileID: 1403795093}
+        m_TargetAssemblyTypeName: MusicLibrary, Assembly-CSharp
+        m_MethodName: PlaySong
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37198,7 +37058,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4726599174486614169, guid: 9f7257e50fb4e234ea7fc25e655c98ba, type: 3}
+  m_Sprite: {fileID: 3941627226299094857, guid: 9f7257e50fb4e234ea7fc25e655c98ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -37432,9 +37292,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1403795092}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySnipClicked
+      - m_Target: {fileID: 1403795093}
+        m_TargetAssemblyTypeName: MusicLibrary, Assembly-CSharp
+        m_MethodName: PlaySong
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38998,7 +38858,6 @@ GameObject:
   - component: {fileID: 1381175743}
   - component: {fileID: 1381175742}
   - component: {fileID: 1381175741}
-  - component: {fileID: 1381175740}
   m_Layer: 5
   m_Name: Button (5)
   m_TagString: Untagged
@@ -39027,19 +38886,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -690}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1381175740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1381175738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d0c7c6f3015b84a891bf3d4a1499cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  price: 250
 --- !u!114 &1381175741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40857,7 +40703,6 @@ GameObject:
   - component: {fileID: 1430110665}
   - component: {fileID: 1430110664}
   - component: {fileID: 1430110663}
-  - component: {fileID: 1430110662}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -40886,19 +40731,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 10}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1430110662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1430110660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d0c7c6f3015b84a891bf3d4a1499cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  price: 0
 --- !u!114 &1430110663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41262,7 +41094,6 @@ GameObject:
   - component: {fileID: 1464994981}
   - component: {fileID: 1464994980}
   - component: {fileID: 1464994979}
-  - component: {fileID: 1464994978}
   m_Layer: 5
   m_Name: Button (14)
   m_TagString: Untagged
@@ -41291,19 +41122,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -1950}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1464994978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1464994976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d0c7c6f3015b84a891bf3d4a1499cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  price: 250
 --- !u!114 &1464994979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41936,7 +41754,6 @@ GameObject:
   - component: {fileID: 1481898357}
   - component: {fileID: 1481898356}
   - component: {fileID: 1481898355}
-  - component: {fileID: 1481898354}
   m_Layer: 5
   m_Name: Button (11)
   m_TagString: Untagged
@@ -41965,19 +41782,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -1530}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1481898354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1481898352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d0c7c6f3015b84a891bf3d4a1499cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  price: 250
 --- !u!114 &1481898355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44797,7 +44601,6 @@ GameObject:
   - component: {fileID: 1565310893}
   - component: {fileID: 1565310892}
   - component: {fileID: 1565310891}
-  - component: {fileID: 1565310890}
   m_Layer: 5
   m_Name: Button (4)
   m_TagString: Untagged
@@ -44826,19 +44629,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -550}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1565310890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1565310888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d0c7c6f3015b84a891bf3d4a1499cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  price: 250
 --- !u!114 &1565310891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45137,9 +44927,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1403795092}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySnipClicked
+      - m_Target: {fileID: 1403795093}
+        m_TargetAssemblyTypeName: MusicLibrary, Assembly-CSharp
+        m_MethodName: PlaySong
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -46019,7 +45809,6 @@ GameObject:
   - component: {fileID: 1611136152}
   - component: {fileID: 1611136151}
   - component: {fileID: 1611136150}
-  - component: {fileID: 1611136149}
   m_Layer: 5
   m_Name: Button (13)
   m_TagString: Untagged
@@ -46048,19 +45837,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -1810}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1611136149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1611136147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d0c7c6f3015b84a891bf3d4a1499cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  price: 250
 --- !u!114 &1611136150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47927,7 +47703,6 @@ GameObject:
   - component: {fileID: 1674533082}
   - component: {fileID: 1674533081}
   - component: {fileID: 1674533080}
-  - component: {fileID: 1674533079}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -47956,19 +47731,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -270}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1674533079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1674533077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d0c7c6f3015b84a891bf3d4a1499cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  price: 250
 --- !u!114 &1674533080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53882,7 +53644,6 @@ GameObject:
   - component: {fileID: 1899226120}
   - component: {fileID: 1899226119}
   - component: {fileID: 1899226118}
-  - component: {fileID: 1899226117}
   m_Layer: 5
   m_Name: Button (10)
   m_TagString: Untagged
@@ -53911,19 +53672,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -1390}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1899226117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1899226115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d0c7c6f3015b84a891bf3d4a1499cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  price: 250
 --- !u!114 &1899226118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56212,9 +55960,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1403795092}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySnipClicked
+      - m_Target: {fileID: 1403795093}
+        m_TargetAssemblyTypeName: MusicLibrary, Assembly-CSharp
+        m_MethodName: PlaySong
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -57176,9 +56924,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1403795092}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySnipClicked
+      - m_Target: {fileID: 1403795093}
+        m_TargetAssemblyTypeName: MusicLibrary, Assembly-CSharp
+        m_MethodName: PlaySong
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

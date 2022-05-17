@@ -65,6 +65,7 @@ public class AudioManager : MonoBehaviour
     {
         if (Locked[index])
         {
+            curIndex = index;
             availableGold.text = cp.Gold.text.ToString();
             cost.text = shopSongButtons[index].GetComponent<GoldPrice>().Price.ToString();
             buySongView.SetActive(true);
@@ -104,7 +105,7 @@ public class AudioManager : MonoBehaviour
     }
 
     //Check if the player has enough money to puchase the background
-    //If so unlock it and set it as the new default background
+    //If so unlock it.
     public void BuySong()
     {
         int price = int.Parse(cost.text);
@@ -113,9 +114,15 @@ public class AudioManager : MonoBehaviour
         {
             UnlockSong(CurIndex);
             cp.Gold.text = (curGold - price).ToString();
-            ownedSongs.Add(shopSongs[curIndex+1]);
-            library.AddToLibrary(shopSongs[curIndex + 1]);
+            ownedSongs.Add(shopSongs[curIndex]);
+            library.AddToLibrary(shopSongs[curIndex]);
         }
+    }
+
+    public void LoadSong(int index)
+    {
+        UnlockSong(index);
+        library.AddToLibrary(shopSongs[index]);
     }
 
     //Close buy song menu

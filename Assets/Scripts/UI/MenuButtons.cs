@@ -103,6 +103,7 @@ public class MenuButtons : MonoBehaviour
     public void MusicLibrary()
     {
         musicLibrary.SetActive(true);
+        blackoutImg.SetActive(true);
     }
 
     public void Back(string from)

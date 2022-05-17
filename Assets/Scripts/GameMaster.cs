@@ -13,6 +13,7 @@ public class GameMaster : MonoBehaviour
     private Buddy buddy;
     private ToDo td;
     private BackgroundSelector bg;
+    private AudioManager am;
     private PetManager pm;
     [SerializeField]
     private Image[] checkboxes;
@@ -25,6 +26,7 @@ public class GameMaster : MonoBehaviour
         buddy = GameObject.Find("StudyBuddy").GetComponent<Buddy>();
         td = GameObject.Find("ToDoListContainer").GetComponent<ToDo>();
         bg = GameObject.Find("ShopsContainer").GetComponent<BackgroundSelector>();
+        am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         pm = gameObject.GetComponent<PetManager>();
     }
 
@@ -60,7 +62,12 @@ public class GameMaster : MonoBehaviour
 
         bg.LoadBackground(data.curBg);
 
-        for(int i = 0; i < data.numTasks; i++)
+        foreach (int i in data.unlockedSongs)
+        {
+            am.LoadSong(i);
+        }
+
+        for (int i = 0; i < data.numTasks; i++)
         {
             td.tasks[i].SetActive(true);
             td.tasks[i].GetComponentInChildren<TextMeshProUGUI>().text = data.toDoValues[i];
@@ -110,7 +117,8 @@ public class GameMaster : MonoBehaviour
         ItemManager im = GameObject.Find("GameMaster").GetComponent<ItemManager>();
         ToDo td = GameObject.Find("ToDoListContainer").GetComponent<ToDo>();
         BackgroundSelector bg = GameObject.Find("ShopsContainer").GetComponent<BackgroundSelector>();
+        AudioManager am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
-        SaveGame.Save(cp, inv, im, td, bg);
+        SaveGame.Save(cp, inv, im, td, bg, am);
     }
 }

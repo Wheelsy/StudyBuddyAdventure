@@ -9,6 +9,12 @@ public class MusicLibrary : MonoBehaviour
     private TextMeshProUGUI[] songNames;
     private List<AudioClip> library = new List<AudioClip>();
     private int songCount = 0;
+    private AudioSource source;
+
+    private void Start()
+    {
+        source = gameObject.GetComponent<AudioSource>();
+    }
 
     public void AddToLibrary(AudioClip clip)
     {
@@ -18,15 +24,12 @@ public class MusicLibrary : MonoBehaviour
         songCount++;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void PlaySong(int index)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (index <= library.Count && index >= 0)
+        {
+            source.clip = library[index];
+            source.Play();
+        }
     }
 }

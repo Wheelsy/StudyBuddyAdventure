@@ -18,9 +18,10 @@ public class PlayerData
     public List<string> toDoValues = new List<string>();
     public List<bool> toDoCompleteds = new List<bool>();
     public List<int> unlockedBackgrounds = new List<int>();
+    public List<int> unlockedSongs = new List<int>();
     public int curBg;
 
-    public PlayerData(CharacterPanel cp, Inventory inv,ItemManager im, ToDo td, BackgroundSelector bg)
+    public PlayerData(CharacterPanel cp, Inventory inv,ItemManager im, ToDo td, BackgroundSelector bg, AudioManager am)
     {
         curBg = bg.CurIndex;
         gold = cp.Gold.text.ToString();
@@ -39,7 +40,15 @@ public class PlayerData
             }
         }
 
-        foreach(KeyValuePair<string, int> entry in inv.SlotsInUse)
+        for (int i = 0; i < bg.Locked.Length; i++)
+        {
+            if (!am.Locked[i])
+            {
+                unlockedSongs.Add(i);
+            }
+        }
+
+        foreach (KeyValuePair<string, int> entry in inv.SlotsInUse)
         {
             if (entry.Value > 0)
             {
