@@ -6,6 +6,9 @@ using TMPro;
 
 public class Inventory : MonoBehaviour
 {
+    public GameObject invFullTxt;
+    public GameObject loadout;
+
     [SerializeField]
     private Image[] slots;
     [SerializeField]
@@ -57,10 +60,11 @@ public class Inventory : MonoBehaviour
     //Turn off the button after click
     public void AddToInventory(GameObject item)
     {
-        item.transform.GetChild(0).gameObject.SetActive(false);       
         Image slot = FindEmptySlot(item.GetComponent<Image>().sprite);
         if (slot != null)
         {
+            item.transform.GetChild(0).gameObject.SetActive(false);       
+            invFullTxt.SetActive(false);
             Item i = im.GetItemBySpriteMatch(item.GetComponent<Image>().sprite); 
             TextMeshProUGUI existingQuantity = slot.GetComponentInChildren<TextMeshProUGUI>();
             //if its an empty slot
@@ -79,7 +83,8 @@ public class Inventory : MonoBehaviour
         }
         else
         {
-            Debug.Log("inventory full");
+            loadout.SetActive(true);
+            invFullTxt.SetActive(true);
         }
     }
 

@@ -40,7 +40,7 @@ public class PlayerData
             }
         }
 
-        for (int i = 0; i < bg.Locked.Length; i++)
+        for (int i = 0; i < am.Locked.Length; i++)
         {
             if (!am.Locked[i])
             {

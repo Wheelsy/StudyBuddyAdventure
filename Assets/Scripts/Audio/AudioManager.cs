@@ -121,8 +121,11 @@ public class AudioManager : MonoBehaviour
 
     public void LoadSong(int index)
     {
-        UnlockSong(index);
-        library.AddToLibrary(shopSongs[index]);
+        if (!shopSongs[index].name.Equals("November Snow"))
+        {
+            UnlockSong(index);
+            library.AddToLibrary(shopSongs[index]);
+        }
     }
 
     //Close buy song menu

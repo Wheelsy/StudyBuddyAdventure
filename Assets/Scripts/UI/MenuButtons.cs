@@ -124,6 +124,7 @@ public class MenuButtons : MonoBehaviour
                 break;
 
             case "questOutcome":
+                inv.GetComponent<Inventory>().invFullTxt.SetActive(false);
                 set.sprite = empty;
                 potion.sprite = empty;
                 questOutcome.SetActive(false);
