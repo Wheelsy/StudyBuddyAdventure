@@ -56572,7 +56572,7 @@ MonoBehaviour:
   currentSkin:
   - {fileID: 0}
   - {fileID: 0}
-  pm: {fileID: 0}
+  pm: {fileID: 1178643}
 --- !u!1 &1995363750
 GameObject:
   m_ObjectHideFlags: 0

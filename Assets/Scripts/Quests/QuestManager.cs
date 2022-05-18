@@ -69,7 +69,7 @@ public class QuestManager : MonoBehaviour
     //Get an index for a random quest
     private int GetRandomIndex()
     {
-        return validIndexes[Random.Range(0, validIndexes.Count)];
+        return validIndexes[Random.Range(0, validIndexes.Count+1)];
     }
 
     //Remove an index from valid indexes so the quest wont show again
