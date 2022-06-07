@@ -37,6 +37,11 @@ public class QuestManager : MonoBehaviour
     //Generate a random number and add the corresponding quest from full list to available list
     private void Start()
     {
+        ResetQuests();
+    }
+
+    public void ResetQuests()
+    {
         SetValidIndexes();
         for (int i = 0; i < 3; i++)
         {
@@ -69,7 +74,8 @@ public class QuestManager : MonoBehaviour
     //Get an index for a random quest
     private int GetRandomIndex()
     {
-        return validIndexes[Random.Range(0, validIndexes.Count+1)];
+        int index = validIndexes[Random.Range(0, validIndexes.Count)];
+        return index;
     }
 
     //Remove an index from valid indexes so the quest wont show again

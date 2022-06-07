@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSet: 1
   name: Bandit Set
-  itemArt: {fileID: 0}
+  itemArt: {fileID: -406909047897414593, guid: 59aa32c25a3476e47a99f9d29a9fa05e, type: 3}
   atk: 3
   def: 3
   initiative: 2

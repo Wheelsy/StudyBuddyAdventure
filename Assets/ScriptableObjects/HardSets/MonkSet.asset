@@ -19,7 +19,9 @@ MonoBehaviour:
   def: 8
   initiative: 0
   durability: 5
-  skin: []
+  skin:
+  - {fileID: 8237175253110175670, guid: 145681dc79da8ae4a913e0ae3aeb6276, type: 3}
+  - {fileID: 2928998997057255141, guid: 145681dc79da8ae4a913e0ae3aeb6276, type: 3}
   potion: 0
   potionEffect: 
   hasPet: 0

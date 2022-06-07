@@ -46,6 +46,7 @@ public class QuestResolution : MonoBehaviour
     //Call success or failure methods based on outcome
     public void ResolveQuest()
     {
+        qm.ResetQuests();//Change the available quests
         string difficulty = qm.ActiveQuest.Difficulty;
         CalulateQuestStrength(difficulty);
 
@@ -136,11 +137,14 @@ public class QuestResolution : MonoBehaviour
         }
         if(weaponBreakChance - durability >= 90)
         {
-            cp.AddOrSubtractAtk(-set.atk);
-            cp.AddOrSubtractDef(-set.def);
-            cp.AddOrSubtractInitiative(-set.initiative);
-            cp.AddOrSubtractDurability(-set.durability);
-            cp.RemoveSet();
+            if (!cp.SetSlot.name.Equals("empty"))//Incase there is no equipped set we check for null
+            {
+                cp.AddOrSubtractAtk(-set.atk);
+                cp.AddOrSubtractDef(-set.def);
+                cp.AddOrSubtractInitiative(-set.initiative);
+                cp.AddOrSubtractDurability(-set.durability);
+                cp.RemoveSet();
+            }
         }
         buddy.gameObject.GetComponent<SpriteRenderer>().enabled = true;
     }

@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSet: 1
   name: Archer Set
-  itemArt: {fileID: 0}
+  itemArt: {fileID: 3895642625641873787, guid: e2ca6c53be9d4d64eba1fb0ac4ff18ab, type: 3}
   atk: 9
   def: -5
   initiative: 9
   durability: 3
-  skin: []
+  skin:
+  - {fileID: 4703990544782767578, guid: 284a2e4e690eaeb42a1a98d1eb489858, type: 3}
+  - {fileID: 860553510819747442, guid: 284a2e4e690eaeb42a1a98d1eb489858, type: 3}
   potion: 0
   potionEffect: 
   hasPet: 0
