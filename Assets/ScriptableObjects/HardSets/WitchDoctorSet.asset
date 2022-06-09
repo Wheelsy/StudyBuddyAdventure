@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17bb5a6cf6337cf4a9534c612dab0637, type: 3}
   m_Name: WitchDoctorSet
   m_EditorClassIdentifier: 
-  isSet: 0
+  isSet: 1
   name: Witch Doctor
   itemArt: {fileID: 9020793170607591675, guid: 611df5ff0bdd1714d84b72ca02708e89, type: 3}
   atk: 3
