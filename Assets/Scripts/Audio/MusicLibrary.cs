@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class MusicLibrary : MonoBehaviour
 {
@@ -16,6 +17,16 @@ public class MusicLibrary : MonoBehaviour
     private bool repeatOne = false;
     private float timePlaying;
     private int currentSongIndex;
+
+    public Image shuffleImg;
+    public Image repeatImg;
+    public Image repeatOneImg;
+    public Sprite shuffleUnselected;
+    public Sprite shuffleSelected;
+    public Sprite repeatUnselected;
+    public Sprite repeatSelected;
+    public Sprite repeatOneUnselected;
+    public Sprite repeatOneSelected;
 
     private void Start()
     {
@@ -75,6 +86,10 @@ public class MusicLibrary : MonoBehaviour
             source.clip = library[index];
             source.Play();
         }
+        else
+        {
+            return;
+        }
     }
 
     public void Shuffle()
@@ -82,6 +97,9 @@ public class MusicLibrary : MonoBehaviour
         repeatAll = false;
         repeatOne = false;
         shuffle = true;
+        shuffleImg.sprite = shuffleSelected;
+        repeatImg.sprite = repeatUnselected;
+        repeatOneImg.sprite = repeatOneUnselected;
     }
 
     public void RepeatAll()
@@ -89,6 +107,9 @@ public class MusicLibrary : MonoBehaviour
         repeatOne = false;
         shuffle = false;
         repeatAll = true;
+        shuffleImg.sprite = shuffleUnselected;
+        repeatImg.sprite = repeatSelected;
+        repeatOneImg.sprite = repeatOneUnselected;
     }
 
     public void RepeatOne()
@@ -96,5 +117,8 @@ public class MusicLibrary : MonoBehaviour
         repeatAll = false;
         shuffle = false;
         repeatOne = true;
+        shuffleImg.sprite = shuffleUnselected;
+        repeatImg.sprite = repeatUnselected;
+        repeatOneImg.sprite = repeatOneSelected;
     }
 }

@@ -14,6 +14,18 @@ TextureImporter:
   - first:
       213: 3941627226299094857
     second: musicPlayerBtns_3
+  - first:
+      213: -5813016051397238721
+    second: musicPlayerBtns_4
+  - first:
+      213: 4541756416547073115
+    second: musicPlayerBtns_5
+  - first:
+      213: -3780594414614983197
+    second: musicPlayerBtns_6
+  - first:
+      213: 4049947058427760007
+    second: musicPlayerBtns_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -131,7 +143,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 7
-        y: 12
+        y: 46
         width: 35
         height: 35
       alignment: 0
@@ -152,7 +164,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 50
-        y: 12
+        y: 46
         width: 35
         height: 35
       alignment: 0
@@ -173,7 +185,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 92
-        y: 12
+        y: 46
         width: 35
         height: 35
       alignment: 0
@@ -194,7 +206,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 135
-        y: 12
+        y: 46
         width: 35
         height: 35
       alignment: 0
@@ -206,6 +218,90 @@ TextureImporter:
       bones: []
       spriteID: 947d094241973b630800000000000000
       internalID: 3941627226299094857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: musicPlayerBtns_4
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 7
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f30e2de23b4045fa0800000000000000
+      internalID: -5813016051397238721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: musicPlayerBtns_5
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 7
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ca3a8c56f870f30800000000000000
+      internalID: 4541756416547073115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: musicPlayerBtns_6
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 7
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ed4c0d0961a88bc0800000000000000
+      internalID: -3780594414614983197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: musicPlayerBtns_7
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 7
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78d89b0646d443830800000000000000
+      internalID: 4049947058427760007
       vertices: []
       indices: 
       edges: []
