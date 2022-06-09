@@ -15,11 +15,11 @@ public class PetManager : MonoBehaviour
 
     public void TurnOnPet(int index)
     {
-        if(CurActivePet != 99)
+        if(CurActivePet != 99) //if no pet is currently active
         {
             CurActivePet = index;
         }
-        else
+        else //if there is a pet active turn it off
         {
             TurnOffPet();
         }
