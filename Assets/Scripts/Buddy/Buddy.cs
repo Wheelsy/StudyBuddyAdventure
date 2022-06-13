@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Buddy : MonoBehaviour
 {
-    private int atk = 21;
-    private int def = 21;
-    private int initiative = 21;
+    private int atk = 7;
+    private int def = 7;
+    private int initiative = 7;
     [SerializeField]
     private Animator anim;
     private SpriteRenderer sr;
@@ -15,7 +15,9 @@ public class Buddy : MonoBehaviour
     private bool sprite1 = false;
     private bool sprite2 = false;
 
+    public GameObject wooshPrefab;
     public PetManager pm;
+    public GameObject dialogue;
     public int Atk { get => atk; set => atk = value; }
     public int Def { get => def; set => def = value; }
     public int Initiative { get => initiative; set => initiative = value; }
@@ -42,22 +44,25 @@ public class Buddy : MonoBehaviour
 
     public void LeaveForQuest()
     {
-        //set leaving anim here >>>>>
+        GameObject clone = Instantiate(wooshPrefab, transform.position, Quaternion.identity);
+        Destroy(clone, 0.7f);
+
         if(pm.CurActivePet != 99)
         {
             pm.TurnOffPet();
         }
         sr.enabled = false;
+        dialogue.SetActive(false);
     }
 
     public void ReturnFromQuest()
     {
-        //set returning anim here >>>>>>
         if (pm.CurActivePet != 99)
         {
             pm.TurnOnPet(pm.CurActivePet);
         }
         sr.enabled = true;
+        dialogue.SetActive(true);
     }
 
     public void UpdateCurrentSkin(Sprite sprite1, Sprite sprite2)

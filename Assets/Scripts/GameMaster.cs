@@ -18,8 +18,24 @@ public class GameMaster : MonoBehaviour
     [SerializeField]
     private Image[] checkboxes;
 
+    public GameObject howToPlayBtn;
+    public Sprite howToPlayNormal;
+    public Sprite howToPlayRed;
+
     private void Awake()
     {
+        if (!PlayerPrefs.HasKey("playCount"))
+        {
+            PlayerPrefs.SetInt("playCount", 1);
+            InvokeRepeating("FlashIcon", 0, 0.75f);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("playCount", PlayerPrefs.GetInt("playCount") + 1);
+        }
+        //PlayerPrefs.DeleteKey("playCount");
+        PlayerPrefs.Save();
+
         cp = GameObject.Find("LoadoutContainer").GetComponent<CharacterPanel>();
         inv = GameObject.Find("LoadoutContainer").GetComponent<Inventory>();
         im = gameObject.GetComponent<ItemManager>();
@@ -47,6 +63,24 @@ public class GameMaster : MonoBehaviour
         File.Delete(path);
     }
 
+    private void FlashIcon()
+    {
+        if(howToPlayBtn.GetComponent<Image>().sprite == howToPlayNormal)
+        {
+            howToPlayBtn.GetComponent<Image>().sprite = howToPlayRed;
+        }
+        else
+        {
+            howToPlayBtn.GetComponent<Image>().sprite = howToPlayNormal;
+        }
+    }
+
+    public void CancelFlashIcon()
+    {
+        CancelInvoke("FlashIcon");
+        howToPlayBtn.GetComponent<Image>().sprite = howToPlayNormal;
+    }
+
     public void LoadData()
     {
         PlayerData data = SaveGame.Load();
@@ -55,9 +89,12 @@ public class GameMaster : MonoBehaviour
         cp.Initiative.text = data.initiative;
         cp.Gold.text = data.gold;
 
+        int k = 0;
         foreach(int i in data.unlockedBackgrounds)
         {
-            bg.UnlockBackground(data.unlockedBackgrounds[i]);
+            Debug.Log("unlock bg " + i);
+            bg.UnlockBackground(data.unlockedBackgrounds[k]);
+            k++;
         }
 
         bg.LoadBackground(data.curBg);

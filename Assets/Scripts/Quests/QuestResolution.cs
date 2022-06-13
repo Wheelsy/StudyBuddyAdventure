@@ -103,7 +103,9 @@ public class QuestResolution : MonoBehaviour
                 }
             }
         }
-        
+
+        Debug.Log("Quest Atk: " + atk);
+        Debug.Log("Quest Def: " + def);
         //Compare player vs quest stats
         if (playerInit >= initiative)
         {
@@ -146,7 +148,7 @@ public class QuestResolution : MonoBehaviour
                 cp.RemoveSet();
             }
         }
-        buddy.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        buddy.ReturnFromQuest();
     }
 
     //Generate quest stats
@@ -154,28 +156,28 @@ public class QuestResolution : MonoBehaviour
     {
         switch (difficulty)
         {
-            case "easy":
-                atk = Random.Range(1, 21);
-                def = Random.Range(1, 21);
-                initiative = Random.Range(1, 21);
+            case "Easy":
+                atk = Random.Range(0, 10);
+                def = Random.Range(0, 10);
+                initiative = Random.Range(0, 10);
                 break;
 
-            case "medium":
-                atk = Random.Range(21, 41);
-                def = Random.Range(21, 41);
-                initiative = Random.Range(21, 41);
+            case "Medium":
+                atk = Random.Range(5, 15);
+                def = Random.Range(5, 15);
+                initiative = Random.Range(5, 15);
                 break;
 
-            case "hard":
-                atk = Random.Range(41, 61);
-                def = Random.Range(41, 61);
-                initiative = Random.Range(41, 61);
+            case "Hard":
+                atk = Random.Range(10, 25);
+                def = Random.Range(10, 25);
+                initiative = Random.Range(10, 25);
                 break;
 
-            case "extreme":
-                atk = Random.Range(61, 101);
-                def = Random.Range(61, 101);
-                initiative = Random.Range(61, 101);
+            case "Extreme":
+                atk = Random.Range(15, 40);
+                def = Random.Range(15, 40);
+                initiative = Random.Range(15, 40);
                 break;
         }
     }
@@ -353,7 +355,7 @@ public class QuestResolution : MonoBehaviour
         {
             dropType = "Medium";
         }
-        else if(dropTotal > 80 && dropTotal <= 90)
+        else if(dropTotal > 80 && dropTotal <= 95)
         {
             dropType = "Hard";
         }

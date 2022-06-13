@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PurchaseButton : MonoBehaviour
 {
-    public enum PurchaseType { gold100, gold500, gold1500};
+    public enum PurchaseType { gold100, gold500, gold1500, gold5000};
     public PurchaseType purchaseType;
 
     public void Purchase()
@@ -21,6 +21,9 @@ public class PurchaseButton : MonoBehaviour
 
             case PurchaseType.gold1500:
                 IAPManager.instance.Buy1500Gold();
+                break;
+            case PurchaseType.gold5000:
+                IAPManager.instance.Buy5000Gold();
                 break;
         }
     }

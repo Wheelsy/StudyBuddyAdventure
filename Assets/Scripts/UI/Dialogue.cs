@@ -10,6 +10,7 @@ public class Dialogue : MonoBehaviour
 
     private bool stopTyping = false;
     private Image speechBubble;
+    private float timer = 0;
 
     [SerializeField]
     private List<string> dialogues = new List<string>();
@@ -22,7 +23,16 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
         speechBubble = gameObject.GetComponent<Image>();
-        WriteText(0);
+    }
+
+    private void FixedUpdate()
+    {
+        timer += Time.deltaTime;
+        if(timer%20 <= 0.01f && timer%20 >= -0.01f)
+        {
+            int index = Random.Range(0, dialogues.Count);
+            WriteText(index);
+        }
     }
 
     public void WriteText(int textIndex)

@@ -15,6 +15,7 @@ public class IAPManager : MonoBehaviour, IStoreListener
     private string gold100 = "gold100";
     private string gold500 = "gold500";
     private string gold1500 = "gold1500";
+    private string gold5000 = "gold5000";
 
 
     //************************** Adjust these methods **************************************
@@ -27,6 +28,7 @@ public class IAPManager : MonoBehaviour, IStoreListener
         builder.AddProduct(gold100, ProductType.Consumable);
         builder.AddProduct(gold500, ProductType.Consumable);
         builder.AddProduct(gold1500, ProductType.Consumable);
+        builder.AddProduct(gold5000, ProductType.Consumable);
 
         UnityPurchasing.Initialize(this, builder);
     }
@@ -53,6 +55,11 @@ public class IAPManager : MonoBehaviour, IStoreListener
         BuyProductID(gold1500);
     }
 
+    public void Buy5000Gold()
+    {
+        BuyProductID(gold5000);
+    }
+
     //Step 4 modify purchasing
     public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs args)
     {
@@ -70,6 +77,11 @@ public class IAPManager : MonoBehaviour, IStoreListener
         {
             cp.AddOrSubtractGold(1500);
             Debug.Log("bought 1500 gold");
+        }
+        else if (String.Equals(args.purchasedProduct.definition.id, gold5000, StringComparison.Ordinal))
+        {
+            cp.AddOrSubtractGold(5000);
+            Debug.Log("bought 5000 gold");
         }
         else
         {

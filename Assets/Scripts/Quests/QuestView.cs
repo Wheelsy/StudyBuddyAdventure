@@ -28,9 +28,9 @@ public class QuestView : MonoBehaviour
         if(quest.Name != null)
         {
             OpenQuest = quest;
-            this.reward.text = "Reward: " + quest.Reward;
-            this.difficulty.text = "Difficulty: " + quest.Difficulty;
-            this.description.text = "Description: " + quest.Description;
+            this.reward.text = quest.Reward + " gold";
+            this.difficulty.text = quest.Difficulty;
+            this.description.text = quest.Description;
         }
     }
 }

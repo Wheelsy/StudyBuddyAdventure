@@ -52,6 +52,10 @@ public class MenuButtons : MonoBehaviour
     private ShopSwitcher switcher;
     [SerializeField]
     private GameObject musicLibrary;
+    [SerializeField]
+    private GameObject howToPlay;
+
+    public GameMaster gm;
 
     public void QuestsMenu()
     {
@@ -106,6 +110,16 @@ public class MenuButtons : MonoBehaviour
         blackoutImg.SetActive(true);
     }
 
+    public void HowToPlay()
+    {
+        if (PlayerPrefs.GetInt("playCount") == 1)
+        {
+            gm.CancelFlashIcon();
+        }
+
+        howToPlay.SetActive(true);
+    }
+
     public void Back(string from)
     {
         switch (from)
@@ -146,6 +160,10 @@ public class MenuButtons : MonoBehaviour
 
             case "musicLibrary":
                 musicLibrary.SetActive(false);
+                break;
+
+            case "howToPlay":
+                howToPlay.SetActive(false);
                 break;
         }
         blackoutImg.SetActive(false);

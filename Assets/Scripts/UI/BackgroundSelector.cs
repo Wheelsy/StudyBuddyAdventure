@@ -47,7 +47,7 @@ public class BackgroundSelector : MonoBehaviour
             availableGold.text = cp.Gold.text.ToString();
             cost.text = backgrounds[index].GetComponent<GoldPrice>().Price.ToString();
             buyBackgroundView.SetActive(true);
-            buyBackgroundImg = backgrounds[index].GetComponent<Image>();
+            buyBackgroundImg.sprite = backgrounds[index].GetComponent<Image>().sprite;
         }
         CurIndex = index;
     }
