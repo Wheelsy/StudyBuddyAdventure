@@ -32,8 +32,7 @@ public class GameMaster : MonoBehaviour
         else
         {
             PlayerPrefs.SetInt("playCount", PlayerPrefs.GetInt("playCount") + 1);
-        }
-        //PlayerPrefs.DeleteKey("playCount");
+        }      
         PlayerPrefs.Save();
 
         cp = GameObject.Find("LoadoutContainer").GetComponent<CharacterPanel>();
@@ -61,6 +60,12 @@ public class GameMaster : MonoBehaviour
     {
         string path = Application.persistentDataPath + "/player.savedata";
         File.Delete(path);
+    }
+
+    public void ResetPlayCount()
+    {
+        PlayerPrefs.DeleteKey("playCount");
+        PlayerPrefs.Save();
     }
 
     private void FlashIcon()
