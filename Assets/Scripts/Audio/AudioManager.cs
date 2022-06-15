@@ -116,6 +116,7 @@ public class AudioManager : MonoBehaviour
             cp.Gold.text = (curGold - price).ToString();
             ownedSongs.Add(shopSongs[curIndex]);
             library.AddToLibrary(shopSongs[curIndex]);
+            GameMaster.SaveData();
         }
     }
 

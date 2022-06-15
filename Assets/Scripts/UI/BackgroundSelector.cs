@@ -62,6 +62,7 @@ public class BackgroundSelector : MonoBehaviour
         {
             UnlockBackground(CurIndex);
             cp.Gold.text = (curGold - price).ToString();
+            GameMaster.SaveData();
         }
     }
 

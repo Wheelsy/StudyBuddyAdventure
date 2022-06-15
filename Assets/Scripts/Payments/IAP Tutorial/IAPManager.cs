@@ -87,6 +87,7 @@ public class IAPManager : MonoBehaviour, IStoreListener
         {
             Debug.Log("Purchase Failed");
         }
+        GameMaster.SaveData();
         return PurchaseProcessingResult.Complete;
     }
 

@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
     private QuestResolution qr;
     private TextMeshProUGUI text;
     [SerializeField]
-    private float seconds = 60;
+    private float seconds = 0;
     [SerializeField]
     private float minutes;
     private bool startTimer = false;
@@ -48,11 +48,27 @@ public class Timer : MonoBehaviour
         if(seconds <= 0)
         {
             minutes -= 1;
-            if (minutes > 0)
+            if (minutes >= 0)
             {
                 seconds = 60;
             }
         }
-        text.text = minutes + ":" + seconds.ToString("N0");
+
+        if(seconds <= 9)
+        {
+            text.text = minutes + ":" + "0" + seconds.ToString("N0");
+        }
+        else
+        {
+            text.text = minutes + ":" + seconds.ToString("N0");
+        }
+    }
+
+    public void StopTimer()
+    {
+        startTimer = false;
+        minutes = 0;
+        seconds = 0;
+        text.text = "";
     }
 }

@@ -86,6 +86,7 @@ public class Inventory : MonoBehaviour
             loadout.SetActive(true);
             invFullTxt.SetActive(true);
         }
+        GameMaster.SaveData();
     }
 
     private void SwapFromCp(Sprite sprite)

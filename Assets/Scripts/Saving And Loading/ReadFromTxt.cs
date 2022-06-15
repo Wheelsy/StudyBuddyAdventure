@@ -6,10 +6,10 @@ using System;
 
 public class ReadFromTxt : MonoBehaviour
 {
-    private string dialogueFileName = "dialogue.txt";
-    private string shortQuestFileName = "shortQuest.txt";
-    private string mediumQuestFileName = "mediumQuest.txt";
-    private string longQuestFileName = "longQuest.txt";
+    private string dialogueFileName = "dialogue";
+    private string shortQuestFileName = "shortQuest";
+    private string mediumQuestFileName = "mediumQuest";
+    private string longQuestFileName = "longQuest";
     private Dialogue d;
     private StreamReader sr;
     [SerializeField]
@@ -28,31 +28,34 @@ public class ReadFromTxt : MonoBehaviour
     //Read the files that have been passed in and add them to the correct array/list
     private void readFile(string fileName)
     {
-        sr = new StreamReader(Application.dataPath + "/TxtFiles/" + fileName);
-        string tmp = sr.ReadToEnd();
+        //sr = new StreamReader(Application.persistentDataPath + "/TxtFiles/" + fileName);
+        //string tmp = sr.ReadToEnd();
+        TextAsset ta = (TextAsset)Resources.Load(fileName, typeof(TextAsset));
+        string tmp = ta.text;
         string[] lines = tmp.Split("\n"[0]);
         foreach (string line in lines)
         {
-            if (fileName.Equals("dialogue.txt"))
+           // Debug.Log("new line");
+            if (fileName.Equals("dialogue"))
             {
                 d.AddToDialogueArray(line);
             }
-            else if (fileName.Equals("shortQuest.txt"))
+            else if (fileName.Equals("shortQuest"))
             {
                 string[] s = line.Split(new char[] { ',' });
                 qm.AddShortQuest(s[0], s[1], s[2], int.Parse(s[3]), s[4], s[5], s[6]);
             }
-            else if (fileName.Equals("mediumQuest.txt"))
+            else if (fileName.Equals("mediumQuest"))
             {
                 string[] s = line.Split(new char[] { ',' });
                 qm.AddMediumQuest(s[0], s[1], s[2], int.Parse(s[3]), s[4], s[5], s[6]);
             }
-            else if (fileName.Equals("longQuest.txt"))
+            else if (fileName.Equals("longQuest"))
             {
                 string[] s = line.Split(new char[] { ',' });
                 qm.AddLongQuest(s[0], s[1], s[2], int.Parse(s[3]), s[4], s[5], s[6]);
             }
         }
-        sr.Close();
+        //sr.Close();
     }
 }

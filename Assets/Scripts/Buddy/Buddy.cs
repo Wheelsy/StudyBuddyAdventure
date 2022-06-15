@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Buddy : MonoBehaviour
 {
@@ -15,9 +16,12 @@ public class Buddy : MonoBehaviour
     private bool sprite1 = false;
     private bool sprite2 = false;
 
+    public GameObject questButton;
+    public GameObject cancelQuestButton;
     public GameObject wooshPrefab;
     public PetManager pm;
     public GameObject dialogue;
+    public Timer timer;
     public int Atk { get => atk; set => atk = value; }
     public int Def { get => def; set => def = value; }
     public int Initiative { get => initiative; set => initiative = value; }
@@ -46,8 +50,10 @@ public class Buddy : MonoBehaviour
     {
         GameObject clone = Instantiate(wooshPrefab, transform.position, Quaternion.identity);
         Destroy(clone, 0.7f);
+        questButton.GetComponent<Button>().interactable = false;
+        cancelQuestButton.SetActive(true);
 
-        if(pm.CurActivePet != 99)
+        if (pm.CurActivePet != 99)
         {
             pm.TurnOffPet();
         }
@@ -61,6 +67,9 @@ public class Buddy : MonoBehaviour
         {
             pm.TurnOnPet(pm.CurActivePet);
         }
+        timer.StopTimer();
+        cancelQuestButton.SetActive(false);
+        questButton.GetComponent<Button>().interactable = true;
         sr.enabled = true;
         dialogue.SetActive(true);
     }

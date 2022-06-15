@@ -48,9 +48,10 @@ public class GameMaster : MonoBehaviour
     private void Start()
     {
         im = gameObject.GetComponent<ItemManager>();
-
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        string path = Path.Combine(Application.dataPath + "/player.savedata");
         //if a save file exists the call load method
-        if (File.Exists(Application.persistentDataPath + "/player.savedata"))
+        if (File.Exists(Application.dataPath + "/player.savedata"))
         {
             LoadData();
         }
@@ -58,7 +59,7 @@ public class GameMaster : MonoBehaviour
 
     public static void DeleteSaveFile()
     {
-        string path = Application.persistentDataPath + "/player.savedata";
+        string path = Application.dataPath + "/player.savedata";
         File.Delete(path);
     }
 
@@ -162,5 +163,10 @@ public class GameMaster : MonoBehaviour
         AudioManager am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
         SaveGame.Save(cp, inv, im, td, bg, am);
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveData();
     }
 }

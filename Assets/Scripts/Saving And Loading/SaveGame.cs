@@ -10,7 +10,7 @@ public static class SaveGame
     {
         BinaryFormatter formatter = new BinaryFormatter();
         //set save file location
-        string path = Application.persistentDataPath + "/player.savedata";
+        string path = Path.Combine(Application.persistentDataPath + "/player.savedata");
         FileStream stream = new FileStream(path, FileMode.Create);
         PlayerData data = new PlayerData(cp, inv, im, td, bg, am);
         formatter.Serialize(stream, data);
@@ -22,17 +22,15 @@ public static class SaveGame
     {
         try
         {
-            string path = Application.persistentDataPath + "/player.savedata";
+            string path = Path.Combine(Application.persistentDataPath + "/player.savedata");
 
             //if there is a save file continue
             if (File.Exists(path))
             {
                 BinaryFormatter formatter = new BinaryFormatter();
                 FileStream stream = new FileStream(path, FileMode.Open);
-
                 PlayerData data = formatter.Deserialize(stream) as PlayerData;
                 stream.Close();
-
                 return data;
             }
             else
