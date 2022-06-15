@@ -38,7 +38,7 @@ public class CharacterPanel : MonoBehaviour
     public TextMeshProUGUI Durability { get => durability; set => durability = value; }
 
     //Assign buddies base stats on start
-    private void Start()
+    private void Awake()
     {
         Item curSet = im.GetItemBySpriteMatch(setSlot.sprite);
 
@@ -98,8 +98,17 @@ public class CharacterPanel : MonoBehaviour
     public void RemoveSet()
     {
         setSlot.sprite = emptySprite;
+        characterSlot.sprite = buddy.noSkin[0];
+        buddy.RemoveSet();
     }
 
+    public void ResetStats()
+    {
+        initiative.text = buddy.Initiative.ToString();
+        atk.text = buddy.Atk.ToString();
+        def.text = buddy.Def.ToString();
+        durability.text = "0";
+    }
     //Find the scriptable object and add its stats to the character panel
     public void UpdateStats(Sprite sprite)
     {

@@ -28,8 +28,6 @@ public class ReadFromTxt : MonoBehaviour
     //Read the files that have been passed in and add them to the correct array/list
     private void readFile(string fileName)
     {
-        //sr = new StreamReader(Application.persistentDataPath + "/TxtFiles/" + fileName);
-        //string tmp = sr.ReadToEnd();
         TextAsset ta = (TextAsset)Resources.Load(fileName, typeof(TextAsset));
         string tmp = ta.text;
         string[] lines = tmp.Split("\n"[0]);

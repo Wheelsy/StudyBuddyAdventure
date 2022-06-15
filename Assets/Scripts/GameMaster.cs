@@ -49,9 +49,8 @@ public class GameMaster : MonoBehaviour
     {
         im = gameObject.GetComponent<ItemManager>();
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        string path = Path.Combine(Application.dataPath + "/player.savedata");
         //if a save file exists the call load method
-        if (File.Exists(Application.dataPath + "/player.savedata"))
+        if (File.Exists(Application.persistentDataPath + "/saveData.txt"))
         {
             LoadData();
         }
@@ -59,7 +58,7 @@ public class GameMaster : MonoBehaviour
 
     public static void DeleteSaveFile()
     {
-        string path = Application.dataPath + "/player.savedata";
+        string path = Application.persistentDataPath + "/saveData.txt";
         File.Delete(path);
     }
 
@@ -98,7 +97,6 @@ public class GameMaster : MonoBehaviour
         int k = 0;
         foreach(int i in data.unlockedBackgrounds)
         {
-            Debug.Log("unlock bg " + i);
             bg.UnlockBackground(data.unlockedBackgrounds[k]);
             k++;
         }
@@ -120,10 +118,12 @@ public class GameMaster : MonoBehaviour
             }
         }
 
-        foreach(KeyValuePair<string, int> entry in data.inventoryItems)
+        if (data.inventoryKeys != null)
         {
-            Item i = im.GetItemByNameMatch(entry.Key);
-            inv.SlotsInUse.Add(i.name, entry.Value);
+            for(int i = 0; i< data.inventoryKeys.Count; i++)
+            {
+                inv.SlotsInUse.Add(data.inventoryKeys[i], data.inventoryValues[i]);
+            }
         }
 
         foreach (KeyValuePair<string, int> entry in inv.SlotsInUse)
@@ -137,19 +137,25 @@ public class GameMaster : MonoBehaviour
         if (data.equippedPotion != null)
         {
             Item potion = im.GetItemByNameMatch(data.equippedPotion);
-            cp.UpdatePotionImage(potion.itemArt);
+            if (potion != null)
+            {
+                cp.UpdatePotionImage(potion.itemArt);
+            }
         }
 
         if (data.equippedItem != null)
         {
             Item item = im.GetItemByNameMatch(data.equippedItem);
-            if (item.hasPet)
+            if (item != null)
             {
-                pm.TurnOnPet(item.petIndex);
+                if (item.hasPet)
+                {
+                    pm.TurnOnPet(item.petIndex);
+                }
+                cp.UpdateSetImage(item.itemArt);
+                cp.UpdateCharacterImage(item.skin[0]);
+                buddy.UpdateCurrentSkin(item.skin[0], item.skin[1]);
             }
-            cp.UpdateSetImage(item.itemArt);
-            cp.UpdateCharacterImage(item.skin[0]);
-            buddy.UpdateCurrentSkin(item.skin[0], item.skin[1]);
         }
     }
 

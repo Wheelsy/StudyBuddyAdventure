@@ -14,6 +14,8 @@ public class Timer : MonoBehaviour
     private float minutes;
     private bool startTimer = false;
 
+    public GameObject timerBg;
+
     private void Start()
     {
         text = gameObject.GetComponent<TextMeshProUGUI>();
@@ -24,6 +26,7 @@ public class Timer : MonoBehaviour
         minutes = time;
         startTimer = true;
         text.text = time.ToString();
+        timerBg.SetActive(true);
     }
 
     //While timer value > 0 minus time
@@ -40,6 +43,7 @@ public class Timer : MonoBehaviour
             startTimer = false;
             text.text = "";
             qr.ResolveQuest();
+            timerBg.SetActive(false);
         }
     }
 

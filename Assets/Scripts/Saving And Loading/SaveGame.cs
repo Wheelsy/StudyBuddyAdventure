@@ -8,13 +8,10 @@ public static class SaveGame
 {
     public static void Save( CharacterPanel cp, Inventory inv, ItemManager im, ToDo td, BackgroundSelector bg, AudioManager am)
     {
-        BinaryFormatter formatter = new BinaryFormatter();
-        //set save file location
-        string path = Path.Combine(Application.persistentDataPath + "/player.savedata");
-        FileStream stream = new FileStream(path, FileMode.Create);
         PlayerData data = new PlayerData(cp, inv, im, td, bg, am);
-        formatter.Serialize(stream, data);
-        stream.Close();
+        string json = JsonUtility.ToJson(data);
+        File.WriteAllText(Application.persistentDataPath + "/saveData.txt", json);
+        Debug.Log(json);
     }
 
     //deserialize saved data
@@ -22,15 +19,13 @@ public static class SaveGame
     {
         try
         {
-            string path = Path.Combine(Application.persistentDataPath + "/player.savedata");
+            string path = Application.persistentDataPath + "/saveData.txt";
 
             //if there is a save file continue
             if (File.Exists(path))
             {
-                BinaryFormatter formatter = new BinaryFormatter();
-                FileStream stream = new FileStream(path, FileMode.Open);
-                PlayerData data = formatter.Deserialize(stream) as PlayerData;
-                stream.Close();
+                string saveString = File.ReadAllText(Application.persistentDataPath + "/saveData.txt");
+                PlayerData data = JsonUtility.FromJson<PlayerData>(saveString);
                 return data;
             }
             else

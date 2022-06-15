@@ -16,6 +16,7 @@ public class Buddy : MonoBehaviour
     private bool sprite1 = false;
     private bool sprite2 = false;
 
+    public Sprite[] noSkin;
     public GameObject questButton;
     public GameObject cancelQuestButton;
     public GameObject wooshPrefab;
@@ -78,6 +79,12 @@ public class Buddy : MonoBehaviour
     {
         currentSkin[0] = sprite1;
         currentSkin[1] = sprite2;
+    }
+
+    public void RemoveSet()
+    {
+        currentSkin[0] = noSkin[0];
+        currentSkin[1] = noSkin[1];
     }
 
     public void ReplaceAnimSprite1()

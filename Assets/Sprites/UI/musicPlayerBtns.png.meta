@@ -26,6 +26,9 @@ TextureImporter:
   - first:
       213: 4049947058427760007
     second: musicPlayerBtns_7
+  - first:
+      213: 3823346110440906055
+    second: musicPlayerBtns_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -226,8 +229,8 @@ TextureImporter:
       name: musicPlayerBtns_4
       rect:
         serializedVersion: 2
-        x: 7
-        y: 7
+        x: 180
+        y: 30
         width: 35
         height: 35
       alignment: 0
@@ -247,7 +250,7 @@ TextureImporter:
       name: musicPlayerBtns_5
       rect:
         serializedVersion: 2
-        x: 50
+        x: 7
         y: 7
         width: 35
         height: 35
@@ -268,7 +271,7 @@ TextureImporter:
       name: musicPlayerBtns_6
       rect:
         serializedVersion: 2
-        x: 92
+        x: 50
         y: 7
         width: 35
         height: 35
@@ -289,7 +292,7 @@ TextureImporter:
       name: musicPlayerBtns_7
       rect:
         serializedVersion: 2
-        x: 135
+        x: 92
         y: 7
         width: 35
         height: 35
@@ -302,6 +305,27 @@ TextureImporter:
       bones: []
       spriteID: 78d89b0646d443830800000000000000
       internalID: 4049947058427760007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: musicPlayerBtns_8
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 7
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74d933ec7014f0530800000000000000
+      internalID: 3823346110440906055
       vertices: []
       indices: 
       edges: []

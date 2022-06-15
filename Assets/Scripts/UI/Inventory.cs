@@ -22,6 +22,7 @@ public class Inventory : MonoBehaviour
     private Dictionary<string,int> slotsInUse = new Dictionary<string, int>();
     private CharacterPanel cp;
 
+    public GameObject invFull;
     public Dictionary<string, int> SlotsInUse { get => slotsInUse; set => slotsInUse = value; }
 
     private void Start()
@@ -113,6 +114,7 @@ public class Inventory : MonoBehaviour
         else
         {
             Debug.Log("inventory full");
+            invFull.SetActive(true);
         }
     }
 
@@ -159,6 +161,7 @@ public class Inventory : MonoBehaviour
                     cp.UpdatePotionImage(img.sprite);
                 }
 
+                //Adjust the inventory to reflect the now missing item
                 TextMeshProUGUI invQuantity = img.GetComponentInChildren<TextMeshProUGUI>();
                 if (int.Parse(invQuantity.text) > 1)
                 {
@@ -171,11 +174,11 @@ public class Inventory : MonoBehaviour
                     img.sprite = emptySlot;
                 }
 
+                //If theres already a set equipped swap it out.
                 if (itemToCp.isSet)
                 {
                     if (!sprite.name.Equals("empty"))
                     {
-                        Debug.Log(sprite.name);
                         SwapFromCp(sprite);
                     }
                 }

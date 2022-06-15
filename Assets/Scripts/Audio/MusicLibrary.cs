@@ -92,6 +92,11 @@ public class MusicLibrary : MonoBehaviour
         }
     }
 
+    public void Stop()
+    {
+        source.Stop();
+    }
+
     public void Shuffle()
     {
         repeatAll = false;

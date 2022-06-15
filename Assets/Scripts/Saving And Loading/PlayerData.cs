@@ -12,6 +12,8 @@ public class PlayerData
     public string def;
     public string initiative;
     public Dictionary<string, int> inventoryItems = new Dictionary<string, int>();
+    public List<string> inventoryKeys = new List<string>();
+    public List<int> inventoryValues = new List<int>();
     public string equippedItem;
     public string equippedPotion;
     public int numTasks;
@@ -53,7 +55,8 @@ public class PlayerData
             if (entry.Value > 0)
             {
                 Item i = im.GetItemByNameMatch(entry.Key);
-                inventoryItems.Add(i.name, entry.Value);
+                inventoryKeys.Add(i.name);
+                inventoryValues.Add(entry.Value);
             }
         }
 

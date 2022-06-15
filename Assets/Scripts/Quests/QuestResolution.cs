@@ -35,10 +35,24 @@ public class QuestResolution : MonoBehaviour
     private int initiative;
     private QuestManager qm;
 
+    public GameObject loadout;
+    public GameObject shops;
+    public GameObject musicLibrary;
+    public GameObject howToPlay;
+    public GameObject toDo;
 
     private void Start()
     {
         qm = gameObject.GetComponent<QuestManager>();
+    }
+
+    private void CloseTabs()
+    {
+        loadout.SetActive(false);
+        shops.SetActive(false);
+        musicLibrary.SetActive(false);
+        howToPlay.SetActive(false);
+        toDo.SetActive(false);
     }
 
     //If inititiative is higher than compare buddy atk to quest def
@@ -104,8 +118,6 @@ public class QuestResolution : MonoBehaviour
             }
         }
 
-        Debug.Log("Quest Atk: " + atk);
-        Debug.Log("Quest Def: " + def);
         //Compare player vs quest stats
         if (playerInit >= initiative)
         {
@@ -139,12 +151,10 @@ public class QuestResolution : MonoBehaviour
         }
         if(weaponBreakChance - durability >= 90)
         {
-            if (!cp.SetSlot.name.Equals("empty"))//Incase there is no equipped set we check for null
+            Debug.Log("weapon broke");
+            if (!cp.SetSlot.sprite.name.Equals("empty"))//Incase there is no equipped set we check for null
             {
-                cp.AddOrSubtractAtk(-set.atk);
-                cp.AddOrSubtractDef(-set.def);
-                cp.AddOrSubtractInitiative(-set.initiative);
-                cp.AddOrSubtractDurability(-set.durability);
+                cp.ResetStats();
                 cp.RemoveSet();
             }
         }
@@ -202,7 +212,6 @@ public class QuestResolution : MonoBehaviour
                 int ePotionDrop = Random.Range(0, im.Potions.Count);
                 if (sDrop)
                 {
-                    Debug.Log("dropping set because sdrop = " + sDrop);
                     s = (Item)im.GetReward(difficulty, eSetDrop);
                     setSprite = s.itemArt;
                 }
@@ -266,7 +275,6 @@ public class QuestResolution : MonoBehaviour
         goldValue.text = qm.ActiveQuest.Reward;
         int gold = int.Parse(qm.ActiveQuest.Reward);
         cp.AddOrSubtractGold(gold);
-        questOutcome.SetActive(true);
         outcome.text = "Success";
         questName.text = qm.ActiveQuest.Name;
         if (sDrop)
@@ -277,14 +285,17 @@ public class QuestResolution : MonoBehaviour
         {
             potion.GetComponent<Image>().sprite = potionSprite;
         }
+        CloseTabs();
+        questOutcome.SetActive(true);
     }
 
     private void QuestFailed(string difficulty)
     {
         events.text = qm.ActiveQuest.Defeat;
-        questOutcome.SetActive(true);
         outcome.text = "Defeat";
+        CloseTabs();
         questName.text = qm.ActiveQuest.Name;
+        questOutcome.SetActive(true);
     }
 
     private bool DoesSetDrop()

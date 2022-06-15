@@ -41,6 +41,7 @@ public class BackgroundSelector : MonoBehaviour
         {
             background.GetComponent<SpriteRenderer>().sprite = backgrounds[index].GetComponent<Image>().sprite;
             SetCurrentBackgroundMarker(index);
+            curIndex = index;
         }
         else
         {
@@ -69,14 +70,11 @@ public class BackgroundSelector : MonoBehaviour
     //Set the background to unlocked
     //Set lock image to unlocked
     //Turn off buy background view
-    //Update the background
     public void UnlockBackground(int index)
     {
         Locked[index] = false;
         backgrounds[index].transform.GetChild(1).GetComponent<Image>().sprite = lockUnlock[1];
-        buyBackgroundView.SetActive(false);
-        background.GetComponent<SpriteRenderer>().sprite = backgrounds[index].GetComponent<Image>().sprite;
-        curIndex = index;
+        buyBackgroundView.SetActive(false);      
     }
 
     //Load the default background on game start

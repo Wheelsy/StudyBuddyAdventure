@@ -29,8 +29,6 @@ public class MenuButtons : MonoBehaviour
     [SerializeField]
     private GameObject toDo;
     [SerializeField]
-    private GameObject blackoutImg;
-    [SerializeField]
     private GameObject shopMenu;
     [SerializeField]
     private GameObject backgroundShop;
@@ -56,17 +54,16 @@ public class MenuButtons : MonoBehaviour
     private GameObject howToPlay;
 
     public GameMaster gm;
+    public GameObject invFull;
 
     public void QuestsMenu()
     {
-        blackoutImg.SetActive(true);
         TurnOffDialogue();
         questMenu.SetActive(true);
     }
 
     public void LoadoutMenu()
     {
-        blackoutImg.SetActive(true);
         TurnOffDialogue();
         loadoutMenu.SetActive(true);
     }
@@ -74,12 +71,10 @@ public class MenuButtons : MonoBehaviour
     public void ShopMenu()
     {
         shopMenu.SetActive(true);
-        blackoutImg.SetActive(true);
     }
 
     public void QuestView(TextMeshProUGUI questName)
     {
-        blackoutImg.SetActive(false);
         TurnOffDialogue();
         TurnOffMainButtons();
         questMenu.SetActive(false);
@@ -89,7 +84,6 @@ public class MenuButtons : MonoBehaviour
 
     public void QuestAccepted(TextMeshProUGUI questName)
     {
-        blackoutImg.SetActive(false);
         TurnOnMainButtons();
         questView.SetActive(false);
         qm.SetActiveQuest(questName.text);
@@ -99,7 +93,6 @@ public class MenuButtons : MonoBehaviour
 
     public void ToDo()
     {
-        blackoutImg.SetActive(true);
         toDo.SetActive(true);
         TurnOffDialogue();
     }
@@ -107,7 +100,6 @@ public class MenuButtons : MonoBehaviour
     public void MusicLibrary()
     {
         musicLibrary.SetActive(true);
-        blackoutImg.SetActive(true);
     }
 
     public void HowToPlay()
@@ -135,6 +127,11 @@ public class MenuButtons : MonoBehaviour
 
             case "loadout":
                 loadoutMenu.SetActive(false);
+
+                if (invFull.activeInHierarchy)
+                {
+                    invFull.SetActive(false);
+                }
                 break;
 
             case "questOutcome":
@@ -166,7 +163,6 @@ public class MenuButtons : MonoBehaviour
                 howToPlay.SetActive(false);
                 break;
         }
-        blackoutImg.SetActive(false);
         TurnOnMainButtons();
     }
 
