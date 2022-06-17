@@ -50,13 +50,23 @@ public class PlayerData
             }
         }
 
-        foreach (KeyValuePair<string, int> entry in inv.SlotsInUse)
+       /* foreach (KeyValuePair<string, int> entry in inv.SlotsInUse)
         {
             if (entry.Value > 0)
             {
                 Item i = im.GetItemByNameMatch(entry.Key);
                 inventoryKeys.Add(i.name);
                 inventoryValues.Add(entry.Value);
+            }
+        }*/
+
+        foreach (string key in inv.InvItemsKey)
+        {
+            if (inv.InvItemsValue[inv.InvItemsKey.IndexOf(key)] > 0)
+            {
+                Item i = im.GetItemByNameMatch(key);
+                inventoryKeys.Add(i.name);
+                inventoryValues.Add(inv.InvItemsValue[inv.InvItemsKey.IndexOf(key)]);
             }
         }
 

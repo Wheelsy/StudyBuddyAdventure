@@ -93,6 +93,7 @@ public class CharacterPanel : MonoBehaviour
     public void RemovePotion()
     {
         potionSlot.sprite = emptySprite;
+        GameMaster.SaveData();
     }
 
     public void RemoveSet()
@@ -100,6 +101,7 @@ public class CharacterPanel : MonoBehaviour
         setSlot.sprite = emptySprite;
         characterSlot.sprite = buddy.noSkin[0];
         buddy.RemoveSet();
+        GameMaster.SaveData();
     }
 
     public void ResetStats()
@@ -108,6 +110,7 @@ public class CharacterPanel : MonoBehaviour
         atk.text = buddy.Atk.ToString();
         def.text = buddy.Def.ToString();
         durability.text = "0";
+        GameMaster.SaveData();
     }
     //Find the scriptable object and add its stats to the character panel
     public void UpdateStats(Sprite sprite)
@@ -117,5 +120,6 @@ public class CharacterPanel : MonoBehaviour
         durability.text = newItem.durability.ToString();
         def.text = (buddy.Def + newItem.def).ToString();
         initiative.text = (buddy.Initiative + newItem.initiative).ToString();
+        GameMaster.SaveData();
     }
 }

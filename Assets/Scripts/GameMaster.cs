@@ -122,16 +122,26 @@ public class GameMaster : MonoBehaviour
         {
             for(int i = 0; i< data.inventoryKeys.Count; i++)
             {
-                inv.SlotsInUse.Add(data.inventoryKeys[i], data.inventoryValues[i]);
+                //inv.SlotsInUse.Add(data.inventoryKeys[i], data.inventoryValues[i]);
+                inv.InvItemsKey.Add(data.inventoryKeys[i]);
+                inv.InvItemsValue.Add(data.inventoryValues[i]);
             }
         }
 
-        foreach (KeyValuePair<string, int> entry in inv.SlotsInUse)
+       /* foreach (KeyValuePair<string, int> entry in inv.SlotsInUse)
         {           
             Item i = im.GetItemByNameMatch(entry.Key);
             Image slot = inv.FindEmptySlot(i.itemArt);
             slot.sprite = i.itemArt;
             slot.GetComponentInChildren<TextMeshProUGUI>().text = entry.Value.ToString();
+        }*/
+
+        foreach (string key in inv.InvItemsKey)
+        {
+            Item i = im.GetItemByNameMatch(key);
+            Image slot = inv.FindEmptySlot(i.itemArt);
+            slot.sprite = i.itemArt;
+            slot.GetComponentInChildren<TextMeshProUGUI>().text = inv.InvItemsValue[inv.InvItemsKey.IndexOf(key)].ToString();
         }
 
         if (data.equippedPotion != null)

@@ -19,11 +19,13 @@ public class Inventory : MonoBehaviour
     private Buddy buddy;
     [SerializeField]
     private Sprite emptySlot;
-    private Dictionary<string,int> slotsInUse = new Dictionary<string, int>();
+    private List<string> invItemsKey = new List<string>();
+    private List<int> invItemsValue = new List<int>();
     private CharacterPanel cp;
 
     public GameObject invFull;
-    public Dictionary<string, int> SlotsInUse { get => slotsInUse; set => slotsInUse = value; }
+    public List<int> InvItemsValue { get => invItemsValue; set => invItemsValue = value; }
+    public List<string> InvItemsKey { get => invItemsKey; set => invItemsKey = value; }
 
     private void Start()
     {
@@ -34,9 +36,10 @@ public class Inventory : MonoBehaviour
     //return the image or null if inventory full
     public Image FindEmptySlot(Sprite sprite)
     {
+        Item item = im.GetItemBySpriteMatch(sprite);
         for(int i = 0; i < slots.Length; i++)
         {
-            if(slots[i].sprite == sprite)
+            if(slots[i].sprite == sprite && !item.isSet)
             {
                 return slots[i];
             }
@@ -50,10 +53,12 @@ public class Inventory : MonoBehaviour
 
     private void AdjustSlotQuantity(string itemName, int amount)
     {
-        if (SlotsInUse.ContainsKey(itemName))
+        if (invItemsKey.Contains(itemName))
         {
-            SlotsInUse[itemName] += amount;
+            Debug.Log("adding 1 to " + itemName);
+            invItemsValue[invItemsKey.IndexOf(itemName)] += amount;
         }
+        GameMaster.SaveData();
     }
 
     //Button click event for item on quest outcome
@@ -73,7 +78,8 @@ public class Inventory : MonoBehaviour
             {            
                 slot.sprite = i.itemArt;
                 existingQuantity.text = "1";
-                SlotsInUse.Add(i.name, 1);
+                invItemsKey.Add(i.name);
+                invItemsValue.Add(1);
             }
             //else its adding quantity to an existing item
             else
@@ -90,6 +96,7 @@ public class Inventory : MonoBehaviour
         GameMaster.SaveData();
     }
 
+    //Swap an equipped item back to the inventory
     private void SwapFromCp(Sprite sprite)
     {
         Image slot = FindEmptySlot(sprite);
@@ -102,13 +109,15 @@ public class Inventory : MonoBehaviour
             {
                 slot.sprite = i.itemArt;
                 existingQuantity.text = "1";
-                SlotsInUse.Add(i.name, 1);
+                invItemsKey.Add(i.name);
+                invItemsValue.Add(1);
+                Debug.Log("setting slot " + slot.name + " to 1");
             }
             //else its adding quantity to an existing item
             else
             {
                 existingQuantity.text = (int.Parse(existingQuantity.text) + 1).ToString();
-                AdjustSlotQuantity(i.name, 1);
+                //AdjustSlotQuantity(i.name, 1);
             }
         }
         else
@@ -116,6 +125,7 @@ public class Inventory : MonoBehaviour
             Debug.Log("inventory full");
             invFull.SetActive(true);
         }
+        GameMaster.SaveData();
     }
 
     //Retrieve the scriptable obj by sprite match
@@ -124,9 +134,10 @@ public class Inventory : MonoBehaviour
     //Update all of the stats in character panel by adding the values form the scriptable obj
     public void AttachInventoryItem(Image img)
     {
-        Sprite sprite = cp.SetSlot.sprite;
+        Sprite setSprite = cp.SetSlot.sprite;
+        Sprite potionSprite = cp.PotionSlot.sprite;
 
-        if (img.sprite != null || img != cp.SetSlot || img != cp.PotionSlot)
+        if (img.sprite != null || img.sprite != setSprite || img.sprite != potionSprite) //check its not already in cp panel
         {
             Item itemToCp = im.GetItemBySpriteMatch(img.sprite);
 
@@ -174,16 +185,26 @@ public class Inventory : MonoBehaviour
                     img.sprite = emptySlot;
                 }
 
-                //If theres already a set equipped swap it out.
                 if (itemToCp.isSet)
                 {
-                    if (!sprite.name.Equals("empty"))
+                    //If theres already a set equipped swap it out.
+                    if (!setSprite.name.Equals("empty"))
                     {
-                        SwapFromCp(sprite);
+                        SwapFromCp(setSprite);
+                    }
+                }
+                else
+                {
+                    //If theres already a potion equipped swap it out.
+                    if (!potionSprite.name.Equals("empty"))
+                    {
+                        Debug.Log("swapping potion back to inventory");
+                        SwapFromCp(potionSprite);
                     }
                 }
             }
         }
+        GameMaster.SaveData();
     }
 
     //Revome item from the dictionary and update the ui
@@ -196,12 +217,17 @@ public class Inventory : MonoBehaviour
         {
             invQuantity.text = "0";
             img.sprite = emptySlot;
-            slotsInUse.Remove(item.name);
+            invItemsKey.Remove(item.name);
+            invItemsValue.Remove(invItemsKey.IndexOf(item.name));
         }
-        else if (int.Parse(invQuantity.text) != 0)
+        else if (int.Parse(invQuantity.text) > 1)
         {
+            Debug.Log("subtracting 1 from " + invQuantity.text);
             invQuantity.text = (int.Parse(invQuantity.text) - 1).ToString();
-            slotsInUse[item.name] = -1;
+            invItemsValue[invItemsKey.IndexOf(item.name)] -= 1;
+            Debug.Log("to give " + invItemsValue[invItemsKey.IndexOf(item.name)]);
         }
+
+        GameMaster.SaveData();
     }
 }
