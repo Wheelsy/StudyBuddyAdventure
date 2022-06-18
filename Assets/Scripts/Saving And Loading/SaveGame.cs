@@ -11,7 +11,7 @@ public static class SaveGame
         PlayerData data = new PlayerData(cp, inv, im, td, bg, am);
         string json = JsonUtility.ToJson(data);
         File.WriteAllText(Application.persistentDataPath + "/saveData.txt", json);
-        Debug.Log(json);
+        //Debug.Log(json);
     }
 
     //deserialize saved data
