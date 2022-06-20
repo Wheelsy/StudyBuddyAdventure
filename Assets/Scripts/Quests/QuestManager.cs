@@ -30,7 +30,7 @@ public class QuestManager : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI[] longQuestDifficulties;
     private int index;
-    private List<int> validIndexes = new List<int>();
+    private List<int> usedIndexes = new List<int>();
 
     //Quest that has been accepted
     public Quest ActiveQuest { get => activeQuest; set => activeQuest = value; }
@@ -43,7 +43,6 @@ public class QuestManager : MonoBehaviour
 
     public void ResetQuests()
     {
-        SetValidIndexes();
         for (int i = 0; i < 3; i++)
         {
             //Get a random quest
@@ -60,29 +59,44 @@ public class QuestManager : MonoBehaviour
             mediumQuestDifficulties[i].text = mediumQuests[index].Difficulty;
             longQuestDifficulties[i].text = longQuests[index].Difficulty;
             //remove that quest from the pool
-            RemoveIndex(index);
+            AddUsedIndexes(index);
         }
+
     }
 
     //create a list of indexes to use to fetch random quests
-    private void SetValidIndexes(){
-        for(int i = 0; i < shortQuests.Count; i++)
-        {
-            validIndexes.Add(i);
-        }
+    private void AddUsedIndexes(int index)
+    {
+        usedIndexes.Add(index);       
     }
 
     //Get an index for a random quest
     private int GetRandomIndex()
     {
-        int index = validIndexes[Random.Range(0, validIndexes.Count)];
+        int index = Random.Range(0, shortQuests.Count);
+
+        if (usedIndexes.Contains(index))
+        {
+            index += 1;
+
+            if(usedIndexes.Contains(index) || index >= shortQuests.Count)
+            {
+                index -= 2;
+
+                if(usedIndexes.Contains(index) || index < 0)
+                {
+                    index = Random.Range(0, shortQuests.Count);
+                }
+            }
+        }
+
         return index;
     }
 
     //Remove an index from valid indexes so the quest wont show again
-    private void RemoveIndex(int index)
+    private void RemoveUsedIndexes()
     {
-        validIndexes.Remove(index);
+        usedIndexes.Clear();
     }
 
     //Create the struct and add to short quests list

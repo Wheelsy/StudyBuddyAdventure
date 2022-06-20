@@ -26,6 +26,9 @@ public class Inventory : MonoBehaviour
     private CharacterPanel cp;
 
     public GameObject invFull;
+    public GameObject areYouSure;
+    public Button delete;
+    public Button dontDelete;
     public List<int> InvItemsValue { get => invItemsValue; set => invItemsValue = value; }
     public List<string> InvItemsKey { get => invItemsKey; set => invItemsKey = value; }
 
@@ -39,17 +42,27 @@ public class Inventory : MonoBehaviour
     public Image FindEmptySlot(Sprite sprite)
     {
         Item item = im.GetItemBySpriteMatch(sprite);
-        for(int i = 0; i < slots.Length; i++)
+
+        if (!item.isSet)
         {
-            if(slots[i].sprite == sprite && !item.isSet)
+            for (int i = 0; i < slots.Length; i++)
             {
-                return slots[i];
+                if (slots[i].sprite == sprite && !item.isSet)
+                {
+                    return slots[i];
+                }
             }
-            else if(slots[i].sprite == emptySlot)
+        }
+
+        for (int i = 0; i < slots.Length; i++)
+            {
+            if (slots[i].sprite == emptySlot)
             {
                 return slots[i];
             }
         }
+        
+
         return null;
     }
 
@@ -77,7 +90,6 @@ public class Inventory : MonoBehaviour
             //if its an empty slot
             if (slot.sprite == emptySlot || i.isSet)
             {            
-                Debug.Log("adding item to empty slot");
                 slot.sprite = i.itemArt;
                 existingQuantity.text = "1";
                 invItemsKey.Add(i.name);
@@ -86,7 +98,6 @@ public class Inventory : MonoBehaviour
             //else its adding quantity to an existing item
             else
             {
-                Debug.Log("adding item to existing slot");
                 existingQuantity.text = (int.Parse(existingQuantity.text) + 1).ToString();
                 AdjustSlotQuantity(i.name, 1);
             }
@@ -102,7 +113,6 @@ public class Inventory : MonoBehaviour
     //Swap an equipped item back to the inventory
     private void SwapFromCp(Sprite sprite)
     {
-
         Image slot = FindEmptySlot(sprite);
         if (slot != null)
         {
@@ -111,7 +121,6 @@ public class Inventory : MonoBehaviour
             //if its an empty slot
             if (slot.sprite == emptySlot || i.isSet)
             {
-                Debug.Log("swapping item back to inv in empty slot");
                 slot.sprite = i.itemArt;
                 existingQuantity.text = "1";
                 invItemsKey.Add(i.name);
@@ -120,14 +129,12 @@ public class Inventory : MonoBehaviour
             //else its adding quantity to an existing item
             else
             {
-                Debug.Log("swapping item back to inv in existing slot");
                 AdjustSlotQuantity(i.name,1);
                 existingQuantity.text = (int.Parse(existingQuantity.text) + 1).ToString();
             }
         }
         else
         {
-            Debug.Log("inventory full");
             invFull.SetActive(true);
         }
         GameMaster.SaveData();
@@ -139,7 +146,6 @@ public class Inventory : MonoBehaviour
     //Update all of the stats in character panel by adding the values form the scriptable obj
     public void AttachInventoryItem(Image img)
     {
-        Debug.Log("attaching item to cp");
         Sprite setSprite = cp.SetSlot.sprite;
         Sprite potionSprite = cp.PotionSlot.sprite;
 
@@ -213,9 +219,28 @@ public class Inventory : MonoBehaviour
         GameMaster.SaveData();
     }
 
+    public void AreYouSureYouWantToDelete(Image img)
+    {
+        if (img.sprite == emptySlot)
+        {
+            return;
+        }
+        else
+        {
+            areYouSure.SetActive(true);
+            delete.onClick.AddListener(delegate { RemoveItemFromInventory(img); });
+        }
+    }
+
+    public void CancelDelete()
+    {
+        areYouSure.SetActive(false);
+    }
+
     //Revome item from the dictionary and update the ui
     public void RemoveItemFromInventory(Image img)
     {
+        areYouSure.SetActive(false);
         Item item = im.GetItemBySpriteMatch(img.sprite);
         TextMeshProUGUI invQuantity = img.GetComponentInChildren<TextMeshProUGUI>();
         int index = invItemsKey.IndexOf(item.name);
@@ -232,6 +257,7 @@ public class Inventory : MonoBehaviour
             invItemsValue[index] -= 1;
             invQuantity.text = (int.Parse(invQuantity.text) - 1).ToString();
         }
+        delete.onClick.RemoveAllListeners();
         GameMaster.SaveData();
     }
 }

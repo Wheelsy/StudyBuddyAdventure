@@ -52,6 +52,8 @@ public class MenuButtons : MonoBehaviour
     private GameObject musicLibrary;
     [SerializeField]
     private GameObject howToPlay;
+    [SerializeField]
+    private GameObject cancelQuest;
 
     public GameMaster gm;
     public GameObject invFull;
@@ -138,6 +140,7 @@ public class MenuButtons : MonoBehaviour
                 inv.GetComponent<Inventory>().invFullTxt.SetActive(false);
                 set.sprite = empty;
                 potion.sprite = empty;
+                qm.GetComponent<QuestResolution>().notes.text = "";
                 questOutcome.SetActive(false);
                 break;
 
@@ -161,6 +164,10 @@ public class MenuButtons : MonoBehaviour
 
             case "howToPlay":
                 howToPlay.SetActive(false);
+                break;
+
+            case "cancelQuest":
+                cancelQuest.SetActive(false);
                 break;
         }
         TurnOnMainButtons();

@@ -40,6 +40,7 @@ public class QuestResolution : MonoBehaviour
     public GameObject musicLibrary;
     public GameObject howToPlay;
     public GameObject toDo;
+    public TextMeshProUGUI notes;
 
     private void Start()
     {
@@ -151,7 +152,7 @@ public class QuestResolution : MonoBehaviour
         }
         if(weaponBreakChance - durability >= 90)
         {
-            Debug.Log("weapon broke");
+            notes.text += "Your set was destroyed during the quest.";
             if (!cp.SetSlot.sprite.name.Equals("empty"))//Incase there is no equipped set we check for null
             {
                 cp.ResetStats();
@@ -194,8 +195,7 @@ public class QuestResolution : MonoBehaviour
 
     //If drop chance passed => Find a reward to display and add gold to player bank
     private void QuestSuccess(string difficulty)
-    {
-        
+    {        
         bool pDrop = DoesPotionDrop();
         bool sDrop = DoesSetDrop();
         Sprite setSprite = null;
@@ -291,8 +291,11 @@ public class QuestResolution : MonoBehaviour
 
     private void QuestFailed(string difficulty)
     {
+        addSetToInvButton.SetActive(false);
+        addPotionToInvButton.SetActive(false);
         events.text = qm.ActiveQuest.Defeat;
         outcome.text = "Defeat";
+        goldValue.text = "0";
         CloseTabs();
         questName.text = qm.ActiveQuest.Name;
         questOutcome.SetActive(true);

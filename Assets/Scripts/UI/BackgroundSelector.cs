@@ -21,7 +21,7 @@ public class BackgroundSelector : MonoBehaviour
     [SerializeField]
     private Sprite[] lockUnlock;
 
-    private int curIndex; 
+    private int curIndex = 0; 
 
     public CharacterPanel cp;
     public GameObject buyBackgroundView;
@@ -37,6 +37,7 @@ public class BackgroundSelector : MonoBehaviour
     //If not open the buy background menu
     public void SetBackground(int index)
     {
+        Debug.Log("setting bg");
         if (!Locked[index])
         {
             background.GetComponent<SpriteRenderer>().sprite = backgrounds[index].GetComponent<Image>().sprite;
@@ -50,7 +51,6 @@ public class BackgroundSelector : MonoBehaviour
             buyBackgroundView.SetActive(true);
             buyBackgroundImg.sprite = backgrounds[index].GetComponent<Image>().sprite;
         }
-        CurIndex = index;
     }
 
     //Check if the player has enough money to puchase the background

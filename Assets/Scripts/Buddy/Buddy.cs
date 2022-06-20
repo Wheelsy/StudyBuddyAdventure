@@ -18,11 +18,13 @@ public class Buddy : MonoBehaviour
 
     public Sprite[] noSkin;
     public GameObject questButton;
+    public GameObject loadoutBtn;
     public GameObject cancelQuestButton;
     public GameObject wooshPrefab;
     public PetManager pm;
     public GameObject dialogue;
     public Timer timer;
+    public GameObject areYouSure;
     public int Atk { get => atk; set => atk = value; }
     public int Def { get => def; set => def = value; }
     public int Initiative { get => initiative; set => initiative = value; }
@@ -52,6 +54,7 @@ public class Buddy : MonoBehaviour
         GameObject clone = Instantiate(wooshPrefab, transform.position, Quaternion.identity);
         Destroy(clone, 0.7f);
         questButton.GetComponent<Button>().interactable = false;
+        loadoutBtn.GetComponent<Button>().interactable = false;
         cancelQuestButton.SetActive(true);
 
         if (pm.CurActivePet != 99)
@@ -60,10 +63,21 @@ public class Buddy : MonoBehaviour
         }
         sr.enabled = false;
         dialogue.SetActive(false);
+        dialogue.GetComponent<Dialogue>().StopTimer();
+    }
+
+    public void CancelQuestClicked()
+    {
+        areYouSure.SetActive(true);
     }
 
     public void ReturnFromQuest()
     {
+        if (areYouSure.activeInHierarchy)
+        {
+            areYouSure.SetActive(false);
+        }
+
         if (pm.CurActivePet != 99)
         {
             pm.TurnOnPet(pm.CurActivePet);
@@ -71,8 +85,10 @@ public class Buddy : MonoBehaviour
         timer.StopTimer();
         cancelQuestButton.SetActive(false);
         questButton.GetComponent<Button>().interactable = true;
+        loadoutBtn.GetComponent<Button>().interactable = true;
         sr.enabled = true;
         dialogue.SetActive(true);
+        dialogue.GetComponent<Dialogue>().StartTimer();
     }
 
     public void UpdateCurrentSkin(Sprite sprite1, Sprite sprite2)
