@@ -21,6 +21,7 @@ public class GameMaster : MonoBehaviour
     public GameObject howToPlayBtn;
     public Sprite howToPlayNormal;
     public Sprite howToPlayRed;
+    public CloudSave cloud;
 
     private void Awake()
     {
@@ -175,5 +176,18 @@ public class GameMaster : MonoBehaviour
     private void OnApplicationQuit()
     {
         SaveData();
+        CloudSave();
+    }
+
+    private void CloudSave()
+    {
+        CharacterPanel cp = GameObject.Find("LoadoutContainer").GetComponent<CharacterPanel>();
+        Inventory inv = GameObject.Find("LoadoutContainer").GetComponent<Inventory>();
+        ItemManager im = GameObject.Find("GameMaster").GetComponent<ItemManager>();
+        ToDo td = GameObject.Find("ToDoListContainer").GetComponent<ToDo>();
+        BackgroundSelector bg = GameObject.Find("ShopsContainer").GetComponent<BackgroundSelector>();
+        AudioManager am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
+        cloud.Save(cp, inv, im, td, bg, am);
     }
 }

@@ -6,7 +6,7 @@ using System.IO;
 
 public static class SaveGame
 {
-    public static void Save( CharacterPanel cp, Inventory inv, ItemManager im, ToDo td, BackgroundSelector bg, AudioManager am)
+    public static void Save(CharacterPanel cp, Inventory inv, ItemManager im, ToDo td, BackgroundSelector bg, AudioManager am)
     {
         PlayerData data = new PlayerData(cp, inv, im, td, bg, am);
         string json = JsonUtility.ToJson(data);
