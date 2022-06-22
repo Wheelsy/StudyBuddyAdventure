@@ -50,6 +50,7 @@ public class Initialise : MonoBehaviour
         {
             await AuthenticationService.Instance.SignInAnonymouslyAsync();
             Debug.Log("Sign in anonymously succeeded!");
+            gameObject.GetComponent<CloudLoad>().CheckForLoadData();
 
             // Shows how to get the playerID
             Debug.Log($"PlayerID: {AuthenticationService.Instance.PlayerId}");

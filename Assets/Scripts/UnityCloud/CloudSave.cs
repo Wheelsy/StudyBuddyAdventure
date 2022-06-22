@@ -5,15 +5,12 @@ using UnityEngine;
 
 public class CloudSave : MonoBehaviour
 {
-   public async void Save(CharacterPanel cp, Inventory inv, ItemManager im, ToDo td, BackgroundSelector bg, AudioManager am)
+   public static async void Save(CharacterPanel cp, Inventory inv, ItemManager im, ToDo td, BackgroundSelector bg, AudioManager am)
     {
-        PlayerData localData = new PlayerData(cp, inv, im, td, bg, am);
-        var dataToCloud = new Dictionary<string, object> { { "key", "someValue" } };
-
-        if (localData.gold != null)
-        {
-            dataToCloud["key"] = localData.gold;
-            await CloudSaveService.Instance.Data.ForceSaveAsync(dataToCloud);
-        }
+        //PlayerData localData = new PlayerData(cp, inv, im, td, bg, am);
+        PlayerData data = new PlayerData(cp, inv, im, td, bg, am);
+        var dataToCloud = new Dictionary<string, object>();
+        dataToCloud["saveData"] = data;
+        await CloudSaveService.Instance.Data.ForceSaveAsync(dataToCloud);
     }
 }

@@ -51,10 +51,10 @@ public class GameMaster : MonoBehaviour
         im = gameObject.GetComponent<ItemManager>();
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         //if a save file exists the call load method
-        if (File.Exists(Application.persistentDataPath + "/saveData.txt"))
+        /*if (File.Exists(Application.persistentDataPath + "/saveData.txt"))
         {
             LoadData();
-        }
+        }*/
     }
 
     public static void DeleteSaveFile()
@@ -87,7 +87,7 @@ public class GameMaster : MonoBehaviour
         howToPlayBtn.GetComponent<Image>().sprite = howToPlayNormal;
     }
 
-    public void LoadData()
+    /*public void LoadData()
     {
         PlayerData data = SaveGame.Load();
         cp.Atk.text = data.atk;
@@ -159,6 +159,23 @@ public class GameMaster : MonoBehaviour
                 buddy.UpdateCurrentSkin(item.skin[0], item.skin[1]);
             }
         }
+    }*/
+
+  /*  public static void SaveData()
+    {
+        CharacterPanel cp = GameObject.Find("LoadoutContainer").GetComponent<CharacterPanel>();
+        Inventory inv = GameObject.Find("LoadoutContainer").GetComponent<Inventory>();
+        ItemManager im = GameObject.Find("GameMaster").GetComponent<ItemManager>();
+        ToDo td = GameObject.Find("ToDoListContainer").GetComponent<ToDo>();
+        BackgroundSelector bg = GameObject.Find("ShopsContainer").GetComponent<BackgroundSelector>();
+        AudioManager am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
+        SaveGame.Save(cp, inv, im, td, bg, am);
+    }*/
+
+    private void OnApplicationQuit()
+    {
+        SaveData();
     }
 
     public static void SaveData()
@@ -170,24 +187,6 @@ public class GameMaster : MonoBehaviour
         BackgroundSelector bg = GameObject.Find("ShopsContainer").GetComponent<BackgroundSelector>();
         AudioManager am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
-        SaveGame.Save(cp, inv, im, td, bg, am);
-    }
-
-    private void OnApplicationQuit()
-    {
-        SaveData();
-        CloudSave();
-    }
-
-    private void CloudSave()
-    {
-        CharacterPanel cp = GameObject.Find("LoadoutContainer").GetComponent<CharacterPanel>();
-        Inventory inv = GameObject.Find("LoadoutContainer").GetComponent<Inventory>();
-        ItemManager im = GameObject.Find("GameMaster").GetComponent<ItemManager>();
-        ToDo td = GameObject.Find("ToDoListContainer").GetComponent<ToDo>();
-        BackgroundSelector bg = GameObject.Find("ShopsContainer").GetComponent<BackgroundSelector>();
-        AudioManager am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
-
-        cloud.Save(cp, inv, im, td, bg, am);
+        CloudSave.Save(cp, inv, im, td, bg, am);
     }
 }
