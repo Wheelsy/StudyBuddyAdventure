@@ -22,18 +22,20 @@ public class CloudLoad : MonoBehaviour
     private AudioManager am;
     private PetManager pm;
 
+    public GameObject loadScreen;
+
     private Dictionary<string, string> FormattedData = new Dictionary<string, string>();
 
     private void Awake()
     {
         cp = GameObject.Find("LoadoutContainer").GetComponent<CharacterPanel>();
         inv = GameObject.Find("LoadoutContainer").GetComponent<Inventory>();
-        im = gameObject.GetComponent<ItemManager>();
+        im = GameObject.Find("GameMaster").GetComponent<ItemManager>();
         buddy = GameObject.Find("StudyBuddy").GetComponent<Buddy>();
         td = GameObject.Find("ToDoListContainer").GetComponent<ToDo>();
         bg = GameObject.Find("ShopsContainer").GetComponent<BackgroundSelector>();
         am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
-        pm = gameObject.GetComponent<PetManager>();
+        pm = GameObject.Find("GameMaster").GetComponent<PetManager>();
     }
 
     public async void CheckForLoadData()
@@ -47,18 +49,8 @@ public class CloudLoad : MonoBehaviour
         else
         {
             Debug.Log("No data to load");
+            loadScreen.SetActive(false);
         }
-    }
-
-    private void FormatLoadData(string data)
-    {
-        data = data.Replace("\"", "");
-        data = data.Replace("{", "");
-        data = data.Replace("}", "");
-
-        
-        List<string> splitData = new List<string>();
-        splitData.AddRange(data.Split(','));    
     }
 
     public async void Load(CharacterPanel cp, Inventory inv, ItemManager im, ToDo td, BackgroundSelector bg, AudioManager am, Buddy buddy, PetManager pm)
@@ -97,10 +89,12 @@ public class CloudLoad : MonoBehaviour
         {
             for (int i = 0; i < data.inventoryKeys.Count; i++)
             {
-                if (data.inventoryKeys[i].ToString().Trim() != "")
+                string key = data.inventoryKeys[i].ToString();
+                key.TrimEnd();
+                key.TrimStart();
+                if (key != "")
                 {
-                    Debug.Log("adding inv item: " + data.inventoryKeys[i].ToString().Trim());
-                    inv.InvItemsKey.Add(data.inventoryKeys[i].ToString().Trim());
+                    inv.InvItemsKey.Add(key);
                     inv.InvItemsValue.Add(data.inventoryValues[i]);
                 }
             }
@@ -109,9 +103,12 @@ public class CloudLoad : MonoBehaviour
         foreach (string key in inv.InvItemsKey)
         {
             Item i = im.GetItemByNameMatch(key);
-            Image slot = inv.FindEmptySlot(i.itemArt);
-            slot.sprite = i.itemArt;
-            slot.GetComponentInChildren<TextMeshProUGUI>().text = inv.InvItemsValue[inv.InvItemsKey.IndexOf(key)].ToString();
+            if (i != null)
+            {
+                Image slot = inv.FindEmptySlot(i.itemArt);
+                slot.sprite = i.itemArt;
+                slot.GetComponentInChildren<TextMeshProUGUI>().text = inv.InvItemsValue[inv.InvItemsKey.IndexOf(key)].ToString();
+            }
         }
 
         if (data.equippedPotion.Trim() != "")
@@ -137,5 +134,6 @@ public class CloudLoad : MonoBehaviour
                 buddy.UpdateCurrentSkin(item.skin[0], item.skin[1]);
             }
         }
+        loadScreen.SetActive(false);
     }
 }

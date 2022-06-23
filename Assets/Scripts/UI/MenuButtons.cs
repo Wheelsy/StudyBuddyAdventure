@@ -54,6 +54,10 @@ public class MenuButtons : MonoBehaviour
     private GameObject howToPlay;
     [SerializeField]
     private GameObject cancelQuest;
+    [SerializeField]
+    private GameObject playerProfile;
+    [SerializeField]
+    private GameObject deleteAccount;
 
     public GameMaster gm;
     public GameObject invFull;
@@ -114,6 +118,11 @@ public class MenuButtons : MonoBehaviour
         howToPlay.SetActive(true);
     }
 
+    public void PlayerProfile()
+    {
+        playerProfile.SetActive(true);
+    }
+
     public void Back(string from)
     {
         switch (from)
@@ -168,6 +177,14 @@ public class MenuButtons : MonoBehaviour
 
             case "cancelQuest":
                 cancelQuest.SetActive(false);
+                break;
+
+            case "playerProfile":
+                playerProfile.SetActive(false);
+                break;
+
+            case "deleteAccount":
+                deleteAccount.SetActive(false);
                 break;
         }
         TurnOnMainButtons();

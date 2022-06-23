@@ -21,6 +21,7 @@ public class BackgroundSelector : MonoBehaviour
     [SerializeField]
     private Sprite[] lockUnlock;
 
+    private int tmpIndex;
     private int curIndex = 0; 
 
     public CharacterPanel cp;
@@ -46,6 +47,7 @@ public class BackgroundSelector : MonoBehaviour
         }
         else
         {
+            tmpIndex = index;
             availableGold.text = cp.Gold.text.ToString();
             cost.text = backgrounds[index].GetComponent<GoldPrice>().Price.ToString();
             buyBackgroundView.SetActive(true);
@@ -61,7 +63,7 @@ public class BackgroundSelector : MonoBehaviour
         int curGold = int.Parse(availableGold.text);
         if(curGold >= price)
         {
-            UnlockBackground(CurIndex);
+            UnlockBackground(tmpIndex);
             cp.Gold.text = (curGold - price).ToString();
             GameMaster.SaveData();
         }
