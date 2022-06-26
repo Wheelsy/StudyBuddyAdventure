@@ -4,13 +4,16 @@ using Unity.Services.Authentication;
 using Unity.Services.CloudSave;
 using System.Threading.Tasks;
 using TMPro;
+using GooglePlayGames;
 
 public class Initialise : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI playerId;
     [SerializeField]
-    private GameObject errorText;
+    private GameObject connectionErrorText;
+    [SerializeField]
+    private GameObject loginScreen;
 
     private async void Awake()
     {
@@ -18,9 +21,9 @@ public class Initialise : MonoBehaviour
         Debug.Log(UnityServices.State);
     }
 
-    private async void Start()
+    private void Start()
     {
-        await SignInAnonymouslyAsync();
+        InitializePlayGamesLogin();
         SetupEvents();
     }
 
@@ -33,7 +36,6 @@ public class Initialise : MonoBehaviour
 
             // Shows how to get an access token
             Debug.Log($"Access Token: {AuthenticationService.Instance.AccessToken}");
-
         };
 
         AuthenticationService.Instance.SignInFailed += (err) => {
@@ -50,33 +52,52 @@ public class Initialise : MonoBehaviour
         };
     }
 
-    async Task SignInAnonymouslyAsync()
+    void InitializePlayGamesLogin()
+    {      
+        PlayGamesPlatform.Activate();
+    }
+
+    public void LoginGooglePlayGames()
+    {
+        Social.localUser.Authenticate(OnGooglePlayGamesLogin);
+    }
+
+    async void OnGooglePlayGamesLogin(bool success)
+    {
+        if (success)
+        {
+            // Call Unity Authentication SDK to sign in or link with Google.
+            string idToken = PlayGamesPlatform.Instance.GetUserId();
+            await SignInWithGoogleAsync(idToken);
+        }
+        else
+        {
+            Debug.Log("Unsuccessful login");
+        }
+    }
+
+    async Task SignInWithGoogleAsync(string idToken)
     {
         try
         {
-            await AuthenticationService.Instance.SignInAnonymouslyAsync();
-            Debug.Log("Sign in anonymously succeeded!");
-
+            await AuthenticationService.Instance.SignInWithGoogleAsync(idToken);
+            Debug.Log("SignIn is successful.");
             //if sign in successful check for load data and assign player id to in game ui
-            gameObject.GetComponent<CloudLoad>().CheckForLoadData(); 
+            loginScreen.SetActive(false);
+            gameObject.GetComponent<CloudLoad>().CheckForLoadData();
             playerId.text = AuthenticationService.Instance.PlayerId.ToString();
-
-            // Shows how to get the playerID
-            Debug.Log($"PlayerID: {AuthenticationService.Instance.PlayerId}");
         }
         catch (AuthenticationException ex)
         {
             // Compare error code to AuthenticationErrorCodes
             // Notify the player with the proper error message
             Debug.LogException(ex);
-            errorText.SetActive(true);
         }
         catch (RequestFailedException ex)
         {
             // Compare error code to CommonErrorCodes
             // Notify the player with the proper error message
             Debug.LogException(ex);
-            errorText.SetActive(true);
         }
     }
 }
