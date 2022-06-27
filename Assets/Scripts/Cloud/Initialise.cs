@@ -85,7 +85,7 @@ public class Initialise : MonoBehaviour
             Debug.Log("SignIn is successful.");
             //if sign in successful check for load data and assign player id to in game ui
             loginScreen.SetActive(false);
-            gameObject.GetComponent<CloudLoad>().CheckForLoadData();
+            //gameObject.GetComponent<CloudLoad>().CheckForLoadData();
             playerId.text = AuthenticationService.Instance.PlayerId.ToString();
         }
         catch (AuthenticationException ex)
