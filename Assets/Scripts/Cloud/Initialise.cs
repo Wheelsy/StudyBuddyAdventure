@@ -68,6 +68,7 @@ public class Initialise : MonoBehaviour
         {
             // Call Unity Authentication SDK to sign in or link with Google.
             string idToken = PlayGamesPlatform.Instance.GetUserId();
+            Debug.Log("Player id: " + idToken);
             await SignInWithGoogleAsync(idToken);
         }
         else
