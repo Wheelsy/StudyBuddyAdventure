@@ -19,11 +19,11 @@ public class Initialise : MonoBehaviour
     {
         await UnityServices.InitializeAsync();
         Debug.Log(UnityServices.State);
+        InitializePlayGamesLogin();
     }
 
     private void Start()
     {
-        InitializePlayGamesLogin();
         SetupEvents();
     }
 
@@ -85,11 +85,13 @@ public class Initialise : MonoBehaviour
             Debug.Log("SignIn is successful.");
             //if sign in successful check for load data and assign player id to in game ui
             loginScreen.SetActive(false);
-            //gameObject.GetComponent<CloudLoad>().CheckForLoadData();
+            gameObject.GetComponent<CloudLoad>().CheckForLoadData();
             playerId.text = AuthenticationService.Instance.PlayerId.ToString();
         }
         catch (AuthenticationException ex)
         {
+            Debug.Log(ex.Message);
+            Debug.Log("cant unity sign in");
             // Compare error code to AuthenticationErrorCodes
             // Notify the player with the proper error message
             Debug.LogException(ex);
