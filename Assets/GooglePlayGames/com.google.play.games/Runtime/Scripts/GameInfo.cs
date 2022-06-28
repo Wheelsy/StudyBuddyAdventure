@@ -39,7 +39,7 @@ namespace GooglePlayGames {
         public const string ApplicationId = "846198572387"; // Filled in automatically
         public const string IosClientId = "__IOS_CLIENTID__"; // Filled in automatically
         public const string WebClientId = "846198572387-lokunk9idj75a3t5sg58b74thov6o0s7.apps.googleusercontent.com"; // Filled in automatically
-        public const string NearbyConnectionServiceId = "";
+        public const string NearbyConnectionServiceId = "com.GemeraldStudios.StudyBuddyAdventure";
 
         public static bool ApplicationIdInitialized() {
             return !string.IsNullOrEmpty(ApplicationId) && !ApplicationId.Equals(ToEscapedToken(UnescapedApplicationId));

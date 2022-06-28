@@ -18,8 +18,7 @@ public class Initialise : MonoBehaviour
     private async void Awake()
     {
         await UnityServices.InitializeAsync();
-        Debug.Log(UnityServices.State);
-        InitializePlayGamesLogin();
+        Debug.Log(UnityServices.State);       
     }
 
     private void Start()
@@ -52,14 +51,15 @@ public class Initialise : MonoBehaviour
         };
     }
 
-    void InitializePlayGamesLogin()
-    {      
-        PlayGamesPlatform.Activate();
-    }
-
     public void LoginGooglePlayGames()
     {
+        InitializePlayGamesLogin();
         Social.localUser.Authenticate(OnGooglePlayGamesLogin);
+    }
+
+    void InitializePlayGamesLogin()
+    {
+        PlayGamesPlatform.Activate();
     }
 
     async void OnGooglePlayGamesLogin(bool success)
@@ -67,8 +67,8 @@ public class Initialise : MonoBehaviour
         if (success)
         {
             // Call Unity Authentication SDK to sign in or link with Google.
-            string idToken = PlayGamesPlatform.Instance.GetUserId();
-            Debug.Log("Player id: " + idToken);
+            string idToken = Social.localUser.id;
+ 
             await SignInWithGoogleAsync(idToken);
         }
         else
