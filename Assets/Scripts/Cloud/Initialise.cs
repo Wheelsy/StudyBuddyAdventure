@@ -23,6 +23,7 @@ public class Initialise : MonoBehaviour
 
     private void Start()
     {
+        InitializePlayGamesLogin();
         SetupEvents();
     }
 
@@ -52,8 +53,7 @@ public class Initialise : MonoBehaviour
     }
 
     public void LoginGooglePlayGames()
-    {
-        InitializePlayGamesLogin();
+    {       
         Social.localUser.Authenticate(OnGooglePlayGamesLogin);
     }
 
@@ -67,8 +67,8 @@ public class Initialise : MonoBehaviour
         if (success)
         {
             // Call Unity Authentication SDK to sign in or link with Google.
-            string idToken = Social.localUser.id;
- 
+            string idToken = ((PlayGamesLocalUser)PlayGamesPlatform.Instance.localUser).GetIdToken();
+            Debug.Log(idToken);
             await SignInWithGoogleAsync(idToken);
         }
         else
