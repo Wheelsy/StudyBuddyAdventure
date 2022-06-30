@@ -67,9 +67,18 @@ public class Initialise : MonoBehaviour
         if (success)
         {
             // Call Unity Authentication SDK to sign in or link with Google.
-            string idToken = ((PlayGamesLocalUser)PlayGamesPlatform.Instance.localUser).GetIdToken();
-            Debug.Log(idToken);
-            await SignInWithGoogleAsync(idToken);
+            // string idToken = ((PlayGamesLocalUser)PlayGamesPlatform.Instance.localUser).GetIdToken();
+            //string idToken = PlayGamesPlatform.Instance.GetServerAuthCode();
+            string idToken = PlayGamesPlatform.Instance.GetUserId();
+            Debug.Log("google id: " + idToken);
+            if (idToken == null || idToken.Trim().Equals(""))
+            {
+                Debug.Log("token is null");
+            }
+            else
+            {
+                await SignInWithGoogleAsync(idToken);              
+            }
         }
         else
         {
@@ -90,8 +99,7 @@ public class Initialise : MonoBehaviour
         }
         catch (AuthenticationException ex)
         {
-            Debug.Log(ex.Message);
-            Debug.Log("cant unity sign in");
+            Debug.Log("error signing in with unity cloud");
             // Compare error code to AuthenticationErrorCodes
             // Notify the player with the proper error message
             Debug.LogException(ex);
