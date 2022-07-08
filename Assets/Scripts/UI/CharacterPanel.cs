@@ -72,9 +72,9 @@ public class CharacterPanel : MonoBehaviour
 
     public void AddOrSubtractGold(int value)
     {
-        //Debug.Log("adding " + value + " gold to existing bank of: " + gold.text);
+        Debug.Log("adding " + value + " gold to existing bank of: " + gold.text);
         gold.text = (int.Parse(gold.text) + value).ToString();
-        //Debug.Log("new gold bank is " + gold.text);
+        Debug.Log("new gold bank is " + gold.text);
         GameMaster.SaveData();
     }
 

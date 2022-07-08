@@ -63,10 +63,12 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
             Debug.Log("Unity Ads Rewarded Ad Completed");
             // Grant a reward.
             cp.AddOrSubtractGold(2);
-            GameMaster.SaveData();
+            _showAdButton.interactable = false;
 
             // Load another ad:
-            Advertisement.Load(_adUnitId, this);
+            //Advertisement.Load(_adUnitId, this);
+
+            _showAdButton.onClick.RemoveAllListeners();
         }
     }
 
@@ -74,12 +76,14 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     public void OnUnityAdsFailedToLoad(string adUnitId, UnityAdsLoadError error, string message)
     {
         Debug.Log($"Error loading Ad Unit {adUnitId}: {error.ToString()} - {message}");
+        _showAdButton.onClick.RemoveAllListeners();
         // Use the error details to determine whether to try to load another ad.
     }
 
     public void OnUnityAdsShowFailure(string adUnitId, UnityAdsShowError error, string message)
     {
         Debug.Log($"Error showing Ad Unit {adUnitId}: {error.ToString()} - {message}");
+        _showAdButton.onClick.RemoveAllListeners();
         // Use the error details to determine whether to try to load another ad.
     }
 
