@@ -17328,7 +17328,6 @@ MonoBehaviour:
   _androidGameId: 4632149
   _iOSGameId: 4632148
   _testMode: 1
-  rewardedAdsButton: {fileID: 1099261096}
 --- !u!4 &590230883
 Transform:
   m_ObjectHideFlags: 0
@@ -63130,6 +63129,7 @@ MonoBehaviour:
   cp: {fileID: 372816362}
   addSetToInvButton: {fileID: 839555093}
   addPotionToInvButton: {fileID: 71478956}
+  rewardedAdsButton: {fileID: 1099261096}
   loadout: {fileID: 1223276935}
   shops: {fileID: 66642162}
   musicLibrary: {fileID: 876941316}

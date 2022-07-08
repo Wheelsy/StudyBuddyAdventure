@@ -30,6 +30,8 @@ public class QuestResolution : MonoBehaviour
     private GameObject addSetToInvButton;
     [SerializeField]
     private GameObject addPotionToInvButton;
+    [SerializeField]
+    private RewardedAdsButton rewardedAdsButton;
     private int atk;
     private int def;
     private int initiative;
@@ -287,6 +289,7 @@ public class QuestResolution : MonoBehaviour
         }
         CloseTabs();
         questOutcome.SetActive(true);
+        rewardedAdsButton.LoadAd();
     }
 
     private void QuestFailed(string difficulty)
@@ -299,6 +302,7 @@ public class QuestResolution : MonoBehaviour
         CloseTabs();
         questName.text = qm.ActiveQuest.Name;
         questOutcome.SetActive(true);
+        rewardedAdsButton.LoadAd();
     }
 
     private bool DoesSetDrop()
