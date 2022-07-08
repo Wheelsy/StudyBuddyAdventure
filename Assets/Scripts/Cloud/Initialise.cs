@@ -3,7 +3,6 @@ using UnityEngine;
 using Unity.Services.Authentication;
 using System.Threading.Tasks;
 using TMPro;
-using GooglePlayGames;
 using UnityEngine.Android;
 
 public class Initialise : MonoBehaviour
@@ -15,48 +14,30 @@ public class Initialise : MonoBehaviour
     [SerializeField]
     private GameObject loginScreen;
 
+    private CloudLoad load;
+
     async void Awake()
     {
         await UnityServices.InitializeAsync();
-        InitializePlayGamesLogin();
     }
 
-    void InitializePlayGamesLogin()
+    async void Start()
     {
-        PlayGamesPlatform.Activate();
+        load = gameObject.GetComponent<CloudLoad>();
+        await SignInAnonymouslyAsync();
     }
 
-    // Call when login button is pressed
-    public void LoginGooglePlayGames()
-    {       
-        Social.localUser.Authenticate(OnGooglePlayGamesLogin);
-    }
-
-    //Check login success
-    async void OnGooglePlayGamesLogin(bool success)
-    {
-        if (success)
-        {
-            // Call Unity Authentication SDK to sign in or link with Google.
-            string idToken = PlayGamesPlatform.Instance.GetUserId();
-            await SignInWithGoogleAsync(idToken);                          
-        }
-        else
-        {
-            Debug.Log("Unsuccessful login");
-        }
-    }
-
-    async Task SignInWithGoogleAsync(string idToken)
+    async Task SignInAnonymouslyAsync()
     {
         try
         {
-            await AuthenticationService.Instance.SignInWithGoogleAsync(idToken);
-            Debug.Log("SignIn is successful.");
-            //if sign in successful check for load data and assign player id to in game ui.
-            //Turn login screen off.
-            loginScreen.SetActive(false);
-            playerId.text = AuthenticationService.Instance.PlayerId.ToString();
+            await AuthenticationService.Instance.SignInAnonymouslyAsync();
+            Debug.Log("Sign in anonymously succeeded!");
+
+            // Shows how to get the playerID
+            Debug.Log($"PlayerID: {AuthenticationService.Instance.PlayerId}");
+            playerId.text = AuthenticationService.Instance.PlayerId;
+            load.CheckForLoadData();
         }
         catch (AuthenticationException ex)
         {

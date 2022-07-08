@@ -19,11 +19,10 @@ public class ShopSwitcher : MonoBehaviour
         curShop = 0;
     }
 
-    public void ReturnToGoldShop()
+    public void ReturnToBgShop()
     {
         curShop = 0;
         shops[1].SetActive(false);
-        shops[2].SetActive(false);
         shops[0].SetActive(true);
     }
 

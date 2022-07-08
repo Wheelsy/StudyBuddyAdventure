@@ -135,13 +135,6 @@ public class AudioManager : MonoBehaviour
         buySongView.SetActive(false);
     }
 
-    public void BuyMoreGold()
-    {
-        CancelSongPurchase();
-        buySongView.SetActive(false);
-        sw.ReturnToGoldShop();
-    }
-
     //Set the song to unlocked
     //Set lock image to unlocked
     //Add song to owned songs

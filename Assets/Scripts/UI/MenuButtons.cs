@@ -35,8 +35,6 @@ public class MenuButtons : MonoBehaviour
     [SerializeField]
     private GameObject musicShop;
     [SerializeField]
-    private GameObject goldShop;
-    [SerializeField]
     private GameObject backgroundBuy;
     [SerializeField]
     private GameObject songBuy;
@@ -158,8 +156,7 @@ public class MenuButtons : MonoBehaviour
                 break;
 
             case "shop":
-                backgroundShop.SetActive(false);
-                goldShop.SetActive(true);
+                backgroundShop.SetActive(true);
                 switcher.ResetTitleText();
                 shopMenu.SetActive(false);
                 musicShop.SetActive(false);

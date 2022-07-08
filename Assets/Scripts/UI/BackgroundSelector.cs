@@ -87,12 +87,6 @@ public class BackgroundSelector : MonoBehaviour
         curIndex = index;
     }
 
-    //Go back to the gold shop
-    public void BuyMoreGold()
-    {
-        buyBackgroundView.SetActive(false);
-        sw.ReturnToGoldShop();
-    }
 
     //Close buy background menu
     public void CancelBackgroundPurchase()
