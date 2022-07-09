@@ -10587,7 +10587,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Watch Ad
+  m_text: 'Watch
+
+    Ad'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10596,8 +10598,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -10614,13 +10616,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -32749,8 +32751,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -408804514165855184, guid: 9706bd54e4c21cc4b904820442732332, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -44645,24 +44647,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopSongs:
-  - {fileID: 8300000, guid: 760d18012e3509f42a353e61a9707cc3, type: 3}
+  - {fileID: 8300000, guid: f87eb06e5497aba4a8ff1316a8a20574, type: 3}
   - {fileID: 8300000, guid: e28ada85522631c4ba105f632e75a247, type: 3}
   - {fileID: 8300000, guid: bd942ecde415d1247afbafadf9c1af71, type: 3}
-  - {fileID: 8300000, guid: 5f35e60c6ccf86f4384410dd9603abfd, type: 3}
-  - {fileID: 8300000, guid: 8da8f96131bdd6a478a630aac3bffcbc, type: 3}
-  - {fileID: 8300000, guid: fb07f0ee0cbf12248aaf929ce658364f, type: 3}
+  - {fileID: 8300000, guid: 3fce8ff427d21e343af7c779ab81ffc0, type: 3}
+  - {fileID: 8300000, guid: ccc34471701fe084ab90134133e28b36, type: 3}
+  - {fileID: 8300000, guid: a358650221054f848aaaa97061d747b8, type: 3}
   - {fileID: 8300000, guid: 8a1e707b41bf54d43b6c16a5859b3bc4, type: 3}
-  - {fileID: 8300000, guid: 36de5c1ad9eaac14bbd361a06d136d90, type: 3}
-  - {fileID: 8300000, guid: 57c54e16b10c8ff458c96956b91309c5, type: 3}
-  - {fileID: 8300000, guid: 48b74517b217c124e83f21985da36c9b, type: 3}
-  - {fileID: 8300000, guid: 7cf1e585a5dd8d74aa80a891fa02a86c, type: 3}
-  - {fileID: 8300000, guid: 08a618a595fa4814eb903609ab6dd0ff, type: 3}
-  - {fileID: 8300000, guid: bda1b6be4ab9e9744a34495df8b68d07, type: 3}
-  - {fileID: 8300000, guid: ae8723affb092bc479356975bc5a512d, type: 3}
-  - {fileID: 8300000, guid: 4a78938d290fab04d80243684db1ab03, type: 3}
-  - {fileID: 8300000, guid: 573c37d1972ebc940a1c09af379394c4, type: 3}
-  - {fileID: 8300000, guid: f4734aca0cf01a3499101b5c42d63caf, type: 3}
-  - {fileID: 8300000, guid: ae38b649ab5bf0d4e9483ce90793599d, type: 3}
+  - {fileID: 8300000, guid: c18afd3c138d6994498fe7255604d696, type: 3}
+  - {fileID: 8300000, guid: 12fe4943ecbe4d04392570e0568ee97f, type: 3}
+  - {fileID: 8300000, guid: 9d142811ce656cf4c983da17fb963d75, type: 3}
+  - {fileID: 8300000, guid: 13fb254f6652b0b4080d136b33469d14, type: 3}
+  - {fileID: 8300000, guid: 179731bc875833441b466cdf04e87a2a, type: 3}
+  - {fileID: 8300000, guid: 6022c862700685a49b36d8de499d3090, type: 3}
+  - {fileID: 8300000, guid: c509827a3cefca14799adf61dffe8e6c, type: 3}
+  - {fileID: 8300000, guid: 4129124b91262c842b899e73c196de4f, type: 3}
+  - {fileID: 8300000, guid: 3acaa796d9629fa4e87a3828a33d35bd, type: 3}
+  - {fileID: 8300000, guid: 7f5b57e4020dcc245b033f2d9af7d7c1, type: 3}
+  - {fileID: 8300000, guid: 5ac3f994140487642bf752f54addc077, type: 3}
   shopSongButtons:
   - {fileID: 829164774}
   - {fileID: 138952006}
@@ -56693,8 +56695,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00009918213, y: -84}
-  m_SizeDelta: {x: 26.0362, y: 0}
+  m_AnchoredPosition: {x: 0.00009918213, y: -87}
+  m_SizeDelta: {x: 26.0362, y: -74.1753}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1824346128
 MonoBehaviour:
@@ -56725,8 +56727,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278229503
+  m_fontColor: {r: 1, g: 0.6, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -56743,8 +56745,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 38
+  m_fontSizeBase: 38
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
