@@ -9,6 +9,7 @@ public class ToDo : MonoBehaviour
     public GameObject[] tasks;
     public List<bool> completed = new List<bool>();
     public Sprite[] checkBoxes;
+    public TMP_InputField txtField;
 
     //Get the user input and find the next inactive task in the array
     //Set the text of the task to the user input and set the task to active
@@ -21,7 +22,8 @@ public class ToDo : MonoBehaviour
             if (task != null)
             {
                 task.SetActive(true);
-                task.GetComponentInChildren<TextMeshProUGUI>().text = text.text;
+                task.GetComponentInChildren<TextMeshProUGUI>().text = text.text;             
+                txtField.text = "";
             }
         }
         else

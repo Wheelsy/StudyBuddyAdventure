@@ -59,6 +59,9 @@ public class MenuButtons : MonoBehaviour
 
     public GameMaster gm;
     public GameObject invFull;
+    public Transform adBtn;
+    public Transform dailyAdPos;
+    public TextMeshProUGUI adBtnText;
 
     public void QuestsMenu()
     {
@@ -149,6 +152,8 @@ public class MenuButtons : MonoBehaviour
                 potion.sprite = empty;
                 qm.GetComponent<QuestResolution>().notes.text = "";
                 questOutcome.SetActive(false);
+                adBtn.position = dailyAdPos.position;
+                adBtnText.text = "Daily\nAd";
                 break;
 
             case "toDo":

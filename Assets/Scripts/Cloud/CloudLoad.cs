@@ -78,7 +78,7 @@ public class CloudLoad : MonoBehaviour
         for (int i = 0; i < data.numTasks; i++)
         {
             td.tasks[i].SetActive(true);
-            td.tasks[i].GetComponentInChildren<TextMeshProUGUI>().text = data.toDoCompleteds[i].ToString();
+            td.tasks[i].GetComponentInChildren<TextMeshProUGUI>().text = data.toDoValues[i].ToString();
             if (data.toDoCompleteds[i])
             {
                 td.CompleteTask(i, checkboxes[i]);

@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Threading.Tasks;
 using TMPro;
 using Unity.Services.Authentication;
-using Unity.Services.CloudSave;
 using Unity.Services.Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,14 +9,14 @@ public class GameMaster : MonoBehaviour
 {
     [SerializeField]
     private Image[] checkboxes;
-
     public GameObject howToPlayBtn;
     public Sprite howToPlayNormal;
     public Sprite howToPlayRed;
     public CloudSave cloud;
     public TextMeshProUGUI playerId;
     public GameObject deleteAccount;
-    public GameObject internetErrorText;
+    public GameObject loadingScreen;
+    public TextMeshProUGUI loadingError;
 
     private void Awake()
     {
@@ -46,16 +41,18 @@ public class GameMaster : MonoBehaviour
     {
         if (Application.internetReachability == NetworkReachability.NotReachable)
         {
-            if (!internetErrorText.activeInHierarchy)
+            if (!loadingScreen.activeInHierarchy)
             {
-                internetErrorText.SetActive(true);
+                loadingError.gameObject.SetActive(true);
+                loadingError.text = "Error: No internet connection.";
             }
         }
         else
         {
-            if (internetErrorText.activeInHierarchy)
+            if (loadingError.gameObject.activeInHierarchy)
             {
-                internetErrorText.SetActive(false);
+                loadingScreen.SetActive(false);
+                loadingError.gameObject.SetActive(false);
             }
         }
     }
