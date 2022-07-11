@@ -1,15 +1,20 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
+using System;
 
 public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
     public CharacterPanel cp;
+    public GameObject questOutcome;
 
     [SerializeField] Button _showAdButton;
     [SerializeField] string _androidAdUnitId = "Rewarded_Android";
     [SerializeField] string _iOSAdUnitId = "Rewarded_iOS";
     string _adUnitId = null; // This will remain null for unsupported platforms
+    private static string dateDailyAdWatched;
+    private static bool dailyAdWatched = false;
+    private bool rewardAdWatched = false;
 
     void Awake()
     {
@@ -22,6 +27,60 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
 
         //Disable the button until the ad is ready to show:
         _showAdButton.interactable = false;
+    }
+
+    private void Start()
+    {
+        InvokeRepeating("CheckDay", 1, 60);
+
+        if (PlayerPrefs.HasKey("dailyAdWatched"))
+        {
+            if(PlayerPrefs.GetInt("dailyAdWatched") == 0)
+            {
+                dailyAdWatched = false;
+            }
+            else
+            {
+                dailyAdWatched = true;
+            }
+        }
+
+        if (PlayerPrefs.HasKey("dateDailyAdWatched"))
+        {
+            dateDailyAdWatched = PlayerPrefs.GetString("dateDailyAdWatched");
+        }
+    }
+
+    private void CheckDay()
+    {
+        if(dateDailyAdWatched != null)
+        {
+            if(dateDailyAdWatched != DateTime.Today.ToString() && dailyAdWatched != false)
+            {
+                PlayerPrefs.SetInt("dailyAdWatched", 0);
+                dailyAdWatched = false;
+            }
+        }
+    }
+
+    private void Update()
+    {     
+        if (questOutcome.activeInHierarchy && rewardAdWatched == false)
+        {
+            _showAdButton.interactable = true;
+        }
+        else if (questOutcome.activeInHierarchy && rewardAdWatched == true)
+        {
+            _showAdButton.interactable = false;
+        }
+        else if (!questOutcome.activeInHierarchy && !dailyAdWatched)
+        {
+            _showAdButton.interactable = true;
+        }
+        else if (!questOutcome.activeInHierarchy && dailyAdWatched)
+        {
+            _showAdButton.interactable = false;
+        }
     }
 
     // Load content to the Ad Unit:
@@ -41,8 +100,6 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         {
             // Configure the button to call the ShowAd() method when clicked:
             _showAdButton.onClick.AddListener(ShowAd);
-            // Enable the button for users to click:
-            _showAdButton.interactable = true;
         }
     }
 
@@ -65,8 +122,21 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
             cp.AddOrSubtractGold(2);
             _showAdButton.interactable = false;
 
+            if (!questOutcome.activeInHierarchy)
+            {
+                dailyAdWatched = true;
+                dateDailyAdWatched = DateTime.Today.ToString();
+
+                PlayerPrefs.SetInt("dailyAdWatched", 1);
+                PlayerPrefs.SetString("dateDailyAdWatched", dateDailyAdWatched.ToString());
+            }
+            else
+            {
+                rewardAdWatched = true;
+            }
+
             // Load another ad:
-            //Advertisement.Load(_adUnitId, this);
+            Advertisement.Load(_adUnitId, this);
 
             _showAdButton.onClick.RemoveAllListeners();
         }

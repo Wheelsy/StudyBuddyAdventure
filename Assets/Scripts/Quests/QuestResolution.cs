@@ -37,6 +37,8 @@ public class QuestResolution : MonoBehaviour
     private int initiative;
     private QuestManager qm;
 
+    public Transform rewardAdPos;
+    public TextMeshProUGUI rewardBtnTxt;
     public GameObject loadout;
     public GameObject shops;
     public GameObject musicLibrary;
@@ -63,6 +65,8 @@ public class QuestResolution : MonoBehaviour
     //Call success or failure methods based on outcome
     public void ResolveQuest()
     {
+        rewardedAdsButton.transform.position = rewardAdPos.position;//move ad button
+        rewardBtnTxt.text = "Watch\nAd";
         qm.ResetQuests();//Change the available quests
         string difficulty = qm.ActiveQuest.Difficulty;
         CalulateQuestStrength(difficulty);
@@ -154,9 +158,9 @@ public class QuestResolution : MonoBehaviour
         }
         if(weaponBreakChance - durability >= 90)
         {
-            notes.text += "Your set was destroyed during the quest.";
             if (!cp.SetSlot.sprite.name.Equals("empty"))//Incase there is no equipped set we check for null
             {
+                notes.text += "Your set was destroyed during the quest.";
                 cp.ResetStats();
                 cp.RemoveSet();
             }
