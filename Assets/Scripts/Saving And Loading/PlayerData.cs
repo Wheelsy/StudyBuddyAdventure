@@ -22,9 +22,13 @@ public class PlayerData
     public List<int> unlockedBackgrounds = new List<int>();
     public List<int> unlockedSongs = new List<int>();
     public int curBg;
+    public string date;
+    public int numAdsWatched;
 
-    public PlayerData(CharacterPanel cp, Inventory inv,ItemManager im, ToDo td, BackgroundSelector bg, AudioManager am)
+    public PlayerData(CharacterPanel cp, Inventory inv,ItemManager im, ToDo td, BackgroundSelector bg, AudioManager am, DailyAd da)
     {
+        date = da.Date;
+        numAdsWatched = da.NumDailyAdsWatched;
         curBg = bg.CurIndex;
         gold = cp.Gold.text.ToString();
         atk = cp.Atk.text.ToString();

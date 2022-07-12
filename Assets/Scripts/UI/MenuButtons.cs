@@ -62,6 +62,7 @@ public class MenuButtons : MonoBehaviour
     public Transform adBtn;
     public Transform dailyAdPos;
     public TextMeshProUGUI adBtnText;
+    public GameObject dailyAdCount;
 
     public void QuestsMenu()
     {
@@ -153,7 +154,8 @@ public class MenuButtons : MonoBehaviour
                 qm.GetComponent<QuestResolution>().notes.text = "";
                 questOutcome.SetActive(false);
                 adBtn.position = dailyAdPos.position;
-                adBtnText.text = "Daily\nAd";
+                adBtnText.text = "Daily Ad";
+                dailyAdCount.SetActive(false);
                 break;
 
             case "toDo":

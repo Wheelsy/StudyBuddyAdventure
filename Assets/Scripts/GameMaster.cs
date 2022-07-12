@@ -115,6 +115,8 @@ public class GameMaster : MonoBehaviour
 
     public static void SaveData()
     {
+        //Grabbing game object in scene required to pass to the cloud saving script
+        DailyAd da = GameObject.Find("AdManager").GetComponent<DailyAd>();
         CharacterPanel cp = GameObject.Find("LoadoutContainer").GetComponent<CharacterPanel>();
         Inventory inv = GameObject.Find("LoadoutContainer").GetComponent<Inventory>();
         ItemManager im = GameObject.Find("GameMaster").GetComponent<ItemManager>();
@@ -122,6 +124,9 @@ public class GameMaster : MonoBehaviour
         BackgroundSelector bg = GameObject.Find("ShopsContainer").GetComponent<BackgroundSelector>();
         AudioManager am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
-        CloudSave.Save(cp, inv, im, td, bg, am);
+        //Saving daily ad player prefs here before cloud saving
+        PlayerPrefs.Save();
+
+        CloudSave.Save(cp, inv, im, td, bg, am, da);
     }
 }

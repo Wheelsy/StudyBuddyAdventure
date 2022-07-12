@@ -7,10 +7,10 @@ using TMPro;
 
 public class CloudSave : MonoBehaviour
 {
-    public static async void Save(CharacterPanel cp, Inventory inv, ItemManager im, ToDo td, BackgroundSelector bg, AudioManager am)
+    public static async void Save(CharacterPanel cp, Inventory inv, ItemManager im, ToDo td, BackgroundSelector bg, AudioManager am, DailyAd da)
     {
         //PlayerData localData = new PlayerData(cp, inv, im, td, bg, am);
-        PlayerData data = new PlayerData(cp, inv, im, td, bg, am);
+        PlayerData data = new PlayerData(cp, inv, im, td, bg, am, da);
         var dataToCloud = new Dictionary<string, object>();
         dataToCloud["saveData"] = data;
 

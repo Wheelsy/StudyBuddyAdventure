@@ -45,6 +45,7 @@ public class QuestResolution : MonoBehaviour
     public GameObject howToPlay;
     public GameObject toDo;
     public TextMeshProUGUI notes;
+    public GameObject dailyAdCount;
 
     private void Start()
     {
@@ -294,6 +295,7 @@ public class QuestResolution : MonoBehaviour
         CloseTabs();
         questOutcome.SetActive(true);
         rewardedAdsButton.LoadAd();
+        dailyAdCount.SetActive(false);
     }
 
     private void QuestFailed(string difficulty)
@@ -307,6 +309,8 @@ public class QuestResolution : MonoBehaviour
         questName.text = qm.ActiveQuest.Name;
         questOutcome.SetActive(true);
         rewardedAdsButton.LoadAd();
+        dailyAdCount.SetActive(false);
+
     }
 
     private bool DoesSetDrop()
