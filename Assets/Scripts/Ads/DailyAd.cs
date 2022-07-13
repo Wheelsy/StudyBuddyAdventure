@@ -13,7 +13,6 @@ public class DailyAd : MonoBehaviour
     public string Date { get => date; set => date = value; }
     public int NumDailyAdsWatched { get => numDailyAdsWatched; set => numDailyAdsWatched = value; }
 
-    // Check if playerprefs have been created for daily ads
     // Start a reccuring check for if daily ad has been watched
     public void Setup()
     {
@@ -23,7 +22,6 @@ public class DailyAd : MonoBehaviour
         {
             date = DateTime.Today.ToString();
         }
-
         RefreshAvailableAds();
     }
 
