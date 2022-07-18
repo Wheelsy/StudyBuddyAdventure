@@ -155,7 +155,7 @@ public class MenuButtons : MonoBehaviour
                 questOutcome.SetActive(false);
                 adBtn.position = dailyAdPos.position;
                 adBtnText.text = "Daily Ad";
-                dailyAdCount.SetActive(false);
+                dailyAdCount.SetActive(true);
                 break;
 
             case "toDo":

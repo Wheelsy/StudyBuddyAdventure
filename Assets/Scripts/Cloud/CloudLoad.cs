@@ -25,8 +25,6 @@ public class CloudLoad : MonoBehaviour
 
     public GameObject loadScreen;
 
-    private Dictionary<string, string> FormattedData = new Dictionary<string, string>();
-
     private void Awake()
     {
         cp = GameObject.Find("LoadoutContainer").GetComponent<CharacterPanel>();
@@ -51,6 +49,7 @@ public class CloudLoad : MonoBehaviour
         else
         {
             Debug.Log("No data to load");
+            da.Setup();
             loadScreen.SetActive(false);
         }
     }
@@ -62,8 +61,9 @@ public class CloudLoad : MonoBehaviour
             Dictionary<string, string> savedData = await CloudSaveService.Instance.Data.LoadAsync(new HashSet<string> { "saveData" });
             PlayerData data = JsonUtility.FromJson<PlayerData>(savedData["saveData"]);
 
+            Debug.Log("loading num ads available: " + data.numAdsAvailable);
             da.Date = data.date;
-            da.NumDailyAdsWatched = data.numAdsWatched;
+            da.numDailyAdsAvailable.text = data.numAdsAvailable;
             cp.Atk.text = data.atk;
             cp.Def.text = data.def;
             cp.Initiative.text = data.initiative;

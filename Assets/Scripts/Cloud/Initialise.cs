@@ -44,12 +44,16 @@ public class Initialise : MonoBehaviour
             // Compare error code to AuthenticationErrorCodes
             // Notify the player with the proper error message
             Debug.LogException(ex);
+            connectionErrorText.GetComponent<TextMeshProUGUI>().text = "Error: Unable to sign in. Please check internet connection and restart the app.";
+            connectionErrorText.SetActive(true);
         }
         catch (RequestFailedException ex)
         {
             // Compare error code to CommonErrorCodes
             // Notify the player with the proper error message
             Debug.LogException(ex);
+            connectionErrorText.GetComponent<TextMeshProUGUI>().text = "Error: Unable to sign in. Please check internet connection and restart the app.";
+            connectionErrorText.SetActive(true);
         }
     }
 }

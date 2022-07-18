@@ -43,6 +43,7 @@ public class GameMaster : MonoBehaviour
         {
             if (!loadingScreen.activeInHierarchy)
             {
+                loadingScreen.SetActive(true);
                 loadingError.gameObject.SetActive(true);
                 loadingError.text = "Error: No internet connection.";
             }
@@ -108,7 +109,7 @@ public class GameMaster : MonoBehaviour
         howToPlayBtn.GetComponent<Image>().sprite = howToPlayNormal;
     }
 
-    private void OnApplicationQuit()
+    private void OnApplicationFocus()
     {
         SaveData();
     }

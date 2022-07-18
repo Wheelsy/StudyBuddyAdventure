@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DailyAd : MonoBehaviour
 {
@@ -8,21 +9,28 @@ public class DailyAd : MonoBehaviour
     public TextMeshProUGUI numDailyAdsAvailable;
 
     private string date;
-    private int numDailyAdsWatched;
 
     public string Date { get => date; set => date = value; }
-    public int NumDailyAdsWatched { get => numDailyAdsWatched; set => numDailyAdsWatched = value; }
 
     // Start a reccuring check for if daily ad has been watched
     public void Setup()
     {
-        InvokeRepeating("CheckDay", 1, 60);
-
         if(date == null || date.Equals(""))
         {
             date = DateTime.Today.ToString();
         }
-        RefreshAvailableAds();
+
+        if (numDailyAdsAvailable.text == null || numDailyAdsAvailable.text.Equals(""))
+        {
+            numDailyAdsAvailable.text = "5";
+        }
+
+        if(rAB.GetComponent<Button>().interactable == false)
+        {
+            rAB.GetComponent<Button>().interactable = true;
+        }
+
+        InvokeRepeating("CheckDay", 1, 60);
     }
 
     //Check the date and compare it to the last date stored
@@ -33,16 +41,14 @@ public class DailyAd : MonoBehaviour
         {
             if (!date.Equals(DateTime.Today.ToString()))
             {
-                Debug.Log("date doesnt match");
-                numDailyAdsWatched = 0;
+                numDailyAdsAvailable.text = "5";
                 date = DateTime.Today.ToString();
-                RefreshAvailableAds();
             }
         }
     }
 
-    public void RefreshAvailableAds()
+    public void SetAvailableAds(string amount)
     {
-        numDailyAdsAvailable.text = (5 - numDailyAdsWatched).ToString();
+        numDailyAdsAvailable.text = amount;
     }
 }

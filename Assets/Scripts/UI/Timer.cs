@@ -15,6 +15,7 @@ public class Timer : MonoBehaviour
     private bool startTimer = false;
 
     public GameObject timerBg;
+    public GameObject cancelBtn;
 
     private void Start()
     {
@@ -27,6 +28,7 @@ public class Timer : MonoBehaviour
         startTimer = true;
         text.text = time.ToString();
         timerBg.SetActive(true);
+        cancelBtn.SetActive(true);
     }
 
     //While timer value > 0 minus time
@@ -42,8 +44,9 @@ public class Timer : MonoBehaviour
         {
             startTimer = false;
             text.text = "";
-            qr.ResolveQuest();
             timerBg.SetActive(false);
+            cancelBtn.SetActive(false);
+            qr.ResolveQuest();
         }
     }
 

@@ -32,6 +32,7 @@ public class AudioManager : MonoBehaviour
     public CharacterPanel cp;
     public GameObject snippetTxt;
     public ShopSwitcher sw;
+    public TextMeshProUGUI buySongName;
 
     private MusicLibrary library;
     public static int curIndex;
@@ -68,6 +69,7 @@ public class AudioManager : MonoBehaviour
             curIndex = index;
             availableGold.text = cp.Gold.text.ToString();
             cost.text = shopSongButtons[index].GetComponent<GoldPrice>().Price.ToString();
+            buySongName.text = shopSongNames[index].text;
             buySongView.SetActive(true);
         }
     }

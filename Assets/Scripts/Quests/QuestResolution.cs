@@ -67,7 +67,7 @@ public class QuestResolution : MonoBehaviour
     public void ResolveQuest()
     {
         rewardedAdsButton.transform.position = rewardAdPos.position;//move ad button
-        rewardBtnTxt.text = "Watch\nAd";
+        rewardBtnTxt.text = "Watch Ad";
         qm.ResetQuests();//Change the available quests
         string difficulty = qm.ActiveQuest.Difficulty;
         CalulateQuestStrength(difficulty);
@@ -294,7 +294,6 @@ public class QuestResolution : MonoBehaviour
         }
         CloseTabs();
         questOutcome.SetActive(true);
-        rewardedAdsButton.LoadAd();
         dailyAdCount.SetActive(false);
     }
 
@@ -308,7 +307,6 @@ public class QuestResolution : MonoBehaviour
         CloseTabs();
         questName.text = qm.ActiveQuest.Name;
         questOutcome.SetActive(true);
-        rewardedAdsButton.LoadAd();
         dailyAdCount.SetActive(false);
 
     }

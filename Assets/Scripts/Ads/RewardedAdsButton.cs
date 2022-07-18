@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
-using System;
+using UnityEngine.SceneManagement;
 
 public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
@@ -26,7 +26,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
 
         //Disable the button until the ad is ready to show:
         _showAdButton.interactable = false;
-    }
+    } 
 
     private void Update()
     {     
@@ -43,7 +43,8 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         }
         else if (!questOutcome.activeInHierarchy)
         {
-            if (dA.NumDailyAdsWatched < 5)
+            int.TryParse(dA.numDailyAdsAvailable.text.ToString(), out int result);
+            if (result > 0)
             {
                 _showAdButton.interactable = true;
             }
@@ -89,20 +90,20 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         if (adUnitId.Equals(_adUnitId) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
         {
             Debug.Log("Unity Ads Rewarded Ad Completed");
-            // Grant a reward.
             _showAdButton.interactable = false;
-            cp.AddOrSubtractGold(5);
 
             if (!questOutcome.activeInHierarchy)
             {
-                dA.NumDailyAdsWatched += 1;
-                dA.RefreshAvailableAds();
+                int tmp = int.Parse(dA.numDailyAdsAvailable.text) - 1;
+                dA.SetAvailableAds(tmp.ToString());
             }
             else
             {
                 rewardAdWatched = true;
             }
 
+            // Grant a reward.
+            cp.AddOrSubtractGold(5);
             // Load another ad:
             Advertisement.Load(_adUnitId, this);
 

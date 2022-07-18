@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class OpenLink : MonoBehaviour
 {
+    string protocol = "http://";
     public void Open(string path)
     {
-        Application.OpenURL(path);
+        Application.OpenURL(protocol + path);
     }
 }
