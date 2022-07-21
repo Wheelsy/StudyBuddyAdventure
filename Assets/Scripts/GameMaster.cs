@@ -116,7 +116,7 @@ public class GameMaster : MonoBehaviour
 
     public static void SaveData()
     {
-        Debug.Log("saving");
+        Debug.Log("saving data");
         //Grabbing game object in scene required to pass to the cloud saving script
         DailyAd da = GameObject.Find("AdManager").GetComponent<DailyAd>();
         CharacterPanel cp = GameObject.Find("LoadoutContainer").GetComponent<CharacterPanel>();
