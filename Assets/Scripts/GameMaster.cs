@@ -111,11 +111,12 @@ public class GameMaster : MonoBehaviour
 
     private void OnApplicationFocus()
     {
-        SaveData();
+        if(!loadingScreen.activeInHierarchy)SaveData();
     }
 
     public static void SaveData()
     {
+        Debug.Log("saving");
         //Grabbing game object in scene required to pass to the cloud saving script
         DailyAd da = GameObject.Find("AdManager").GetComponent<DailyAd>();
         CharacterPanel cp = GameObject.Find("LoadoutContainer").GetComponent<CharacterPanel>();

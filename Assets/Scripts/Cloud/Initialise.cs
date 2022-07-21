@@ -1,9 +1,9 @@
-using Unity.Services.Core;
-using UnityEngine;
 using Unity.Services.Authentication;
 using System.Threading.Tasks;
+using Unity.Services.Core;
+using UnityEngine;
 using TMPro;
-using UnityEngine.Android;
+using System;
 
 public class Initialise : MonoBehaviour
 {
@@ -16,14 +16,43 @@ public class Initialise : MonoBehaviour
 
     private CloudLoad load;
 
-    async void Awake()
+    public GameObject ConnectionErrorText { get => connectionErrorText; set => connectionErrorText = value; }
+
+    internal async Task Awake()
     {
-        await UnityServices.InitializeAsync();
+        try
+        {
+            await UnityServices.InitializeAsync();
+            await SignInAnonymously();
+        }
+        catch(Exception e)
+        {
+            Debug.Log(e.ToString());
+        }
     }
 
-    async void Start()
+    void Start()
     {
         load = gameObject.GetComponent<CloudLoad>();
+    }
+
+    private async Task SignInAnonymously()
+    {
+        Debug.Log("unity services state: " + UnityServices.State);
+        AuthenticationService.Instance.SignedIn += () =>
+        {
+            var playerId = AuthenticationService.Instance.PlayerId;
+            Debug.Log("Signed in as: " + playerId);
+        };
+        AuthenticationService.Instance.SignInFailed += s =>
+        {
+            // Take some action here...
+            Debug.Log(s);
+            ConnectionErrorText.GetComponent<TextMeshProUGUI>().text = s.ToString();
+            ConnectionErrorText.SetActive(true);
+            return;
+        };
+
         await SignInAnonymouslyAsync();
     }
 
@@ -44,16 +73,16 @@ public class Initialise : MonoBehaviour
             // Compare error code to AuthenticationErrorCodes
             // Notify the player with the proper error message
             Debug.LogException(ex);
-            connectionErrorText.GetComponent<TextMeshProUGUI>().text = "Error: Unable to sign in. Please check internet connection and restart the app.";
-            connectionErrorText.SetActive(true);
+            ConnectionErrorText.GetComponent<TextMeshProUGUI>().text = "Error: Unable to sign in. Please check internet connection and restart the app.";
+            ConnectionErrorText.SetActive(true);
         }
         catch (RequestFailedException ex)
         {
             // Compare error code to CommonErrorCodes
             // Notify the player with the proper error message
             Debug.LogException(ex);
-            connectionErrorText.GetComponent<TextMeshProUGUI>().text = "Error: Unable to sign in. Please check internet connection and restart the app.";
-            connectionErrorText.SetActive(true);
+            ConnectionErrorText.GetComponent<TextMeshProUGUI>().text = "Error: Unable to sign in. Please check internet connection and restart the app.";
+            ConnectionErrorText.SetActive(true);
         }
     }
 }

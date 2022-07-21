@@ -15,7 +15,7 @@ public class PetManager : MonoBehaviour
 
     public void TurnOnPet(int index)
     {
-        if(CurActivePet != 99) //if no pet is currently active
+        if(CurActivePet == 99) //if no pet is currently active
         {
             CurActivePet = index;
         }
@@ -38,5 +38,15 @@ public class PetManager : MonoBehaviour
     {
         Destroy(GameObject.FindGameObjectWithTag("Pet"));
         curActivePet = 99;
+    }
+
+    public void LeaveForeQuest()
+    {
+        GameObject.FindGameObjectWithTag("Pet").GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    public void ReturnFromQuest()
+    {
+        GameObject.FindGameObjectWithTag("Pet").GetComponent<SpriteRenderer>().enabled = true;
     }
 }

@@ -25,6 +25,7 @@ public class Buddy : MonoBehaviour
     public GameObject dialogue;
     public Timer timer;
     public GameObject areYouSure;
+    public GameObject timerBg;
     public int Atk { get => atk; set => atk = value; }
     public int Def { get => def; set => def = value; }
     public int Initiative { get => initiative; set => initiative = value; }
@@ -59,7 +60,7 @@ public class Buddy : MonoBehaviour
 
         if (pm.CurActivePet != 99)
         {
-            pm.TurnOffPet();
+            pm.LeaveForeQuest();
         }
         sr.enabled = false;
         dialogue.SetActive(false);
@@ -80,9 +81,10 @@ public class Buddy : MonoBehaviour
 
         if (pm.CurActivePet != 99)
         {
-            pm.TurnOnPet(pm.CurActivePet);
+            pm.ReturnFromQuest();
         }
         timer.StopTimer();
+        timerBg.SetActive(false);
         cancelQuestButton.SetActive(false);
         questButton.GetComponent<Button>().interactable = true;
         loadoutBtn.GetComponent<Button>().interactable = true;

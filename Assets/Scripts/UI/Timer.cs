@@ -44,7 +44,6 @@ public class Timer : MonoBehaviour
         {
             startTimer = false;
             text.text = "";
-            timerBg.SetActive(false);
             cancelBtn.SetActive(false);
             qr.ResolveQuest();
         }

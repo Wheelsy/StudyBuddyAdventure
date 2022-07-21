@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using TMPro;
 using Unity.Services.CloudSave;
 using UnityEngine;
@@ -40,17 +37,25 @@ public class CloudLoad : MonoBehaviour
 
     public async void CheckForLoadData()
     {
-        List<string>keys = await CloudSaveService.Instance.Data.RetrieveAllKeysAsync();
+        try
+        {
+            List<string> keys = await CloudSaveService.Instance.Data.RetrieveAllKeysAsync();
 
-        if (keys.Contains("saveData"))
-        {
-            Load(cp,inv,im,td,bg,am,buddy,pm, da);
+            if (keys.Contains("saveData"))
+            {
+                Load(cp, inv, im, td, bg, am, buddy, pm, da);
+            }
+            else
+            {
+                Debug.Log("No data to load");
+                da.Setup();
+                loadScreen.SetActive(false);
+            }
         }
-        else
+        catch(Exception e)
         {
-            Debug.Log("No data to load");
-            da.Setup();
-            loadScreen.SetActive(false);
+            gameObject.GetComponent<Initialise>().ConnectionErrorText.GetComponent<TextMeshProUGUI>().text = e.ToString();
+            gameObject.GetComponent<Initialise>().ConnectionErrorText.SetActive(true);
         }
     }
 
