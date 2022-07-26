@@ -6967,7 +6967,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Error: No player ID found. Unable to login.'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13424,6 +13424,8 @@ MonoBehaviour:
   playerId: {fileID: 220540666}
   connectionErrorText: {fileID: 1009896360}
   loginScreen: {fileID: 2093974321}
+  adButton: {fileID: 1099261097}
+  gm: {fileID: 1178642}
 --- !u!4 &440167202
 Transform:
   m_ObjectHideFlags: 0
@@ -13471,6 +13473,7 @@ MonoBehaviour:
   - {fileID: 119893152}
   - {fileID: 892014345}
   loadScreen: {fileID: 2093974321}
+  playerId: {fileID: 220540666}
 --- !u!1 &446777751
 GameObject:
   m_ObjectHideFlags: 0
@@ -63904,7 +63907,7 @@ MonoBehaviour:
   dialogue: {fileID: 2046037249}
   timer: {fileID: 1176259741}
   areYouSure: {fileID: 1319945924}
-  timerBg: {fileID: 0}
+  timerBg: {fileID: 708694937}
 --- !u!1 &1995363750
 GameObject:
   m_ObjectHideFlags: 0

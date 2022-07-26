@@ -4,6 +4,7 @@ using Unity.Services.Core;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.UI;
 
 public class Initialise : MonoBehaviour
 {
@@ -16,29 +17,62 @@ public class Initialise : MonoBehaviour
 
     private CloudLoad load;
 
+    public Button adButton;
+    public GameMaster gm;
     public GameObject ConnectionErrorText { get => connectionErrorText; set => connectionErrorText = value; }
 
     internal async Task Awake()
     {
+        load = gameObject.GetComponent<CloudLoad>();
         try
         {
             await UnityServices.InitializeAsync();
-            await SignInAnonymously();
         }
         catch(Exception e)
         {
             Debug.Log(e.ToString());
         }
+
+        InvokeRepeating("CheckSignInWorked", 1, 1);
     }
 
-    void Start()
+    private async void Start()
     {
-        load = gameObject.GetComponent<CloudLoad>();
+        await SignInAnonymously();
     }
 
-    private async Task SignInAnonymously()
+    private async void CheckSignInWorked()
+    {
+        if (!playerId.text.Trim().Equals(""))
+        {
+            Invoke("TurnOffLoadScreen", 1.2f);
+            CancelInvoke("CheckSignInWorked");
+
+            if (!PlayerPrefs.HasKey("playCount"))
+            {
+                PlayerPrefs.SetInt("playCount", 1);
+                gm.StartFlashIcon();
+            }
+            else if (PlayerPrefs.GetInt("playCount") <= 1)
+            {
+                gm.StartFlashIcon();
+            }
+        }
+        else
+        {
+            await SignInAnonymously();
+        }
+    }
+
+    private void TurnOffLoadScreen()
+    {
+        loginScreen.SetActive(false);
+    }
+
+    public async Task SignInAnonymously()
     {
         Debug.Log("unity services state: " + UnityServices.State);
+        string state = UnityServices.State.ToString();
         AuthenticationService.Instance.SignedIn += () =>
         {
             var playerId = AuthenticationService.Instance.PlayerId;
@@ -50,10 +84,12 @@ public class Initialise : MonoBehaviour
             Debug.Log(s);
             ConnectionErrorText.GetComponent<TextMeshProUGUI>().text = s.ToString();
             ConnectionErrorText.SetActive(true);
-            return;
         };
 
-        await SignInAnonymouslyAsync();
+        if (state.Equals("Initialized"))
+        {
+            await SignInAnonymouslyAsync();
+        }
     }
 
     async Task SignInAnonymouslyAsync()
@@ -73,7 +109,7 @@ public class Initialise : MonoBehaviour
             // Compare error code to AuthenticationErrorCodes
             // Notify the player with the proper error message
             Debug.LogException(ex);
-            ConnectionErrorText.GetComponent<TextMeshProUGUI>().text = "Error: Unable to sign in. Please check internet connection and restart the app.";
+            ConnectionErrorText.GetComponent<TextMeshProUGUI>().text = "Error: Unable to sign in. Retrying.. If problem persists Please check internet connection and restart the app.";
             ConnectionErrorText.SetActive(true);
         }
         catch (RequestFailedException ex)
@@ -81,7 +117,7 @@ public class Initialise : MonoBehaviour
             // Compare error code to CommonErrorCodes
             // Notify the player with the proper error message
             Debug.LogException(ex);
-            ConnectionErrorText.GetComponent<TextMeshProUGUI>().text = "Error: Unable to sign in. Please check internet connection and restart the app.";
+            ConnectionErrorText.GetComponent<TextMeshProUGUI>().text = "Error: Unable to sign in. Retrying.. If problem persists Please check internet connection and restart the app.";
             ConnectionErrorText.SetActive(true);
         }
     }

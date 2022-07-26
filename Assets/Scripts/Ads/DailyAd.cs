@@ -29,7 +29,6 @@ public class DailyAd : MonoBehaviour
         {
             rAB.GetComponent<Button>().interactable = true;
         }
-
         InvokeRepeating("CheckDay", 1, 60);
     }
 

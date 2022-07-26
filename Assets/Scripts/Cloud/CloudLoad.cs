@@ -21,6 +21,7 @@ public class CloudLoad : MonoBehaviour
     private DailyAd da;
 
     public GameObject loadScreen;
+    public TextMeshProUGUI playerId;
 
     private void Awake()
     {
@@ -49,7 +50,6 @@ public class CloudLoad : MonoBehaviour
             {
                 Debug.Log("No data to load");
                 da.Setup();
-                loadScreen.SetActive(false);
             }
         }
         catch(Exception e)
@@ -149,7 +149,6 @@ public class CloudLoad : MonoBehaviour
         finally
         {
             da.Setup();
-            loadScreen.SetActive(false);
         }
     }
 }

@@ -17,6 +17,7 @@ public class GameMaster : MonoBehaviour
     public GameObject deleteAccount;
     public GameObject loadingScreen;
     public TextMeshProUGUI loadingError;
+    private bool noInternet = false;
 
     private void Awake()
     {
@@ -37,10 +38,21 @@ public class GameMaster : MonoBehaviour
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
     }
 
+    public void StartFlashIcon()
+    {
+        CancelInvoke("FlashIcon");
+        InvokeRepeating("FlashIcon", 0, 0.75f);
+    }
+
     private void FixedUpdate()
     {
         if (Application.internetReachability == NetworkReachability.NotReachable)
         {
+            if (noInternet == false)
+            {
+                noInternet = true;
+            }
+
             if (!loadingScreen.activeInHierarchy)
             {
                 loadingScreen.SetActive(true);
@@ -50,7 +62,7 @@ public class GameMaster : MonoBehaviour
         }
         else
         {
-            if (loadingError.gameObject.activeInHierarchy)
+            if (noInternet == true)
             {
                 loadingScreen.SetActive(false);
                 loadingError.gameObject.SetActive(false);
@@ -82,6 +94,7 @@ public class GameMaster : MonoBehaviour
             // Notify the player with the proper error message
             Debug.LogException(ex);
         }
+        ResetPlayCount();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
