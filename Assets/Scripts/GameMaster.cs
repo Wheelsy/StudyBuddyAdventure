@@ -17,31 +17,15 @@ public class GameMaster : MonoBehaviour
     public GameObject deleteAccount;
     public GameObject loadingScreen;
     public TextMeshProUGUI loadingError;
-    private bool noInternet = false;
 
-    private void Awake()
-    {
-        if (!PlayerPrefs.HasKey("playCount"))
-        {
-            PlayerPrefs.SetInt("playCount", 1);
-            InvokeRepeating("FlashIcon", 0, 0.75f);
-        }
-        else
-        {
-            PlayerPrefs.SetInt("playCount", PlayerPrefs.GetInt("playCount") + 1);
-        }      
-        PlayerPrefs.Save();
-    }
+    private bool noInternet = false;
+    private bool htpBtnClicked = false;
+
+    public bool HtpBtnClicked { get => htpBtnClicked; set => htpBtnClicked = value; }
 
     private void Start()
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-    }
-
-    public void StartFlashIcon()
-    {
-        CancelInvoke("FlashIcon");
-        InvokeRepeating("FlashIcon", 0, 0.75f);
     }
 
     private void FixedUpdate()
@@ -70,6 +54,14 @@ public class GameMaster : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (htpBtnClicked && howToPlayBtn.GetComponent<Image>().sprite == howToPlayRed)
+        {
+            howToPlayBtn.GetComponent<Image>().sprite = howToPlayNormal;
+        }
+    }
+
     public void DeleteAccountClicked()
     {
         deleteAccount.SetActive(true);
@@ -94,32 +86,7 @@ public class GameMaster : MonoBehaviour
             // Notify the player with the proper error message
             Debug.LogException(ex);
         }
-        ResetPlayCount();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void ResetPlayCount()
-    {
-        PlayerPrefs.DeleteKey("playCount");
-        PlayerPrefs.Save();
-    }
-
-    private void FlashIcon()
-    {
-        if(howToPlayBtn.GetComponent<Image>().sprite == howToPlayNormal)
-        {
-            howToPlayBtn.GetComponent<Image>().sprite = howToPlayRed;
-        }
-        else
-        {
-            howToPlayBtn.GetComponent<Image>().sprite = howToPlayNormal;
-        }
-    }
-
-    public void CancelFlashIcon()
-    {
-        CancelInvoke("FlashIcon");
-        howToPlayBtn.GetComponent<Image>().sprite = howToPlayNormal;
     }
 
     private void OnApplicationFocus()
@@ -138,10 +105,11 @@ public class GameMaster : MonoBehaviour
         ToDo td = GameObject.Find("ToDoListContainer").GetComponent<ToDo>();
         BackgroundSelector bg = GameObject.Find("ShopsContainer").GetComponent<BackgroundSelector>();
         AudioManager am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        GameMaster gm = GameObject.Find("GameMaster").GetComponent<GameMaster>();
 
         //Saving daily ad player prefs here before cloud saving
         PlayerPrefs.Save();
 
-        CloudSave.Save(cp, inv, im, td, bg, am, da);
+        CloudSave.Save(cp, inv, im, td, bg, am, da, gm);
     }
 }

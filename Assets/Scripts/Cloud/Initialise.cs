@@ -47,16 +47,6 @@ public class Initialise : MonoBehaviour
         {
             Invoke("TurnOffLoadScreen", 1.2f);
             CancelInvoke("CheckSignInWorked");
-
-            if (!PlayerPrefs.HasKey("playCount"))
-            {
-                PlayerPrefs.SetInt("playCount", 1);
-                gm.StartFlashIcon();
-            }
-            else if (PlayerPrefs.GetInt("playCount") <= 1)
-            {
-                gm.StartFlashIcon();
-            }
         }
         else
         {

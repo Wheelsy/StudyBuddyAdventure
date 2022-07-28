@@ -19,6 +19,7 @@ public class CloudLoad : MonoBehaviour
     private AudioManager am;
     private PetManager pm;
     private DailyAd da;
+    private GameMaster gm;
 
     public GameObject loadScreen;
     public TextMeshProUGUI playerId;
@@ -34,6 +35,7 @@ public class CloudLoad : MonoBehaviour
         am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         pm = GameObject.Find("GameMaster").GetComponent<PetManager>();
         da = GameObject.Find("AdManager").GetComponent<DailyAd>();
+        gm = GameObject.Find("GameMaster").GetComponent<GameMaster>();
     }
 
     public async void CheckForLoadData()
@@ -44,7 +46,7 @@ public class CloudLoad : MonoBehaviour
 
             if (keys.Contains("saveData"))
             {
-                Load(cp, inv, im, td, bg, am, buddy, pm, da);
+                Load(cp, inv, im, td, bg, am, buddy, pm, da, gm);
             }
             else
             {
@@ -59,14 +61,14 @@ public class CloudLoad : MonoBehaviour
         }
     }
 
-    public async void Load(CharacterPanel cp, Inventory inv, ItemManager im, ToDo td, BackgroundSelector bg, AudioManager am, Buddy buddy, PetManager pm, DailyAd da)
+    public async void Load(CharacterPanel cp, Inventory inv, ItemManager im, ToDo td, BackgroundSelector bg, AudioManager am, Buddy buddy, PetManager pm, DailyAd da, GameMaster gm)
     {
         try
         {
             Dictionary<string, string> savedData = await CloudSaveService.Instance.Data.LoadAsync(new HashSet<string> { "saveData" });
             PlayerData data = JsonUtility.FromJson<PlayerData>(savedData["saveData"]);
 
-            Debug.Log("loading num ads available: " + data.numAdsAvailable);
+            gm.HtpBtnClicked = data.htpBtnClicked;
             da.Date = data.date;
             da.numDailyAdsAvailable.text = data.numAdsAvailable;
             cp.Atk.text = data.atk;

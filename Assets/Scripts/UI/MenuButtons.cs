@@ -112,12 +112,8 @@ public class MenuButtons : MonoBehaviour
 
     public void HowToPlay()
     {
-        if (PlayerPrefs.GetInt("playCount") == 1)
-        {
-            gm.CancelFlashIcon();
-        }
-
         howToPlay.SetActive(true);
+        gm.HtpBtnClicked = true;
     }
 
     public void PlayerProfile()

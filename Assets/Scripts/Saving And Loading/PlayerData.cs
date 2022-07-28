@@ -24,9 +24,11 @@ public class PlayerData
     public int curBg;
     public string date;
     public string numAdsAvailable;
+    public bool htpBtnClicked;
 
-    public PlayerData(CharacterPanel cp, Inventory inv,ItemManager im, ToDo td, BackgroundSelector bg, AudioManager am, DailyAd da)
+    public PlayerData(CharacterPanel cp, Inventory inv,ItemManager im, ToDo td, BackgroundSelector bg, AudioManager am, DailyAd da, GameMaster gm)
     {
+        htpBtnClicked = gm.HtpBtnClicked;
         date = da.Date;
         numAdsAvailable = da.numDailyAdsAvailable.text;
         curBg = bg.CurIndex;
