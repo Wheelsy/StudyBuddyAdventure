@@ -47,10 +47,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -89,6 +91,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -340,9 +343,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      musicPlayerBtns_4: -5813016051397238721
+      musicPlayerBtns_5: 4541756416547073115
+      musicPlayerBtns_7: 4049947058427760007
+      musicPlayerBtns_0: -8967934190259772971
+      musicPlayerBtns_3: 3941627226299094857
+      musicPlayerBtns_8: 3823346110440906055
+      musicPlayerBtns_6: -3780594414614983197
+      musicPlayerBtns_1: -3994715835358655859
+      musicPlayerBtns_2: -4726599174486614169
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

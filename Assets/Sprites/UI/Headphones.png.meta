@@ -56,10 +56,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -98,6 +100,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -412,9 +415,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Headphones_1: -6303713323272437469
+      Headphones_5: 3569679478522897779
+      Headphones_10: -8096789457035328043
+      Headphones_7: -6999043103755246784
+      Headphones_6: 6574808539060476252
+      Headphones_2: -3655890554688797652
+      Headphones_0: 1570060266375725793
+      Headphones_9: 5040805430387954564
+      Headphones_4: 9125095832815113800
+      Headphones_3: -2681313352291298239
+      Headphones_8: 7449578102554121889
+      Headphones_11: 8332183522364963306
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
