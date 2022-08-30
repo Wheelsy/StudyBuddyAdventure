@@ -14,6 +14,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     [SerializeField] string _iOSAdUnitId = "Rewarded_iOS";
     string _adUnitId = null; // This will remain null for unsupported platforms
     private bool rewardAdWatched = false;
+    private bool adLoaded = false;
 
     void Awake()
     {
@@ -32,7 +33,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     {     
         if (questOutcome.activeInHierarchy)
         {
-            if (!rewardAdWatched)
+            if (!rewardAdWatched && adLoaded)
             {
                 _showAdButton.interactable = true;
             }
@@ -44,7 +45,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         else if (!questOutcome.activeInHierarchy)
         {
             int.TryParse(dA.numDailyAdsAvailable.text.ToString(), out int result);
-            if (result > 0)
+            if (result > 0 && adLoaded)
             {
                 _showAdButton.interactable = true;
             }
@@ -67,6 +68,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     public void OnUnityAdsAdLoaded(string adUnitId)
     {
         Debug.Log("Ad Loaded: " + adUnitId);
+        adLoaded = true;
 
         if (adUnitId.Equals(_adUnitId))
         {
@@ -114,6 +116,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     // Implement Load and Show Listener error callbacks:
     public void OnUnityAdsFailedToLoad(string adUnitId, UnityAdsLoadError error, string message)
     {
+        adLoaded = false;
         Debug.Log($"Error loading Ad Unit {adUnitId}: {error.ToString()} - {message}");
         _showAdButton.onClick.RemoveAllListeners();
         // Use the error details to determine whether to try to load another ad.
