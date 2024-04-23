@@ -17,8 +17,7 @@ Feel free to download this repository and make any changes you'd like to the sou
 
 To download and play the game (follow these steps on your Android phone):
 
-1. Click on the "Tags" tab in the repository.
-2. Click on "APKs".
+1. Click on the latest release (right hand side of repository page).
 3. Download the APK file from the release page.
 4. Find the game in your downloads folder and install it (you will be prompted to allow downloads from unknown sources).
 
