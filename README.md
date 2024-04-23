@@ -1,17 +1,17 @@
 # Study Buddy Adventure
 
-Welcome to Study Buddy Adventure!
+Welcome to Study Buddy Adventure for mobile!
 
 Feel free to download this repository and make any changes you'd like to the source code by opening it in the Unity game engine :)
 
 ## Specs
 
-Platform: Android  
+Platform: Android (mobile)  
 Target API: 12.0
 
 ## Download and Play
 
-To download and play the game:
+To download and play the game (do the following steps on your android phone):
 
 1. Click on the "Tags" tab in the repository.
 2. Click on "APKs"
